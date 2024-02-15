@@ -9,14 +9,6 @@ layout: default
 Welcome to Windows or in other words welcome to recursive APIs and general lack of documentation. In this chapter I will go over the various resources I have personally found helpful also dive into some tips and tricks that proved useful in my journey.
 
 
-# Resources
-
-
-## Tools
-
-* [epi052's OSED Scripts](https://github.com/epi052/osed-scripts)
-
-
 ## Blogs and Presentations
 
 
@@ -42,11 +34,6 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 2](https://www.youtube.com/watch?v=UGWqq5kTiso) by OJ Reeves
 
 
-### WinDbg-Specific
-
-* [Setting up kernel debugging using WinDbg and VMware](https://www.triplefault.io/2017/07/setting-up-kernel-debugging-using.html) by triplefault.io
-
-
 ## Courses I've Taken
 
 * [EXP-301](https://www.offsec.com/documentation/EXP301-syllabus.pdf) by OffSec
@@ -66,6 +53,11 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 [back to top](#table-of-contents)
 
 This section will discuss various tips and tricks I have found useful while working with WinDbg
+
+
+## Revelant Blog(s)
+
+* [Setting up kernel debugging using WinDbg and VMware](https://www.triplefault.io/2017/07/setting-up-kernel-debugging-using.html) by triplefault.io
 
 
 ## Important
