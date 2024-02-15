@@ -14,14 +14,7 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 Here is a list of curated resources that cover various aspects of Windows security research:
 
 
-## Recommended Repos
-
-* [Morten Schenk's GitHub](https://github.com/MortenSchenk)
-* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
-* [epi052's GitHub](https://github.com/epi052)
-
-
-## Recommended Blogs
+## Recommended Blogs and Repositories
 
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
@@ -31,6 +24,10 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [DHN's Blog](https://zer0-day.pw/)
+* [Morten Schenk's GitHub](https://github.com/MortenSchenk)
+* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
+* [epi052's GitHub](https://github.com/epi052)
+* [nop's GitHub](https://github.com/nop-tech)
 
 
 ## WinDbg Resources
