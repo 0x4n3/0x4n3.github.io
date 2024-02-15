@@ -9,24 +9,7 @@ layout: default
 Welcome to Windows or in other words welcome to recursive APIs and general lack of documentation. In this chapter I will go over the various resources I have personally found helpful also dive into some tips and tricks that proved useful in my journey.
 
 
-# WinDbg Resources
-
-* [My WinDbg Blog](./windows/WinDbg.md)
-
-
-# Hyper-V Resources
-
-* [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
-* [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
-
-
-# Fuzzing Resources
-
-* [Gamozo Labs' Blog](https://gamozolabs.github.io/)
-* [Google Project Zero's WinAFL Repo](https://github.com/googleprojectzero/winafl)
-* [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
-
-# General Resources
+# Resources
 
 Here is a list of curated resources that cover various aspects of Windows security research:
 
@@ -48,6 +31,24 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [DHN's Blog](https://zer0-day.pw/)
+
+
+## WinDbg Resources
+
+* [My WinDbg Blog](./windows/WinDbg.md)
+
+
+## Hyper-V Resources
+
+* [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
+* [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
+
+
+## Fuzzing Resources
+
+* [Gamozo Labs' Blog](https://gamozolabs.github.io/)
+* [Google Project Zero's WinAFL Repo](https://github.com/googleprojectzero/winafl)
+* [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
 
 
 ## Technical Deep-Dives
