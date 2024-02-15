@@ -75,7 +75,7 @@ This section will discuss various tips and tricks I have found useful while work
 `~.` as a prefix to the breakpoint.  For example:
 
 ```
-~. bp FastBackServer!EventLog_wrapted+0x2c9
+~. bp MODULENAME!FUNCTION_NAME+0xfff
 ```
 
 
