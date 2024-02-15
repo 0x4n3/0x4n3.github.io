@@ -17,8 +17,8 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ## Recommended Repos
 
 * [Morten Schenk's GitHub](https://github.com/MortenSchenk)
-* [epi052's GitHub](https://github.com/epi052)
 * [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
+* [epi052's GitHub](https://github.com/epi052)
 
 
 ## Recommended Blogs
