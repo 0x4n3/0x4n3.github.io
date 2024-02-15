@@ -53,5 +53,3 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [Windows Kernel Internals by CodeMachine](https://codemachine.com/trainings/kerint.html)
 * [Windows Kernel Rootkits by CodeMachine](https://codemachine.com/trainings/kerrkt.html)
 
-# WinDbg
-
