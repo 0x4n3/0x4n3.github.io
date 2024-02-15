@@ -75,7 +75,7 @@ This section will discuss various tips and tricks I have found useful while work
 `~.` as a prefix to the breakpoint.  For example:
 
 ```
-~. bp MODULENAME!FUNCTION_NAME+0xfff
+~. bp <module_name>!<function_name>+0xfff
 ```
 
 
@@ -89,13 +89,13 @@ When you are examining a program with WinDbg you may need to find what file defi
 Whenever you leave for a bit and lose your place in WinDbg, you can get back to where you were by setting a breakpoint at the last opcode you were examining.  For example for 
 
 ```
-0058182c    3bc8                cmp     ecx,eax
+005c182c    3bc8                cmp     ecx,eax
 ```
 
 The command would be 
 
 ```
-bp 58182c
+bp 5c182c
 ```
 
 
@@ -104,13 +104,13 @@ bp 58182c
 You can set a breakpoint by using the hexadecimal location of a particular instruction in IDA. For example if you see the following in IDA:
 
 ```
-.text:0058182C  cmp     ecx, eax
+.text:005C182C  cmp     ecx, eax
 ```
 
 Assuming that you have the correct base address, you can break at that particular location using the command:
 
 ```
-bp 58182c
+bp 5C182c
 ```
 
 
