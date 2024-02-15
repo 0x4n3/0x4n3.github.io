@@ -4,7 +4,29 @@ layout: default
 
 # Table of Contents
 
-PLACEHOLDER
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Resources](#resources)
+  - [Tools](#tools)
+  - [Blogs and Presentations](#blogs-and-presentations)
+    - [Recommended for Everyone](#recommended-for-everyone)
+    - [Technical Deep-Dives](#technical-deep-dives)
+    - [WinDbg-Specific](#windbg-specific)
+  - [Courses I've Taken](#courses-ive-taken)
+  - [Courses I Want to Take](#courses-i-want-to-take)
+- [WinDbg](#windbg)
+  - [Important](#important)
+  - [General Advice](#general-advice)
+    - [Breaking on a Specified Thread Context](#breaking-on-a-specified-thread-context)
+    - [Determining the File Source of a Function Call](#determining-the-file-source-of-a-function-call)
+    - [Returning to Where You Left Off](#returning-to-where-you-left-off)
+    - [Setting Breakpoints](#setting-breakpoints)
+  - [Registers](#registers)
+    - [EAX](#eax)
+  - [WinDbg Commands](#windbg-commands)
+    - [ba - Break on Access](#ba---break-on-access)
+      - [Usage](#usage)
+    - [pt - Step to Next Return](#pt---step-to-next-return)
 
 
 # Overview
