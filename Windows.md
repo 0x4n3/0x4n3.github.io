@@ -47,7 +47,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ## Fuzzing Resources
 
 * [Gamozo Labs' Blog](https://gamozolabs.github.io/)
-* [Google Project Zero's WinAFL Repo](https://github.com/googleprojectzero/winafl)
+* [Google Project Zero's WinAFL](https://github.com/googleprojectzero/winafl)
 * [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
 
 
