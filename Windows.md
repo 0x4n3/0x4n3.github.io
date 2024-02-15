@@ -29,7 +29,7 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [DHN's Blog](https://zer0-day.pw/)
 
 
-### Technical Deep-Dive Blogs
+### Technical Deep-Dives
 
 * [Part 19: Kernel Exploitation -> Logic bugs in Razer rzpnk.sys](https://fuzzysecurity.com/tutorials/expDev/23.html) by Fuzzy Security
 * [I Got 99 Problem But a Kernel Pointer Ain't One](https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf) by Alex Ionescu
