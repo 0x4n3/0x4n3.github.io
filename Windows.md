@@ -16,11 +16,26 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 
 # Resources
 
-## Blogs
+## Tools
+
+* [epi052's OSED Scripts](https://github.com/epi052/osed-scripts)
+
+## Blogs and Presentations
+
+### Recommended for Everyone
 
 * [Connor McGarr's Blog](https://connormcgarr.github.io/)
 * [Spaceraccoon's Blog](https://spaceraccoon.dev/)
 * [Richard Osgood's Blog](https://www.richardosgood.com/)
+* [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
+
+### Technical Deep-Dives
+
+* [Part 19: Kernel Exploitation -> Logic bugs in Razer rzpnk.sys](https://fuzzysecurity.com/tutorials/expDev/23.html) by Fuzzy Security
+* [I Got 99 Problem But a Kernel Pointer Ain't One](https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf) by Alex Ionescu
+* [Bypassing Control Flow Guard in Windows 10 - Part II](https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-on-windows-10-part-ii) by Morten Schenk
+* [Windows Code Injection: Bypassing CIG Through KnownDlls](https://www.tiraniddo.dev/2019/08/windows-code-injection-bypassing-cig.html?m=1) by Tyranid's Lair
+* 
 
 ## Courses I've Taken
 
