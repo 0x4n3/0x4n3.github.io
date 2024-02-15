@@ -14,10 +14,10 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [My WinDbg Blog](./windows/WinDbg.md)
 
 
-## Blogs and Presentations
+## Blogs, Courses, and Books
 
 
-### Recommended
+### Recommended Blogs
 
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
@@ -29,7 +29,7 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [DHN's Blog](https://zer0-day.pw/)
 
 
-### Technical Deep-Dives
+### Technical Deep-Dive Blogs
 
 * [Part 19: Kernel Exploitation -> Logic bugs in Razer rzpnk.sys](https://fuzzysecurity.com/tutorials/expDev/23.html) by Fuzzy Security
 * [I Got 99 Problem But a Kernel Pointer Ain't One](https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf) by Alex Ionescu
@@ -43,14 +43,22 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [Kernel Exploitation on HEVD #1: Stack Overflow + Environment Setup](https://www.youtube.com/watch?v=Ca3dAXDdoz8&list=PLeVq6cCDgXi3VZQ9cpHonJHyzHf7btctr) by areyou1or0
 
 
-## Courses I've Taken
+## Books
+
+* [Windows Kernel Programming](https://www.amazon.com/Windows-Kernel-Programming-Pavel-Yosifovich/dp/1977593372) by Pavel Yosifovich
+* [Windows Internals, Part 1: System architecture, processes, threads, memory management, and more, 7th Edition](https://www.microsoftpressstore.com/store/windows-internals-part-1-system-architecture-processes-9780735684188) by Pavel Yosifovich, Mark E. Russinovich, Alex Ionescu, David A. Solomon
+* [Windows Internals, Part 2, 7th Edition](https://www.microsoftpressstore.com/store/windows-internals-part-2-9780135462409) by Andrea Allievi, Mark E. Russinovich, Alex Ionescu, David A. Solomon
+* [What Makes it Page? The Windows 7 (x64) Virtual Memory Manager](https://www.amazon.com/What-Makes-Page-Windows-Virtual/dp/1479114294) by Enrico Martignetti
+
+
+### Courses I've Taken
 
 * [EXP-301](https://www.offsec.com/documentation/EXP301-syllabus.pdf) by OffSec
   * This course is a great introduction to x86 Windows exploit development. Don't expect anything fancy, but this is a must-have if you are new to the field.
 * [EXP-401](https://www.offensive-security.com/awe/EXP401_syllabus.pdf) by OffSec
   * The gold standard in terms of modern Windows exploit development and security research. If you have the opportunity to attend this course, do so by all means.
 
-## Courses I Want to Take
+### Courses I Want to Take
 
 * [Windows Internal Architecture by CodeMachine](https://codemachine.com/trainings/winint.html)
 * [Windows Malware Techniques by CodeMachine](https://codemachine.com/trainings/winmal.html)
