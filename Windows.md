@@ -9,9 +9,33 @@ layout: default
 Welcome to Windows or in other words welcome to recursive APIs and general lack of documentation. In this chapter I will go over the various resources I have personally found helpful also dive into some tips and tricks that proved useful in my journey.
 
 
-## WinDbg Tips and Tricks
+# WinDbg Resources
 
 * [My WinDbg Blog](./windows/WinDbg.md)
+
+
+# Hyper-V Resources
+
+* [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
+* [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
+
+
+# Fuzzing Resources
+
+* [Gamozo Labs' Blog](https://gamozolabs.github.io/)
+* [Google Project Zero's WinAFL Repo](https://github.com/googleprojectzero/winafl)
+* [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
+
+# General Resources
+
+Here is a list of curated resources that cover various aspects of Windows security research:
+
+
+## Recommended Repos
+
+* [Morten Schenk's GitHub](https://github.com/MortenSchenk)
+* [epi052's GitHub](https://github.com/epi052)
+* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
 
 
 ## Recommended Blogs
@@ -22,7 +46,7 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [Spaceraccoon's Blog](https://spaceraccoon.dev/)
 * [Richard Osgood's Blog](https://www.richardosgood.com/)
 * [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
-* [ihack4falafel's Blog](https://ihack4falafel.github.io/)
+* [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [DHN's Blog](https://zer0-day.pw/)
 
 
@@ -34,6 +58,8 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [Intel CET in Action](https://www.offsec.com/offsec/intel-cet-in-action/) by OffSec
 * [Disarming EMET v5.0](https://www.offsec.com/vulndev/disarming-emet-v5-0/) by Matteo Memelli
 * [Disarming Enhanced Mitigation Experience Toolkit (EMET)](https://www.offsec.com/vulndev/disarming-enhanced-mitigation-experience-toolkit-emet/) by Matteo Memelli
+* [Discovery and analysis of a Windows PhoneBook Use-After-Free vulnerability (CVE-2020-1530)](https://symeonp.github.io/2020/12/08/phonebook-uaf-analysis.html) by Symeon
+* [itsec stuff about fuzzing, vuln hunting and (hopefully) exploitation!](https://symeonp.github.io/) by Symeon
 * [Part 19: Kernel Exploitation -> Logic bugs in Razer rzpnk.sys](https://fuzzysecurity.com/tutorials/expDev/23.html) by Fuzzy Security
 * [I Got 99 Problem But a Kernel Pointer Ain't One](https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf) by Alex Ionescu
 * [Bypassing Control Flow Guard in Windows 10 - Part II](https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-on-windows-10-part-ii) by Morten Schenk
