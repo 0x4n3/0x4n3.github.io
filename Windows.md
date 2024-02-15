@@ -9,7 +9,7 @@ layout: default
 - [Resources](#resources)
   - [Tools](#tools)
   - [Blogs and Presentations](#blogs-and-presentations)
-    - [Recommended for Everyone](#recommended-for-everyone)
+    - [Recommended](#recommended)
     - [Technical Deep-Dives](#technical-deep-dives)
     - [WinDbg-Specific](#windbg-specific)
   - [Courses I've Taken](#courses-ive-taken)
@@ -47,7 +47,7 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 ## Blogs and Presentations
 
 
-### Recommended for Everyone
+### Recommended
 
 * [Connor McGarr's Blog](https://connormcgarr.github.io/)
 * [Spaceraccoon's Blog](https://spaceraccoon.dev/)
