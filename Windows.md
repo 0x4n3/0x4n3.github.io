@@ -19,6 +19,8 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 
 ### Recommended
 
+* [Marcus Hutchins' Blog](https://malwaretech.com/)
+* [Robel Campbell's Blog](https://reverencecyber.com/blog/)
 * [Connor McGarr's Blog](https://connormcgarr.github.io/)
 * [Spaceraccoon's Blog](https://spaceraccoon.dev/)
 * [Richard Osgood's Blog](https://www.richardosgood.com/)
