@@ -37,6 +37,8 @@ Welcome to Windows or in other words welcome to recursive APIs and general lack 
 * [The Info Leak Era on Software Exploitation](https://www.youtube.com/watch?v=VgWoPa8Whmc) by Fermin J. Serna
 * [Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 1](https://www.youtube.com/watch?v=pJZjWXxUEl4) by OJ Reeves
 * [Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 2](https://www.youtube.com/watch?v=UGWqq5kTiso) by OJ Reeves
+* [ROP mitigations and Control Flow Guard - the end of code reuse attacks?](https://www.youtube.com/watch?v=pqU9jsCmlYA&list=PLeVq6cCDgXi3VZQ9cpHonJHyzHf7btctr) by Matthias Ganz 
+* [Kernel Exploitation on HEVD #1: Stack Overflow + Environment Setup](https://www.youtube.com/watch?v=Ca3dAXDdoz8&list=PLeVq6cCDgXi3VZQ9cpHonJHyzHf7btctr) by areyou1or0
 
 
 ## Courses I've Taken
