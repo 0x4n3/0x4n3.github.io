@@ -1,0 +1,5 @@
+title: 0x4n3's Guide to the Galaxy
+description: Reversing the Universe One Bit at a Time
+remote_theme: pages-themes/modernist@v0.2.0
+plugins:
+- jekyll-remote-theme
