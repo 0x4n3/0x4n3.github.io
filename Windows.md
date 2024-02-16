@@ -131,7 +131,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [What Makes it Page? The Windows 7 (x64) Virtual Memory Manager](https://www.amazon.com/What-Makes-Page-Windows-Virtual/dp/1479114294) by Enrico Martignetti
 
 
-## Courses I Want to Take
+## Courses
 
 * [EXP-301](https://www.offsec.com/documentation/EXP301-syllabus.pdf) by OffSec
 * [EXP-401](https://www.offensive-security.com/awe/EXP401_syllabus.pdf) by OffSec
