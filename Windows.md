@@ -101,9 +101,27 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ### Presentations and Walkthroughs
 
 * [The Info Leak Era on Software Exploitation](https://www.youtube.com/watch?v=VgWoPa8Whmc) by Fermin J. Serna
+* [Windows 10 Mitigation Improvements](https://www.youtube.com/watch?v=gCu2GQd0GSE) by David Weston and Matt Miller
+* [Windows 10 Segment Heap Internals](https://www.youtube.com/watch?v=hetZx78SQ_A) by Mark Vincent Yason
+* 
+* [Taking Windows 10 Kernel Exploitation to the next level](https://www.youtube.com/watch?v=Gu_5kkErQ6Y) by Morten Schenk
+* [PowerShell as an attack platform](https://www.youtube.com/watch?v=MOab2Icpecc) by Morten Schenk
+* [Data-Only Pwning Microsoft Windows Kernel](https://www.youtube.com/watch?v=FxZoAupttMI) by Nikita Tarakanov
+* [Advanced Heap Manipulation in Windows 8](https://www.youtube.com/watch?v=0lURSnDOPfQ) by Zhenhua Liu
+* [Demystifying Windows Kernel Exploitation by Abusing GDI Objects](https://www.youtube.com/watch?v=2chDv_wTymc) by Saif El Sherei
+* [Exploiting Hardcore Pool Corruptions in MS Windows Kernel](https://www.youtube.com/watch?v=2yuza8PRGVQ) by Nikita Tarakanov
+* [Windows kernel exploitation techniques](https://www.youtube.com/watch?v=f8hTwFpRphU) by Adrien Garin
+* [Practical Windows Kernel Exploitation](https://www.youtube.com/watch?v=hUCmV7uT29I) by Spencer McIntyre
+* [Over The Edge: Pwning The Windows Kernel](https://www.youtube.com/watch?v=0tFmqSbWSZE) by Rancho Han
+* [Theres a party at ring0](https://www.youtube.com/watch?v=BCavCemZPoI) by Tavis Ormandy and Julien Tinnes
+* [Extreme Privilege Escalation On Windows 8 UEFI Systems](https://www.youtube.com/watch?v=Qj_YCpoct3k) by Corey Kallenberg, Xeno Kovah, John Butterworth, and Sam Cornwell
+* [Windows privilege escalation using 3rd party services](https://www.youtube.com/watch?v=nRVbYt9LKXk) by Kacper Szurek
+* [Practical Windows Privilege Escalation](https://www.youtube.com/watch?v=PC_iMqiuIRQ) by Andrew Smith
+* [Windows Kernel Vulnerability Research and Exploitation](https://www.youtube.com/watch?v=aRZ5Wi-NWXs) by Gilad Bakas
 * [Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 1](https://www.youtube.com/watch?v=pJZjWXxUEl4) by OJ Reeves
 * [Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 2](https://www.youtube.com/watch?v=UGWqq5kTiso) by OJ Reeves
-* [ROP mitigations and Control Flow Guard - the end of code reuse attacks?](https://www.youtube.com/watch?v=pqU9jsCmlYA&list=PLeVq6cCDgXi3VZQ9cpHonJHyzHf7btctr) by Matthias Ganz 
+* [ROP mitigations and Control Flow Guard - the end of code reuse attacks?](https://www.youtube.com/watch?v=pqU9jsCmlYA) by Matthias Ganz 
+* [Building Windows Kernel Fuzzer](https://www.youtube.com/watch?v=mpXQvto4Vy4) by Jaanus Kääp
 
 
 ## Books
