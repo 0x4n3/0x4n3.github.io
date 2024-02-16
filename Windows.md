@@ -89,6 +89,20 @@ The best way to get better at vulnerability research is to practice. As a result
 * [Microsoft Edge: textarea.defaultValue memory disclosure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1255)
 * [Microsoft Edge: Out-of-bounds read in CInputDateTimeScrollerElement::_SelectValueInternal](https://bugs.chromium.org/p/project-zero/issues/detail?id=1264)
 * [Microsoft Edge: ACG bypass using DuplicateHandle](https://bugs.chromium.org/p/project-zero/issues/detail?id=1299)
+* [Microsoft Edge: Memory corruption with Object.setPrototypeOf](https://bugs.chromium.org/p/project-zero/issues/detail?id=1339)
+* [Microsoft Edge: ACG bypass using UnmapViewOfFile](https://bugs.chromium.org/p/project-zero/issues/detail?id=1435)
+* [Microsoft Edge: ACG bypass with OpenProcess()](https://bugs.chromium.org/p/project-zero/issues/detail?id=1552)
+* [Microsoft Edge: Chakra: Bugs in InitializeNumberFormat and InitializeDateTimeFormat](https://bugs.chromium.org/p/project-zero/issues/detail?id=1582)
+* [Windows: Edge/IE Isolated Private Namespace Insecure Boundary Descriptor EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=878)
+* [Windows: Edge/IE Isolated Private Namespace Insecure DACL EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=879)
+
+
+### Fontsub
+
+* [Microsoft Font Subsetting DLL returning a dangling pointer via MergeFontPackage](https://bugs.chromium.org/p/project-zero/issues/detail?id=1862)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in MergeFonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1863)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in GetGlyphIdx](https://bugs.chromium.org/p/project-zero/issues/detail?id=1864)
+* [Microsoft Font Subsetting DLL double free in MergeFormat12Cmap / MakeFormat12MergedGlyphList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1865)
 
 
 ### Hyper-V
