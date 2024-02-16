@@ -144,7 +144,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Windows Malware Techniques](https://codemachine.com/trainings/winmal.html) by CodeMachine
 * [Windows Kernel Internals](https://codemachine.com/trainings/kerint.html) by CodeMachine
 * [Windows Kernel Rootkits](https://codemachine.com/trainings/kerrkt.html) by CodeMachine
-* [SEC760: Advanced Exploit Development for Penetration Testers](https://www.sans.org/cyber-security-courses/advanced-exploit-development-penetration-testers/) by OffSec
+* [SEC760: Advanced Exploit Development for Penetration Testers](https://www.sans.org/cyber-security-courses/advanced-exploit-development-penetration-testers/) by SANS
 * [Corelan Advanced - Heap Exploitation](https://www.corelan-training.com/index.php/training/advanced/) by Corelan
 * [Corelan Bootcamp - Stack Exploitation](https://www.corelan-training.com/index.php/training/bootcamp/) by Corelan
 
