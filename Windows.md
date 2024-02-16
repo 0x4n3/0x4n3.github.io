@@ -60,6 +60,12 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readFDSelect](https://bugs.chromium.org/p/project-zero/issues/detail?id=1837)
 * [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readCharset](https://bugs.chromium.org/p/project-zero/issues/detail?id=1838)
 * [Microsoft DirectWrite / AFDKO heap-based buffer overflow due to integer overflow in readTTCDirectory](https://bugs.chromium.org/p/project-zero/issues/detail?id=1839)
+* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to unbounded iFD](https://bugs.chromium.org/p/project-zero/issues/detail?id=1840)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readStrings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1841)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling while processing CFF blend DICT operator](https://bugs.chromium.org/p/project-zero/issues/detail?id=1842)
+* [Microsoft DirectWrite / AFDKO out-of-bounds read in OpenType font handling due to undefined FontName index](https://bugs.chromium.org/p/project-zero/issues/detail?id=1843)
+* [Microsoft DirectWrite / AFDKO multiple bugs in OpenType font handling related to the "post" table](https://bugs.chromium.org/p/project-zero/issues/detail?id=1844)
+* [Microsoft DirectWrite / AFDKO NULL pointer dereferences in OpenType font handling while accessing empty dynarrays](https://bugs.chromium.org/p/project-zero/issues/detail?id=1845)
 
 
 
