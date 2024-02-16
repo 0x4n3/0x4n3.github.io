@@ -71,6 +71,24 @@ The best way to get better at vulnerability research is to practice. As a result
 * [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to empty ROS strings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1846)
 * [Microsoft DirectWrite / AFDKO insufficient integer overflow check in dnaGrow](https://bugs.chromium.org/p/project-zero/issues/detail?id=1847)
 * [Microsoft DirectWrite / AFDKO read of uninitialized BuildCharArray memory in OpenType font handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=1848)
+* [Microsoft DirectWrite invalid read in SplicePixel while processing OTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1875)
+* [Microsoft DirectWrite out-of-bounds read in sfac_GetSbitBitmap while processing TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1878)
+* [Microsoft DirectWrite heap-based buffer overflow in fsg_ExecuteGlyph while processing variable TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=2123)
+
+
+### DotNet
+
+* [Windows: ManagementObject Arbitrary .NET Serialization RCE](https://bugs.chromium.org/p/project-zero/issues/detail?id=1081)
+* [.NET Partial-Trust bypass via browser command-line injection in System.Windows.Forms.Help](https://bugs.chromium.org/p/project-zero/issues/detail?id=481)
+
+
+### Microsoft Edge
+
+* [Microsoft Edge and IE: Type confusion in HandleColumnBreakOnColumnSpanningElement](https://bugs.chromium.org/p/project-zero/issues/detail?id=1011)
+* [Microsoft Edge: Type confusion in CssParser::RecordProperty](https://bugs.chromium.org/p/project-zero/issues/detail?id=1254)
+* [Microsoft Edge: textarea.defaultValue memory disclosure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1255)
+* [Microsoft Edge: Out-of-bounds read in CInputDateTimeScrollerElement::_SelectValueInternal](https://bugs.chromium.org/p/project-zero/issues/detail?id=1264)
+* [Microsoft Edge: ACG bypass using DuplicateHandle](https://bugs.chromium.org/p/project-zero/issues/detail?id=1299)
 
 
 ### Hyper-V
