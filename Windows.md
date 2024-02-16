@@ -103,6 +103,11 @@ The best way to get better at vulnerability research is to practice. As a result
 * [Microsoft Font Subsetting DLL heap-based out-of-bounds read in MergeFonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1863)
 * [Microsoft Font Subsetting DLL heap-based out-of-bounds read in GetGlyphIdx](https://bugs.chromium.org/p/project-zero/issues/detail?id=1864)
 * [Microsoft Font Subsetting DLL double free in MergeFormat12Cmap / MakeFormat12MergedGlyphList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1865)
+* [Microsoft Font Subsetting DLL heap corruption in ComputeFormat4CmapData](https://bugs.chromium.org/p/project-zero/issues/detail?id=1866)
+* [Microsoft Font Subsetting DLL heap corruption in FixSbitSubTables](https://bugs.chromium.org/p/project-zero/issues/detail?id=1867)
+* [Microsoft Font Subsetting DLL heap corruption in ReadTableIntoStructure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1868)
+* [Microsoft Font Subsetting DLL heap corruption in ReadAllocFormat12CharGlyphMapList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1869)
+* 
 
 
 ### Hyper-V
