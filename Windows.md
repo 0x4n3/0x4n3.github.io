@@ -29,101 +29,6 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Tavis Ormandy's GitHub](https://github.com/taviso)
 
 
-## Advisories
-
-The best way to get better at vulnerability research is to practice. As a result, I have compiled a list of some advisories Google's Project Zero has produced that may help in facilitating what real bugs look like in Windows.
-
-
-### AFD
-
-* [Windows Kernel pool-based out-of-bound reads due to bugs in the implementation of bind() in afd.sys and tcpip.sys](https://bugs.chromium.org/p/project-zero/issues/detail?id=1127)
-
-
-### Avalon
-
-* [Microsoft Windows Presentation Foundation memory disclosure via uninitialized transient array](https://bugs.chromium.org/p/project-zero/issues/detail?id=277)
-
-
-### Defender
-
-* [Windows Defender: Controlled Folder Bypass through UNC Path](https://bugs.chromium.org/p/project-zero/issues/detail?id=1418)
-
-
-### DirectWrite
-
-* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to out-of-bounds cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1829)
-* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1830)
-* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1831)
-* [Microsoft DirectWrite / AFDKO stack-based buffer overflow in do_set_weight_vector_cube for large nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1832)
-* [Microsoft DirectWrite / AFDKO use of uninitialized memory while freeing resources in var_loadavar](https://bugs.chromium.org/p/project-zero/issues/detail?id=1833)
-* [Microsoft DirectWrite / AFDKO interpreter stack underflow in OpenType font handling due to missing CHKUFLOW](https://bugs.chromium.org/p/project-zero/issues/detail?id=1834)
-* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to incorrect handling of blendArray](https://bugs.chromium.org/p/project-zero/issues/detail?id=1835)
-* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readEncoding](https://bugs.chromium.org/p/project-zero/issues/detail?id=1836)
-* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readFDSelect](https://bugs.chromium.org/p/project-zero/issues/detail?id=1837)
-* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readCharset](https://bugs.chromium.org/p/project-zero/issues/detail?id=1838)
-* [Microsoft DirectWrite / AFDKO heap-based buffer overflow due to integer overflow in readTTCDirectory](https://bugs.chromium.org/p/project-zero/issues/detail?id=1839)
-* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to unbounded iFD](https://bugs.chromium.org/p/project-zero/issues/detail?id=1840)
-* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readStrings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1841)
-* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling while processing CFF blend DICT operator](https://bugs.chromium.org/p/project-zero/issues/detail?id=1842)
-* [Microsoft DirectWrite / AFDKO out-of-bounds read in OpenType font handling due to undefined FontName index](https://bugs.chromium.org/p/project-zero/issues/detail?id=1843)
-* [Microsoft DirectWrite / AFDKO multiple bugs in OpenType font handling related to the "post" table](https://bugs.chromium.org/p/project-zero/issues/detail?id=1844)
-* [Microsoft DirectWrite / AFDKO NULL pointer dereferences in OpenType font handling while accessing empty dynarrays](https://bugs.chromium.org/p/project-zero/issues/detail?id=1845)
-* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to empty ROS strings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1846)
-* [Microsoft DirectWrite / AFDKO insufficient integer overflow check in dnaGrow](https://bugs.chromium.org/p/project-zero/issues/detail?id=1847)
-* [Microsoft DirectWrite / AFDKO read of uninitialized BuildCharArray memory in OpenType font handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=1848)
-* [Microsoft DirectWrite invalid read in SplicePixel while processing OTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1875)
-* [Microsoft DirectWrite out-of-bounds read in sfac_GetSbitBitmap while processing TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1878)
-* [Microsoft DirectWrite heap-based buffer overflow in fsg_ExecuteGlyph while processing variable TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=2123)
-
-
-### DotNet
-
-* [Windows: ManagementObject Arbitrary .NET Serialization RCE](https://bugs.chromium.org/p/project-zero/issues/detail?id=1081)
-* [.NET Partial-Trust bypass via browser command-line injection in System.Windows.Forms.Help](https://bugs.chromium.org/p/project-zero/issues/detail?id=481)
-
-
-### Microsoft Edge
-
-* [Microsoft Edge and IE: Type confusion in HandleColumnBreakOnColumnSpanningElement](https://bugs.chromium.org/p/project-zero/issues/detail?id=1011)
-* [Microsoft Edge: Type confusion in CssParser::RecordProperty](https://bugs.chromium.org/p/project-zero/issues/detail?id=1254)
-* [Microsoft Edge: textarea.defaultValue memory disclosure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1255)
-* [Microsoft Edge: Out-of-bounds read in CInputDateTimeScrollerElement::_SelectValueInternal](https://bugs.chromium.org/p/project-zero/issues/detail?id=1264)
-* [Microsoft Edge: ACG bypass using DuplicateHandle](https://bugs.chromium.org/p/project-zero/issues/detail?id=1299)
-* [Microsoft Edge: Memory corruption with Object.setPrototypeOf](https://bugs.chromium.org/p/project-zero/issues/detail?id=1339)
-* [Microsoft Edge: ACG bypass using UnmapViewOfFile](https://bugs.chromium.org/p/project-zero/issues/detail?id=1435)
-* [Microsoft Edge: ACG bypass with OpenProcess()](https://bugs.chromium.org/p/project-zero/issues/detail?id=1552)
-* [Microsoft Edge: Chakra: Bugs in InitializeNumberFormat and InitializeDateTimeFormat](https://bugs.chromium.org/p/project-zero/issues/detail?id=1582)
-* [Windows: Edge/IE Isolated Private Namespace Insecure Boundary Descriptor EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=878)
-* [Windows: Edge/IE Isolated Private Namespace Insecure DACL EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=879)
-
-
-### Fontsub
-
-* [Microsoft Font Subsetting DLL returning a dangling pointer via MergeFontPackage](https://bugs.chromium.org/p/project-zero/issues/detail?id=1862)
-* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in MergeFonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1863)
-* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in GetGlyphIdx](https://bugs.chromium.org/p/project-zero/issues/detail?id=1864)
-* [Microsoft Font Subsetting DLL double free in MergeFormat12Cmap / MakeFormat12MergedGlyphList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1865)
-* [Microsoft Font Subsetting DLL heap corruption in ComputeFormat4CmapData](https://bugs.chromium.org/p/project-zero/issues/detail?id=1866)
-* [Microsoft Font Subsetting DLL heap corruption in FixSbitSubTables](https://bugs.chromium.org/p/project-zero/issues/detail?id=1867)
-* [Microsoft Font Subsetting DLL heap corruption in ReadTableIntoStructure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1868)
-* [Microsoft Font Subsetting DLL heap corruption in ReadAllocFormat12CharGlyphMapList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1869)
-* 
-
-
-### Hyper-V
-
-* [Hyper-V vmswitch.sys VmsMpCommonPvtHandleMulticastOids Guest to Host Kernel-Pool Overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=688)
-* [Windows: Double Dereference in NtEnumerateKey Elevation of Privilege](https://bugs.chromium.org/p/project-zero/issues/detail?id=1599)
-* [Windows: Server Silo Registry Key Symbolic Link EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2120)
-* [Windows Containers: ContainerUser has Elevated Privileges](https://bugs.chromium.org/p/project-zero/issues/detail?id=2127)
-* [Windows Containers: AppSilo Object Manager Root Directory EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2128)
-* [Windows Containers: Host Registry Virtual Registry Provider Bypass EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2129)
-* [Windows: Container Manager Service CmsRpcSrv_CreateContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2149)
-* [Windows: Container Manager Service CmsRpcSrv_MapVirtualDiskToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2150)
-* [Windows: Container Manager Service Arbitrary Object Directory Creation EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2151)
-* [Windows: Container Manager Service CmsRpcSrv_MapNamedPipeToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2153)
-
-
 ## Technical Deep-Dives
 
 * [Intel® 64 and IA-32 Architectures Software Developer Manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html) by Intel
@@ -238,3 +143,110 @@ The best way to get better at vulnerability research is to practice. As a result
 * [SEC760: Advanced Exploit Development for Penetration Testers](https://www.sans.org/cyber-security-courses/advanced-exploit-development-penetration-testers/) by OffSec
 * [Corelan Advanced - Heap Exploitation](https://www.corelan-training.com/index.php/training/advanced/) by Corelan
 * [Corelan Bootcamp - Stack Exploitation](https://www.corelan-training.com/index.php/training/bootcamp/) by Corelan
+
+
+## Advisories
+
+The best way to get better at vulnerability research is to practice. As a result, I have compiled a list of some advisories Google's Project Zero has produced that may help in facilitating what real bugs look like in Windows.
+
+
+### AFD
+
+* [Windows Kernel pool-based out-of-bound reads due to bugs in the implementation of bind() in afd.sys and tcpip.sys](https://bugs.chromium.org/p/project-zero/issues/detail?id=1127)
+
+
+### Avalon
+
+* [Microsoft Windows Presentation Foundation memory disclosure via uninitialized transient array](https://bugs.chromium.org/p/project-zero/issues/detail?id=277)
+
+
+### Defender
+
+* [Windows Defender: Controlled Folder Bypass through UNC Path](https://bugs.chromium.org/p/project-zero/issues/detail?id=1418)
+
+
+### DirectWrite
+
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to out-of-bounds cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1829)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1830)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1831)
+* [Microsoft DirectWrite / AFDKO stack-based buffer overflow in do_set_weight_vector_cube for large nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1832)
+* [Microsoft DirectWrite / AFDKO use of uninitialized memory while freeing resources in var_loadavar](https://bugs.chromium.org/p/project-zero/issues/detail?id=1833)
+* [Microsoft DirectWrite / AFDKO interpreter stack underflow in OpenType font handling due to missing CHKUFLOW](https://bugs.chromium.org/p/project-zero/issues/detail?id=1834)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to incorrect handling of blendArray](https://bugs.chromium.org/p/project-zero/issues/detail?id=1835)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readEncoding](https://bugs.chromium.org/p/project-zero/issues/detail?id=1836)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readFDSelect](https://bugs.chromium.org/p/project-zero/issues/detail?id=1837)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readCharset](https://bugs.chromium.org/p/project-zero/issues/detail?id=1838)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow due to integer overflow in readTTCDirectory](https://bugs.chromium.org/p/project-zero/issues/detail?id=1839)
+* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to unbounded iFD](https://bugs.chromium.org/p/project-zero/issues/detail?id=1840)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readStrings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1841)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling while processing CFF blend DICT operator](https://bugs.chromium.org/p/project-zero/issues/detail?id=1842)
+* [Microsoft DirectWrite / AFDKO out-of-bounds read in OpenType font handling due to undefined FontName index](https://bugs.chromium.org/p/project-zero/issues/detail?id=1843)
+* [Microsoft DirectWrite / AFDKO multiple bugs in OpenType font handling related to the "post" table](https://bugs.chromium.org/p/project-zero/issues/detail?id=1844)
+* [Microsoft DirectWrite / AFDKO NULL pointer dereferences in OpenType font handling while accessing empty dynarrays](https://bugs.chromium.org/p/project-zero/issues/detail?id=1845)
+* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to empty ROS strings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1846)
+* [Microsoft DirectWrite / AFDKO insufficient integer overflow check in dnaGrow](https://bugs.chromium.org/p/project-zero/issues/detail?id=1847)
+* [Microsoft DirectWrite / AFDKO read of uninitialized BuildCharArray memory in OpenType font handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=1848)
+* [Microsoft DirectWrite invalid read in SplicePixel while processing OTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1875)
+* [Microsoft DirectWrite out-of-bounds read in sfac_GetSbitBitmap while processing TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1878)
+* [Microsoft DirectWrite heap-based buffer overflow in fsg_ExecuteGlyph while processing variable TTF fonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=2123)
+
+
+### DotNet
+
+* [Windows: ManagementObject Arbitrary .NET Serialization RCE](https://bugs.chromium.org/p/project-zero/issues/detail?id=1081)
+* [.NET Partial-Trust bypass via browser command-line injection in System.Windows.Forms.Help](https://bugs.chromium.org/p/project-zero/issues/detail?id=481)
+
+
+### Microsoft Edge
+
+* [Microsoft Edge and IE: Type confusion in HandleColumnBreakOnColumnSpanningElement](https://bugs.chromium.org/p/project-zero/issues/detail?id=1011)
+* [Microsoft Edge: Type confusion in CssParser::RecordProperty](https://bugs.chromium.org/p/project-zero/issues/detail?id=1254)
+* [Microsoft Edge: textarea.defaultValue memory disclosure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1255)
+* [Microsoft Edge: Out-of-bounds read in CInputDateTimeScrollerElement::_SelectValueInternal](https://bugs.chromium.org/p/project-zero/issues/detail?id=1264)
+* [Microsoft Edge: ACG bypass using DuplicateHandle](https://bugs.chromium.org/p/project-zero/issues/detail?id=1299)
+* [Microsoft Edge: Memory corruption with Object.setPrototypeOf](https://bugs.chromium.org/p/project-zero/issues/detail?id=1339)
+* [Microsoft Edge: ACG bypass using UnmapViewOfFile](https://bugs.chromium.org/p/project-zero/issues/detail?id=1435)
+* [Microsoft Edge: ACG bypass with OpenProcess()](https://bugs.chromium.org/p/project-zero/issues/detail?id=1552)
+* [Microsoft Edge: Chakra: Bugs in InitializeNumberFormat and InitializeDateTimeFormat](https://bugs.chromium.org/p/project-zero/issues/detail?id=1582)
+* [Windows: Edge/IE Isolated Private Namespace Insecure Boundary Descriptor EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=878)
+* [Windows: Edge/IE Isolated Private Namespace Insecure DACL EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=879)
+
+
+### Fontsub
+
+* [Microsoft Font Subsetting DLL returning a dangling pointer via MergeFontPackage](https://bugs.chromium.org/p/project-zero/issues/detail?id=1862)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in MergeFonts](https://bugs.chromium.org/p/project-zero/issues/detail?id=1863)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in GetGlyphIdx](https://bugs.chromium.org/p/project-zero/issues/detail?id=1864)
+* [Microsoft Font Subsetting DLL double free in MergeFormat12Cmap / MakeFormat12MergedGlyphList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1865)
+* [Microsoft Font Subsetting DLL heap corruption in ComputeFormat4CmapData](https://bugs.chromium.org/p/project-zero/issues/detail?id=1866)
+* [Microsoft Font Subsetting DLL heap corruption in FixSbitSubTables](https://bugs.chromium.org/p/project-zero/issues/detail?id=1867)
+* [Microsoft Font Subsetting DLL heap corruption in ReadTableIntoStructure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1868)
+* [Microsoft Font Subsetting DLL heap corruption in ReadAllocFormat12CharGlyphMapList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1869)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in WriteTableFromStructure](https://bugs.chromium.org/p/project-zero/issues/detail?id=1870)
+* [Microsoft Font Subsetting DLL heap corruption in MakeFormat12MergedGlyphList](https://bugs.chromium.org/p/project-zero/issues/detail?id=1871)
+* [Microsoft Font Subsetting DLL heap-based out-of-bounds read in FixSbitSubTableFormat1](https://bugs.chromium.org/p/project-zero/issues/detail?id=1872)
+
+
+### GDI32.dll
+
+* [Windows gdi32.dll multiple issues in the EMF CREATECOLORSPACEW record handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=722)
+* [Windows gdi32.dll multiple issues in the EMF COMMENT_MULTIFORMATS record handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=729)
+* [Windows gdi32.dll heap-based buffer overflow in ExtEscape() triggerable via EMR_EXTESCAPE EMF record](https://bugs.chromium.org/p/project-zero/issues/detail?id=731)
+* [Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in multiple DIB-related EMF record handlers](https://bugs.chromium.org/p/project-zero/issues/detail?id=757)
+* [Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in EMR_SETDIBITSTODEVICE and possibly other records](https://bugs.chromium.org/p/project-zero/issues/detail?id=992)
+* 
+
+
+### Hyper-V
+
+* [Hyper-V vmswitch.sys VmsMpCommonPvtHandleMulticastOids Guest to Host Kernel-Pool Overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=688)
+* [Windows: Double Dereference in NtEnumerateKey Elevation of Privilege](https://bugs.chromium.org/p/project-zero/issues/detail?id=1599)
+* [Windows: Server Silo Registry Key Symbolic Link EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2120)
+* [Windows Containers: ContainerUser has Elevated Privileges](https://bugs.chromium.org/p/project-zero/issues/detail?id=2127)
+* [Windows Containers: AppSilo Object Manager Root Directory EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2128)
+* [Windows Containers: Host Registry Virtual Registry Provider Bypass EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2129)
+* [Windows: Container Manager Service CmsRpcSrv_CreateContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2149)
+* [Windows: Container Manager Service CmsRpcSrv_MapVirtualDiskToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2150)
+* [Windows: Container Manager Service Arbitrary Object Directory Creation EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2151)
+* [Windows: Container Manager Service CmsRpcSrv_MapNamedPipeToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2153)
