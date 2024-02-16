@@ -11,6 +11,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ## Recommended Blogs
 
+* [Matteo Malvica's Blog](https://www.matteomalvica.com/blog/)
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
 * [Tavis Ormandy's Blog](https://lock.cmpxchg8b.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
