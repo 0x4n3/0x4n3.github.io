@@ -58,13 +58,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ### Windows Mitigation Bypasses and Analysis
 
-* [Bypassing Intel CET with Counterfeit Objects](https://www.offsec.com/offsec/bypassing-intel-cet-with-counterfeit-objects/) by Matteo Malvica
 * [IRQLs Close Encounters of the Rootkit Kind](https://www.offsec.com/offsec/irqls-close-encounters/) by OffSec
-* [eXtended Flow Guard Under The Microscope](https://www.offsec.com/offsec/extended-flow-guard/) by OffSec
-* [Intel CET in Action](https://www.offsec.com/offsec/intel-cet-in-action/) by OffSec
-* [Disarming EMET v5.0](https://www.offsec.com/vulndev/disarming-emet-v5-0/) by Matteo Memelli
-* [Disarming Enhanced Mitigation Experience Toolkit (EMET)](https://www.offsec.com/vulndev/disarming-enhanced-mitigation-experience-toolkit-emet/) by Matteo Memelli
-* [Bypassing Control Flow Guard in Windows 10 - Part II](https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-on-windows-10-part-ii) by Morten Schenk
 * [Windows Exploitation Tricks: Trapping Virtual Memory Access](https://googleprojectzero.blogspot.com/2021/01/windows-exploitation-tricks-trapping.html) by James Forshaw
 * [Windows Exploitation Tricks: Exploiting Arbitrary File Writes for Local Elevation of Privilege](https://googleprojectzero.blogspot.com/2018/04/windows-exploitation-tricks-exploiting.html) by James Forshaw
 * [Discovery and analysis of a Windows PhoneBook Use-After-Free vulnerability (CVE-2020-1530)](https://symeonp.github.io/2020/12/08/phonebook-uaf-analysis.html) by Symeon
@@ -72,6 +66,20 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Part 19: Kernel Exploitation -> Logic bugs in Razer rzpnk.sys](https://fuzzysecurity.com/tutorials/expDev/23.html) by Fuzzy Security
 * [I Got 99 Problem But a Kernel Pointer Ain't One](https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf) by Alex Ionescu
 * [Windows Code Injection: Bypassing CIG Through KnownDlls](https://www.tiraniddo.dev/2019/08/windows-code-injection-bypassing-cig.html?m=1) by Tyranid's Lair
+
+
+#### Intel CET
+
+* [Bypassing Intel CET with Counterfeit Objects](https://www.offsec.com/offsec/bypassing-intel-cet-with-counterfeit-objects/) by Matteo Malvica
+* [Intel CET in Action](https://www.offsec.com/offsec/intel-cet-in-action/) by OffSec
+
+
+#### Windows Defender Exploit Guard (Previously EMET)
+
+* [eXtended Flow Guard Under The Microscope](https://www.offsec.com/offsec/extended-flow-guard/) by OffSec
+* [Disarming EMET v5.0](https://www.offsec.com/vulndev/disarming-emet-v5-0/) by Matteo Memelli
+* [Disarming Enhanced Mitigation Experience Toolkit (EMET)](https://www.offsec.com/vulndev/disarming-enhanced-mitigation-experience-toolkit-emet/) by Matteo Memelli
+* [Bypassing Control Flow Guard in Windows 10 - Part II](https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-on-windows-10-part-ii) by Morten Schenk
 
 
 ### Just-in-Time Compilation
