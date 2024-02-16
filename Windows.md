@@ -36,6 +36,9 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ### Windows Mitigation Bypasses and Analysis
 
+
+#### General
+
 * [CVE-2023-36802 MSSKSRV.sys Local Privilege Escalation](https://reverencecyber.com/cve-2023-36802-mssksrv-sys-local-privilege-escalation-poc/) by Robel Campbell
 * [IRQLs Close Encounters of the Rootkit Kind](https://www.offsec.com/offsec/irqls-close-encounters/) by OffSec
 * [Windows Exploitation Tricks: Trapping Virtual Memory Access](https://googleprojectzero.blogspot.com/2021/01/windows-exploitation-tricks-trapping.html) by James Forshaw
