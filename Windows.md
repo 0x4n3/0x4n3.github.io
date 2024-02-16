@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Resources
+# Resources for Windows Security Research
 
 [Return to Home](./index.md)
 
