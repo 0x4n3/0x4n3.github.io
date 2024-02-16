@@ -2,14 +2,9 @@
 layout: default
 ---
 
-# Overview
+# Resources
 
 [Return to Home](./index.md)
-
-Welcome to Windows or in other words welcome to recursive APIs and general lack of documentation. In this chapter I will go over the various resources I have personally found helpful also dive into some tips and tricks that proved useful in my journey.
-
-
-# Resources
 
 Here is a list of curated resources that cover various aspects of Windows security research:
 
