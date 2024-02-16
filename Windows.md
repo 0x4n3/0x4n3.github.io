@@ -235,7 +235,16 @@ The best way to get better at vulnerability research is to practice. As a result
 * [Windows gdi32.dll heap-based buffer overflow in ExtEscape() triggerable via EMR_EXTESCAPE EMF record](https://bugs.chromium.org/p/project-zero/issues/detail?id=731)
 * [Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in multiple DIB-related EMF record handlers](https://bugs.chromium.org/p/project-zero/issues/detail?id=757)
 * [Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in EMR_SETDIBITSTODEVICE and possibly other records](https://bugs.chromium.org/p/project-zero/issues/detail?id=992)
-* 
+
+
+### GDI+
+
+* [Microsoft GDI+ out-of-bounds write due to invalid pointer arithmetic in DecodeCompressedRLEBitmap](https://bugs.chromium.org/p/project-zero/issues/detail?id=824)
+* [Microsoft GDI+ rendering of uninitialized heap bytes as pixels when handling malformed RLE-compressed bitmaps](https://bugs.chromium.org/p/project-zero/issues/detail?id=825)
+* [Microsoft GDI+ out-of-bounds reads due to invalid pointer arithmetic in ValidateBitmapInfo](https://bugs.chromium.org/p/project-zero/issues/detail?id=826)
+* [Microsoft GDI+ heap-based buffer overflow in the handling of EMR_EXTTEXTOUTA and EMR_POLYTEXTOUTA records](https://bugs.chromium.org/p/project-zero/issues/detail?id=828)
+* [Microsoft GDI+ out-of-bounds reads in DIB palette handling in ValidateBitmapInfo](https://bugs.chromium.org/p/project-zero/issues/detail?id=829)
+* [Microsoft GDI+ out-of-bounds read in gdiplus!GetRECTSForPlayback](https://bugs.chromium.org/p/project-zero/issues/detail?id=1042)
 
 
 ### Hyper-V
@@ -250,3 +259,20 @@ The best way to get better at vulnerability research is to practice. As a result
 * [Windows: Container Manager Service CmsRpcSrv_MapVirtualDiskToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2150)
 * [Windows: Container Manager Service Arbitrary Object Directory Creation EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2151)
 * [Windows: Container Manager Service CmsRpcSrv_MapNamedPipeToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2153)
+
+
+### ICM32.dll
+
+* [Microsoft Color Management Module (icm32.dll) out-of-bounds read in icm32!Fill_ushort_ELUTs_from_lut16Tag](https://bugs.chromium.org/p/project-zero/issues/detail?id=1052)
+* [Microsoft Color Management Module (icm32.dll) out-of-bounds read in icm32!LHCalc3toX_Di16_Do16_Lut8_G32](https://bugs.chromium.org/p/project-zero/issues/detail?id=1054)
+
+
+### Windows Kernel
+
+* [Windows Kernel ATMFD.DLL DoS via unlimited CharString program execution](https://bugs.chromium.org/p/project-zero/issues/detail?id=169)
+* [Windows Kernel ATMFD.DLL out-of-bounds reads from the input CharString stream](https://bugs.chromium.org/p/project-zero/issues/detail?id=174)
+* [Windows Kernel ATMFD.DLL off-by-x oob reads/writes relative to the operand stack](https://bugs.chromium.org/p/project-zero/issues/detail?id=175)
+* [Windows Kernel ATMFD.DLL kernel pool memory disclosure via uninitialized transient array](https://bugs.chromium.org/p/project-zero/issues/detail?id=176)
+* [Windows Kernel ATMFD.DLL read/write-what-where in LOAD and STORE operators](https://bugs.chromium.org/p/project-zero/issues/detail?id=177)
+* [Windows Kernel ATMFD.DLL pool-based buffer overflow in Counter Control Hints](https://bugs.chromium.org/p/project-zero/issues/detail?id=178)
+* 
