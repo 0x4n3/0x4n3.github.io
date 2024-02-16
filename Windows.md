@@ -103,7 +103,6 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [The Info Leak Era on Software Exploitation](https://www.youtube.com/watch?v=VgWoPa8Whmc) by Fermin J. Serna
 * [Windows 10 Mitigation Improvements](https://www.youtube.com/watch?v=gCu2GQd0GSE) by David Weston and Matt Miller
 * [Windows 10 Segment Heap Internals](https://www.youtube.com/watch?v=hetZx78SQ_A) by Mark Vincent Yason
-* 
 * [Taking Windows 10 Kernel Exploitation to the next level](https://www.youtube.com/watch?v=Gu_5kkErQ6Y) by Morten Schenk
 * [PowerShell as an attack platform](https://www.youtube.com/watch?v=MOab2Icpecc) by Morten Schenk
 * [Data-Only Pwning Microsoft Windows Kernel](https://www.youtube.com/watch?v=FxZoAupttMI) by Nikita Tarakanov
