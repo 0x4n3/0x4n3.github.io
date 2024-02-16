@@ -29,11 +29,62 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Tavis Ormandy's GitHub](https://github.com/taviso)
 
 
+## Advisories
+
+
+### AFD
+
+* [Windows Kernel pool-based out-of-bound reads due to bugs in the implementation of bind() in afd.sys and tcpip.sys](https://bugs.chromium.org/p/project-zero/issues/detail?id=1127)
+
+
+### Avalon
+
+* [Microsoft Windows Presentation Foundation memory disclosure via uninitialized transient array](https://bugs.chromium.org/p/project-zero/issues/detail?id=277)
+
+
+### Defender
+
+* [Windows Defender: Controlled Folder Bypass through UNC Path](https://bugs.chromium.org/p/project-zero/issues/detail?id=1418)
+
+
+### DirectWrite
+
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to out-of-bounds cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1829)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative cubeStackDepth](https://bugs.chromium.org/p/project-zero/issues/detail?id=1830)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1831)
+* [Microsoft DirectWrite / AFDKO stack-based buffer overflow in do_set_weight_vector_cube for large nAxes](https://bugs.chromium.org/p/project-zero/issues/detail?id=1832)
+* [Microsoft DirectWrite / AFDKO use of uninitialized memory while freeing resources in var_loadavar](https://bugs.chromium.org/p/project-zero/issues/detail?id=1833)
+* [Microsoft DirectWrite / AFDKO interpreter stack underflow in OpenType font handling due to missing CHKUFLOW](https://bugs.chromium.org/p/project-zero/issues/detail?id=1834)
+* [Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to incorrect handling of blendArray](https://bugs.chromium.org/p/project-zero/issues/detail?id=1835)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readEncoding](https://bugs.chromium.org/p/project-zero/issues/detail?id=1836)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readFDSelect](https://bugs.chromium.org/p/project-zero/issues/detail?id=1837)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readCharset](https://bugs.chromium.org/p/project-zero/issues/detail?id=1838)
+* [Microsoft DirectWrite / AFDKO heap-based buffer overflow due to integer overflow in readTTCDirectory](https://bugs.chromium.org/p/project-zero/issues/detail?id=1839)
+
+
+
+### Hyper-V
+
+* [Hyper-V vmswitch.sys VmsMpCommonPvtHandleMulticastOids Guest to Host Kernel-Pool Overflow](https://bugs.chromium.org/p/project-zero/issues/detail?id=688)
+* [Windows: Double Dereference in NtEnumerateKey Elevation of Privilege](https://bugs.chromium.org/p/project-zero/issues/detail?id=1599)
+* [Windows: Server Silo Registry Key Symbolic Link EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2120)
+* [Windows Containers: ContainerUser has Elevated Privileges](https://bugs.chromium.org/p/project-zero/issues/detail?id=2127)
+* [Windows Containers: AppSilo Object Manager Root Directory EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2128)
+* [Windows Containers: Host Registry Virtual Registry Provider Bypass EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2129)
+* [Windows: Container Manager Service CmsRpcSrv_CreateContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2149)
+* [Windows: Container Manager Service CmsRpcSrv_MapVirtualDiskToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2150)
+* [Windows: Container Manager Service Arbitrary Object Directory Creation EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2151)
+* [Windows: Container Manager Service CmsRpcSrv_MapNamedPipeToContainer EoP](https://bugs.chromium.org/p/project-zero/issues/detail?id=2153)
+
+
 ## Technical Deep-Dives
+
+* [Intel® 64 and IA-32 Architectures Software Developer Manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html) by Intel
 
 
 ### Windows Mitigation Bypasses and Analysis
 
+* [CVE-2023-36802 MSSKSRV.sys Local Privilege Escalation](https://reverencecyber.com/cve-2023-36802-mssksrv-sys-local-privilege-escalation-poc/) by Robel Campbell
 * [IRQLs Close Encounters of the Rootkit Kind](https://www.offsec.com/offsec/irqls-close-encounters/) by OffSec
 * [Windows Exploitation Tricks: Trapping Virtual Memory Access](https://googleprojectzero.blogspot.com/2021/01/windows-exploitation-tricks-trapping.html) by James Forshaw
 * [Windows Exploitation Tricks: Exploiting Arbitrary File Writes for Local Elevation of Privilege](https://googleprojectzero.blogspot.com/2018/04/windows-exploitation-tricks-exploiting.html) by James Forshaw
@@ -76,12 +127,16 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ### Hyper-V
 
+* [Who Contains the Containers?](https://googleprojectzero.blogspot.com/2021/04/who-contains-containers.html) by James Forshaw
+* [A Dive in to Hyper-V Architecture & Vulnerabilities](https://i.blackhat.com/us-18/Wed-August-8/us-18-Joly-Bialek-A-Dive-in-to-Hyper-V-Architecture-and-Vulnerabilities.pdf) by Nicolas Joly and Joe Bialek
 * [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
 * [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
 
 
 ### WinDbg
 
+* [WinDbg Commands](https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/debugger-commands)
+* [WinDBG quick start tutorial](https://codemachine.com/articles/windbg_quickstart.html) by CodeMachine
 * [My WinDbg Blog](./windows/WinDbg.md)
 
 
