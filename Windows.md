@@ -9,14 +9,6 @@ layout: default
 Here is a list of curated resources that cover various aspects of Windows security research:
 
 
-## Recommended Repositories
-
-* [Morten Schenk's GitHub](https://github.com/MortenSchenk)
-* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
-* [epi052's GitHub](https://github.com/epi052)
-* [nop's GitHub](https://github.com/nop-tech)
-
-
 ## Recommended Blogs
 
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
@@ -28,6 +20,14 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [DHN's Blog](https://zer0-day.pw/)
 * [Project Zero's Blog](https://googleprojectzero.blogspot.com/)
+
+
+## Recommended Repositories
+
+* [Morten Schenk's GitHub](https://github.com/MortenSchenk)
+* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
+* [epi052's GitHub](https://github.com/epi052)
+* [nop's GitHub](https://github.com/nop-tech)
 
 
 ## Technical Deep-Dives
