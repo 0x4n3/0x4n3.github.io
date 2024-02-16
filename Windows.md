@@ -35,24 +35,6 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Project Zero's Blog](https://googleprojectzero.blogspot.com/)
 
 
-## WinDbg Resources
-
-* [My WinDbg Blog](./windows/WinDbg.md)
-
-
-## Hyper-V Resources
-
-* [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
-* [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
-
-
-## Fuzzing Resources
-
-* [Gamozo Labs' Blog](https://gamozolabs.github.io/)
-* [Google Project Zero's WinAFL](https://github.com/googleprojectzero/winafl)
-* [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
-
-
 ## Technical Deep-Dives
 
 
@@ -96,6 +78,24 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [JITSploitation I: A JIT Bug](https://googleprojectzero.blogspot.com/2020/09/jitsploitation-one.html) by Samuel Groß
 * [JITSploitation II: Getting Read/Write](https://googleprojectzero.blogspot.com/2020/09/jitsploitation-two.html) by Samuel Groß
 * [JITSploitation III: Subverting Control Flow](https://googleprojectzero.blogspot.com/2020/09/jitsploitation-three.html) by Samuel Groß
+
+
+### Hyper-V
+
+* [First Steps in Hyper-V Research](https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/) by Microsoft
+* [Fuzzing para-virtualized devices in Hyper-V](https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/) by Microsoft
+
+
+### WinDbg
+
+* [My WinDbg Blog](./windows/WinDbg.md)
+
+
+### Fuzzing
+
+* [Gamozo Labs' Blog](https://gamozolabs.github.io/)
+* [Google Project Zero's WinAFL](https://github.com/googleprojectzero/winafl)
+* [SafeBreach & Guardicore Labs' hAFL1](https://github.com/SB-GC-Labs/hAFL1)
 
 
 ### Presentations and Walkthroughs
