@@ -31,6 +31,8 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ## Advisories
 
+The best way to get better at vulnerability research is to practice. As a result, I have compiled a list of some advisories Google's Project Zero has produced that may help in facilitating what real bugs look like in Windows.
+
 
 ### AFD
 
@@ -66,7 +68,9 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Microsoft DirectWrite / AFDKO out-of-bounds read in OpenType font handling due to undefined FontName index](https://bugs.chromium.org/p/project-zero/issues/detail?id=1843)
 * [Microsoft DirectWrite / AFDKO multiple bugs in OpenType font handling related to the "post" table](https://bugs.chromium.org/p/project-zero/issues/detail?id=1844)
 * [Microsoft DirectWrite / AFDKO NULL pointer dereferences in OpenType font handling while accessing empty dynarrays](https://bugs.chromium.org/p/project-zero/issues/detail?id=1845)
-
+* [Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to empty ROS strings](https://bugs.chromium.org/p/project-zero/issues/detail?id=1846)
+* [Microsoft DirectWrite / AFDKO insufficient integer overflow check in dnaGrow](https://bugs.chromium.org/p/project-zero/issues/detail?id=1847)
+* [Microsoft DirectWrite / AFDKO read of uninitialized BuildCharArray memory in OpenType font handling](https://bugs.chromium.org/p/project-zero/issues/detail?id=1848)
 
 
 ### Hyper-V
