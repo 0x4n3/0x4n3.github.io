@@ -12,6 +12,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ## Recommended Blogs
 
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
+* [Tavis Ormandy's Blog](https://lock.cmpxchg8b.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
 * [Connor McGarr's Blog](https://connormcgarr.github.io/)
 * [Spaceraccoon's Blog](https://spaceraccoon.dev/)
@@ -25,9 +26,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ## Recommended Repositories
 
 * [Morten Schenk's GitHub](https://github.com/MortenSchenk)
-* [Hashim Jawad's GitHub](https://github.com/ihack4falafel)
-* [epi052's GitHub](https://github.com/epi052)
-* [nop's GitHub](https://github.com/nop-tech)
+* [Tavis Ormandy's GitHub](https://github.com/taviso)
 
 
 ## Technical Deep-Dives
