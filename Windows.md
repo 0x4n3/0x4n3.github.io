@@ -131,17 +131,14 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [What Makes it Page? The Windows 7 (x64) Virtual Memory Manager](https://www.amazon.com/What-Makes-Page-Windows-Virtual/dp/1479114294) by Enrico Martignetti
 
 
-## Courses I've Taken
-
-* [EXP-301](https://www.offsec.com/documentation/EXP301-syllabus.pdf) by OffSec
-  * This course is a great introduction to x86 Windows exploit development. Don't expect anything fancy, but this is a must-have if you are new to the field.
-* [EXP-401](https://www.offensive-security.com/awe/EXP401_syllabus.pdf) by OffSec
-  * The gold standard in terms of modern Windows exploit development and security research. If you have the opportunity to attend this course, do so by all means.
-
 ## Courses I Want to Take
 
-* [Windows Internal Architecture by CodeMachine](https://codemachine.com/trainings/winint.html)
-* [Windows Malware Techniques by CodeMachine](https://codemachine.com/trainings/winmal.html)
-* [Windows Kernel Internals by CodeMachine](https://codemachine.com/trainings/kerint.html)
-* [Windows Kernel Rootkits by CodeMachine](https://codemachine.com/trainings/kerrkt.html)
-
+* [EXP-301](https://www.offsec.com/documentation/EXP301-syllabus.pdf) by OffSec
+* [EXP-401](https://www.offensive-security.com/awe/EXP401_syllabus.pdf) by OffSec
+* [Windows Internal Architecture](https://codemachine.com/trainings/winint.html) by CodeMachine
+* [Windows Malware Techniques](https://codemachine.com/trainings/winmal.html) by CodeMachine
+* [Windows Kernel Internals](https://codemachine.com/trainings/kerint.html) by CodeMachine
+* [Windows Kernel Rootkits](https://codemachine.com/trainings/kerrkt.html) by CodeMachine
+* [SEC760: Advanced Exploit Development for Penetration Testers](https://www.sans.org/cyber-security-courses/advanced-exploit-development-penetration-testers/) by OffSec
+* [Corelan Advanced - Heap Exploitation](https://www.corelan-training.com/index.php/training/advanced/) by Corelan
+* [Corelan Bootcamp - Stack Exploitation](https://www.corelan-training.com/index.php/training/bootcamp/) by Corelan
