@@ -20,6 +20,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Richard Osgood's Blog](https://www.richardosgood.com/)
 * [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
+* [Alex Plaskett's Blog](https://alexplaskett.github.io/)
 * [DHN's Blog](https://zer0-day.pw/)
 * [Project Zero's Blog](https://googleprojectzero.blogspot.com/)
 
