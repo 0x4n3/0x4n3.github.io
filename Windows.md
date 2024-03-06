@@ -16,11 +16,12 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Tavis Ormandy's Blog](https://lock.cmpxchg8b.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
 * [Connor McGarr's Blog](https://connormcgarr.github.io/)
-* [Spaceraccoon's Blog](https://spaceraccoon.dev/)
+* [Eugene Lim's Blog](https://spaceraccoon.dev/)
 * [Richard Osgood's Blog](https://www.richardosgood.com/)
 * [Yarden Shafir's Blog](https://medium.com/@yardenshafir2)
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [Alex Plaskett's Blog](https://alexplaskett.github.io/)
+* [h0mbre's Blog](https://h0mbre.github.io)
 * [DHN's Blog](https://zer0-day.pw/)
 * [Project Zero's Blog](https://googleprojectzero.blogspot.com/)
 
@@ -94,7 +95,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 * [WinDbg Commands](https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/debugger-commands)
 * [WinDBG quick start tutorial](https://codemachine.com/articles/windbg_quickstart.html) by CodeMachine
-* [My WinDbg Blog](./windows/WinDbg.md)
+* [My WinDbg Blog](https://0x4n3.github.io/windows/WinDbg)
 
 
 ### Fuzzing
