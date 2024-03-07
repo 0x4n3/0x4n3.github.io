@@ -12,6 +12,8 @@ Here is a list of curated resources that cover various aspects of Windows securi
 ## Recommended Blogs
 
 * [Matteo Malvica's Blog](https://www.matteomalvica.com/blog/)
+* [Satoshi Tanda's Blog](https://tandasat.github.io/blog/)
+* [Le Qi Chen's Blog](https://y3a.github.io/)
 * [Marcus Hutchins' Blog](https://malwaretech.com/)
 * [Tavis Ormandy's Blog](https://lock.cmpxchg8b.com/)
 * [Robel Campbell's Blog](https://reverencecyber.com/blog/)
@@ -22,6 +24,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 * [Hashim Jawad's Blog](https://ihack4falafel.github.io/)
 * [Alex Plaskett's Blog](https://alexplaskett.github.io/)
 * [h0mbre's Blog](https://h0mbre.github.io)
+* [k0shl's Blog](https://whereisk0shl.top/)
 * [DHN's Blog](https://zer0-day.pw/)
 * [Project Zero's Blog](https://googleprojectzero.blogspot.com/)
 
