@@ -6,9 +6,15 @@ layout: default
 
 Hello, World! Vulnerability research can often seem like a daunting mountain to climb. I am here to show you where you can get the best climbing gear that I have personally tested.
 
-# Research
+# My Comprehensive Analysis Series
 
-* [A Comprehensive Analysis of CVE-2021-31956](./windows/CVE-2021-31956.md)
+* [CVE-2021-31956](./windows/CVE-2021-31956.md)
+
+## Coming Soon!
+
+* [CVE-2021-31969](./windows/CVE-2021-31969.md)
+* [CVE-2023-35359](./windows/CVE-2021-35359.md)
+* [CVE-2023-21766](./windows/CVE-2021-21766.md)
 
 # Resources
 
