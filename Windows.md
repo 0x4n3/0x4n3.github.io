@@ -11,6 +11,7 @@ Here is a list of curated resources that cover various aspects of Windows securi
 
 ## Recommended Blogs
 
+* [Jan Vojtěšek's Blog](https://decoded.avast.io/janvojtesek/)
 * [Matteo Malvica's Blog](https://www.matteomalvica.com/blog/)
 * [Satoshi Tanda's Blog](https://tandasat.github.io/blog/)
 * [Le Qi Chen's Blog](https://y3a.github.io/)
