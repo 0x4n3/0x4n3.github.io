@@ -6,13 +6,9 @@ Before discussing the specifics of the `overflow_chunk` function, let's first re
 
 ![](img/2024-03-06-22-51-29.png)
 
-Because the advisory mentioned the vulnerable function is called `NtfsQueryEaUserEaList`, we can make an educated guess and assume that the `NtQueryEaFile` syscall will eventually reach `NtfsQueryEaUserEaList`.  
+Because the advisory mentioned the vulnerable function is called `NtfsQueryEaUserEaList`, we can make an educated guess and assume that the `NtQueryEaFile` syscall will eventually reach `NtfsQueryEaUserEaList`. The same logic is applied to the `NtSetEaFile` syscall.
 
-
-
-
-
-
+Thus, we will see the `overflow_chunk` using the `NtSetEaFile` syscall to create the conditions needed so that the syscall `NtQueryEaFile` can trigger the vulnerability. Now that we know the syscalls needed to invoke the vulnerability, let's examine it's usage within the `overflow_chunk` function starting with the function definition: 
 
 ```cpp
 NTSTATUS overflow_chunk(_In_ USHORT overflow_chunk_sz, _In_ char *overflow_data, _In_ USHORT overflow_data_sz)
