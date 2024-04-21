@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Microsoft WinDbg - The !CPUID Shuffle</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">CVE Analysis</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> CVE-2019-0983</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> CVE-2019-0998</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> CVE-2020-0871</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> CVE-2021-1648</div></li><li class="chapter-item expanded "><a href="../cve/CVE-2021-31956.html"><strong aria-hidden="true">6.</strong> CVE-2021-31956</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> CVE-2021-31969</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> CVE-2022-22715</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> CVE-2023-21766</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> CVE-2023-28229</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> CVE-2023-35359</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> CVE-2023-36906</div></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="../tools/WinDbg.html" class="active"><strong aria-hidden="true">13.</strong> Microsoft WinDbg</a></li><li class="chapter-item expanded affix "><li class="part-title">Theory</li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Return-Oriented Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Jump-Oriented Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Call-Oriented Programming</div></li><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><a href="../resources/Windows.html"><strong aria-hidden="true">17.</strong> Microsoft Windows</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The !CPUID Shuffle</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<p><a href="../index.html">Return to Home</a></p>
+<p>This section will discuss various tips and tricks I have found useful while working with WinDbg</p>
+<h1 id="revelant-blogs"><a class="header" href="#revelant-blogs">Revelant Blog(s)</a></h1>
+<ul>
+<li><a href="https://www.triplefault.io/2017/07/setting-up-kernel-debugging-using.html">Setting up kernel debugging using WinDbg and VMware</a> by triplefault.io</li>
+</ul>
+<h1 id="important"><a class="header" href="#important">Important</a></h1>
+<ul>
+<li><strong>!!!Run RP++ in Target Environment!!!</strong></li>
+<li>Memcpy produces no bad characters</li>
+<li>use <code>!showimports</code> to view imports</li>
+</ul>
+<h1 id="general-advice"><a class="header" href="#general-advice">General Advice</a></h1>
+<h2 id="breaking-on-a-specified-thread-context"><a class="header" href="#breaking-on-a-specified-thread-context">Breaking on a Specified Thread Context</a></h2>
+<p><code>~.</code> as a prefix to the breakpoint.  For example:</p>
+<pre><code>~. bp &lt;module_name&gt;!&lt;function_name&gt;+0xfff
+</code></pre>
+<h2 id="determining-the-file-source-of-a-function-call"><a class="header" href="#determining-the-file-source-of-a-function-call">Determining the File Source of a Function Call</a></h2>
+<p>When you are examining a program with WinDbg you may need to find what file defines a particular function executed in memory. One approach to doing so is by examining the call stack soon after the function is called.  Within WinDbg, this can be accomplished through the command <code>k</code>.  <code>k</code> lists a series of functions and their associated modules that were called upon in memory. Taking this knowledge, you can then have an idea of what files to search for using the following syntax in WinDbg: <code>lm m &lt;module_name&gt;</code>.  Note: The module name is displayed prior to the <code>!</code> in the call stack shown by <code>k</code>.</p>
+<h2 id="returning-to-where-you-left-off"><a class="header" href="#returning-to-where-you-left-off">Returning to Where You Left Off</a></h2>
+<p>Whenever you leave for a bit and lose your place in WinDbg, you can get back to where you were by setting a breakpoint at the last opcode you were examining.  For example for</p>
+<pre><code>005c182c    3bc8                cmp     ecx,eax
+</code></pre>
+<p>The command would be</p>
+<pre><code>bp 5c182c
+</code></pre>
+<h2 id="setting-breakpoints"><a class="header" href="#setting-breakpoints">Setting Breakpoints</a></h2>
+<p>You can set a breakpoint by using the hexadecimal location of a particular instruction in IDA. For example if you see the following in IDA:</p>
+<pre><code>.text:005C182C  cmp     ecx, eax
+</code></pre>
+<p>Assuming that you have the correct base address, you can break at that particular location using the command:</p>
+<pre><code>bp 5C182c
+</code></pre>
+<h1 id="registers"><a class="header" href="#registers">Registers</a></h1>
+<p>This section covers the various purposes of registers that I have found interesting</p>
+<h2 id="eax"><a class="header" href="#eax">EAX</a></h2>
+<p>The EAX register is a 32-bit general-purpose register that is commonly used to store the return value for an arbitrary function.</p>
+<h1 id="windbg-commands"><a class="header" href="#windbg-commands">WinDbg Commands</a></h1>
+<p>This section discusses various WinDbg commands that I have found particularly useful to use.</p>
+<h2 id="ba---break-on-access"><a class="header" href="#ba---break-on-access">ba - Break on Access</a></h2>
+<p>What is <em>Break on Access</em>? Well, in WinDbg, the <code>ba</code> command, or <em>Break on Access</em>, sets a processor breakpoint which is subsequently triggered if the target memory is accessed.[^1] What is the target memory? Well, for example, if you have an input buffer that you would like to monitor, that is a perfect example of target memory. Thus, the processor breakpoint is particularly useful when you do not want to step into (<code>t</code>) a function call and would rather set a processor breakpoint and then step over the command (<code>p</code>). Thus, if the targeted memory is accessed when you step over the function call, the processor breakpoint would be subsequently triggered indicating that the function call accessed the target memory. This allows you to save potentially massive amounts of time since you can step over long function calls that may not necessarily be relevent to the function chain you are investigating.</p>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<p><code>ba r1 &lt;memory_address&gt;</code></p>
+<p>The provided example sets a processor breakpoint at the specified <code>&lt;memory_address&gt;</code> with <code>r</code> indicating to break if the CPU reads or writes at the specified address with the size of the location, in bytes, to monitor for access indicated by <code>1</code>. <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/ba--break-on-access-">Source</a></p>
+<h2 id="pt---step-to-next-return"><a class="header" href="#pt---step-to-next-return">pt - Step to Next Return</a></h2>
+<p>Unlike debugging with visual studio, the debugging features within WinDbg are far more robust. For example, the <code>pt</code> command can execute a program and breaks until a return instruction is hit. This ability allows us to step into a function (<code>t</code>) and then continue until the function's return. This allows for alot of flexability because with <code>p</code>, it simply steps over only one instruction where as <code>pt</code> repeatedly steps over instructions until, as stated before, a <code>ret</code> instuction is executed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../cve/CVE-2021-31956.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../resources/Windows.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../cve/CVE-2021-31956.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../resources/Windows.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
