@@ -175,19 +175,68 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="the-cpuid-shuffle"><a class="header" href="#the-cpuid-shuffle">The !CPUID Shuffle</a></h1>
+<blockquote>
 <p>Reversing the Universe One Bit at a Time</p>
-<h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<p>Hello, World! The focus of this blog is to document my own voyage through cyberspace. Hopefully along the way I can help out another traveller.</p>
+</blockquote>
+<p>Hello, World! The focus of this blog is to document my own voyage through cyberspace. Hopefully along the way I can help out another traveler.</p>
 <p>Thanks,</p>
 <p>0x4n3</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="a-comprehensive-analysis-of-cve-2021-31956"><a class="header" href="#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></h1>
 <p><a href="cve/../index.html">Return to Home</a></p>
 <h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
 <ul>
+<li><a href="cve/CVE-2021-31956.html#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></li>
+<li><a href="cve/CVE-2021-31956.html#table-of-contents">Table of Contents</a></li>
 <li><a href="cve/CVE-2021-31956.html#introduction">Introduction</a></li>
-<li><a href="cve/CVE-2021-31956.html#reverse-engineering-the-vulnerability">Reverse Engineering CVE-2021-31956</a></li>
-<li><a href="cve/CVE-2021-31956.html#exploiting-cve-2021-31956">Exploiting CVE-2021-31956</a></li>
-<li>[Sandbox Escape (Coming Soon!)]</li>
+<li><a href="cve/CVE-2021-31956.html#reverse-engineering-cve-2021-31956">Reverse Engineering CVE-2021-31956</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#the-initial-advisory">The Initial Advisory</a></li>
+<li><a href="cve/CVE-2021-31956.html#recreating-cve-2021-31956">Recreating CVE-2021-31956</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#locating-ntfsqueryeauserealist-in-ida">Locating NtfsQueryEaUserEaList in IDA</a></li>
+<li><a href="cve/CVE-2021-31956.html#adding-a-custom-data-structure-in-ida">Adding a Custom Data Structure in IDA</a></li>
+<li><a href="cve/CVE-2021-31956.html#renaming-variables-in-ida">Renaming Variables in IDA</a></li>
+<li><a href="cve/CVE-2021-31956.html#analyzing-the-basic-blocks-and-pseudocode-in-ida">Analyzing the Basic Blocks and Pseudocode in IDA</a></li>
+<li><a href="cve/CVE-2021-31956.html#examining-a-syscall-to-ntfsqueryeauserealist">Examining a Syscall to NtfsQueryEaUserEaList</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="cve/CVE-2021-31956.html#exploiting-cve-2021-31956">Exploiting CVE-2021-31956</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#returning-to-the-advisory">Returning to the Advisory</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#exploit-chain">Exploit Chain</a></li>
+<li><a href="cve/CVE-2021-31956.html#eprocess-structure">EPROCESS Structure</a></li>
+<li><a href="cve/CVE-2021-31956.html#previousmode-overwrite">PreviousMode Overwrite</a></li>
+</ul>
+</li>
+<li><a href="cve/CVE-2021-31956.html#exploitation-overview">Exploitation Overview</a></li>
+<li><a href="cve/CVE-2021-31956.html#examining-y3as-proof-of-concept">Examining Y3A's Proof-of-Concept</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#include-directives">Include Directives</a></li>
+<li><a href="cve/CVE-2021-31956.html#null-pointer-declarations">NULL-Pointer Declarations</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-write64-function">The write64 Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-read64-function">The read64 Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-fix_runrefs-function">The fix_runrefs Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-steal_token-function">The steal_token Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-write_pool-function">The write_pool Function</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#sandbox-constraints">Sandbox Constraints</a></li>
+</ul>
+</li>
+<li><a href="cve/CVE-2021-31956.html#the-read_pool-function">The read_pool Function</a>
+<ul>
+<li><a href="cve/CVE-2021-31956.html#sandbox-constraints-1">Sandbox Constraints</a></li>
+</ul>
+</li>
+<li><a href="cve/CVE-2021-31956.html#the-find_chunk-function">The find_chunk Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-overflow_chunk-function">The overflow_chunk Function</a></li>
+<li><a href="cve/CVE-2021-31956.html#the-fragment_heap-function">The fragment_heap Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="cve/CVE-2021-31956.html#references">References</a></li>
 </ul>
 <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
@@ -1496,7 +1545,7 @@ out:
 <li><a href="https://y3a.github.io/2022/09/03/cve-2021-31956/">Y3A's Blog</a></li>
 <li><a href="https://github.com/Y3A/CVE-2021-31956">Y3A's Proof-of-Concept</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
 <p><a href="ttp/../index.html">Return to Home</a></p>
 <p>This section will discuss various tips and tricks I have found useful while working with WinDbg</p>
 <h1 id="revelant-blogs"><a class="header" href="#revelant-blogs">Revelant Blog(s)</a></h1>
