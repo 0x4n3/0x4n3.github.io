@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">CVE Analysis</li><li class="chapter-item expanded "><a href="CVE-2021-31956.html"><strong aria-hidden="true">2.</strong> CVE-2021-31956</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools and Techniques</li><li class="chapter-item expanded "><a href="WinDbg.html"><strong aria-hidden="true">3.</strong> Microsoft WinDbg</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Return-Oriented Programming (Coming Soon)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Jump-Oriented Programming (Coming Soon)</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Call-Oriented Programming (Coming Soon)</div></li><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><a href="Windows.html"><strong aria-hidden="true">7.</strong> Microsoft Windows</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">CVE Analysis</li><li class="chapter-item expanded "><a href="cve/CVE-2021-31956.html"><strong aria-hidden="true">2.</strong> CVE-2021-31956</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> CVE-2021-31969</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> CVE-2023-21766</div></li><li class="chapter-item expanded affix "><li class="part-title">Tools and Techniques</li><li class="chapter-item expanded "><a href="ttp/WinDbg.html"><strong aria-hidden="true">5.</strong> Microsoft WinDbg</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Return-Oriented Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Jump-Oriented Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Call-Oriented Programming</div></li><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><a href="resources/Windows.html"><strong aria-hidden="true">9.</strong> Microsoft Windows</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -181,23 +181,23 @@
 <p>Thanks,</p>
 <p>0x4n3</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="a-comprehensive-analysis-of-cve-2021-31956"><a class="header" href="#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></h1>
-<p><a href="../index.html">Return to Home</a></p>
+<p><a href="cve/../index.html">Return to Home</a></p>
 <h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
 <ul>
-<li><a href="CVE-2021-31956.html#introduction">Introduction</a></li>
-<li><a href="CVE-2021-31956.html#reverse-engineering-the-vulnerability">Reverse Engineering CVE-2021-31956</a></li>
-<li><a href="CVE-2021-31956.html#exploiting-cve-2021-31956">Exploiting CVE-2021-31956</a></li>
+<li><a href="cve/CVE-2021-31956.html#introduction">Introduction</a></li>
+<li><a href="cve/CVE-2021-31956.html#reverse-engineering-the-vulnerability">Reverse Engineering CVE-2021-31956</a></li>
+<li><a href="cve/CVE-2021-31956.html#exploiting-cve-2021-31956">Exploiting CVE-2021-31956</a></li>
 <li>[Sandbox Escape (Coming Soon!)]</li>
-<li><a href="CVE-2021-31956.html#references">References</a></li>
+<li><a href="cve/CVE-2021-31956.html#references">References</a></li>
 </ul>
 <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>CVE-2021-31956 is a Windows kernel local privilege escalation vulnerability found in multiple Windows versions including but not limited to <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31956">Windows 10 20H2</a>. The computer security company Kaspersky first detected the vulnerability as a actively-exploited issue found <a href="https://securelist.com/puzzlemaker-chrome-zero-day-exploit-chain/102771/">in-the-wild</a>.</p>
 <h1 id="reverse-engineering-cve-2021-31956"><a class="header" href="#reverse-engineering-cve-2021-31956">Reverse Engineering CVE-2021-31956</a></h1>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>To start things off with, we will examine the advisory posted by Kaspersky and then use the information provided to find the vulnerability ourselves.</p>
 <h2 id="the-initial-advisory"><a class="header" href="#the-initial-advisory">The Initial Advisory</a></h2>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>The relevant portions of the vulnerability <a href="https://securelist.com/puzzlemaker-chrome-zero-day-exploit-chain/102771/">advisory</a> posted by Kaspersky is as follows:</p>
 <blockquote>
 <p>The other vulnerability, CVE-2021-31956, is a heap-based buffer overflow in <code>ntfs.sys</code>. The function <code>NtfsQueryEaUserEaList</code> processes a list of extended attributes for the file and stores the retrieved values to a buffer. This function is accessible via a <code>ntoskrnl</code> system call and among other things it's possible to control the size of the output buffer. If the size of the extended attribute is not aligned, the function will calculate a padding and the next extended attribute will be stored at a 32-bit alignment. The code then checks if the output buffer is long enough to fit the extended attribute with padding, but it doesn't check for a possible integer underflow. As a result, a heap-based buffer overflow can occur.</p>
@@ -245,11 +245,11 @@
 </blockquote>
 <p>We can now move onto finding the vulnerability ourselves.</p>
 <h2 id="recreating-cve-2021-31956"><a class="header" href="#recreating-cve-2021-31956">Recreating CVE-2021-31956</a></h2>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>This next section focuses on how to find the vulnerability using IDA and WinDbg. In particular, we will be discussing the steps needed to both recreate the work already done by the vulnerability advisory as well as other researchers.</p>
 <h3 id="locating-ntfsqueryeauserealist-in-ida"><a class="header" href="#locating-ntfsqueryeauserealist-in-ida">Locating NtfsQueryEaUserEaList in IDA</a></h3>
 <p>Our focus now is to locate the function <code>NtfsQueryEaUserEaList</code> in a vulnerable version of <code>ntfs.sys</code>. In our case, we will be using a version from Windows 10 20H2. Once we have a version of the vulnerable driver, we will open it in IDA and locate <code>NtfsQueryEaUserEaList</code> in IDA:</p>
-<p><img src="img/2024-03-06-23-03-18.png" alt="" /></p>
+<p><img src="cve/img/2024-03-06-23-03-18.png" alt="" /></p>
 <p>As well as examining the pseudocode as shown in the advisory, we will also be looking through each basic block as it corresponds to the pseudocode. When we first generate the pseudocode for <code>NtfsQueryEaUserEaList</code>, we notice that we are missing both the variable names and possibly a data structure:</p>
 <pre><code class="language-cpp">for ( i = a6; ; i = (unsigned int *)((char *)i + *i) )
 {
@@ -303,7 +303,7 @@
 <p>extended attribute length structure microsoft</p>
 </blockquote>
 <p>We get the following two results:</p>
-<p><img src="img/2024-03-07-10-02-55.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-02-55.png" alt="" /></p>
 <p>We examine both structures, and we discover the <code>FILE_FULL_EA_INFORMATION</code> structure is the only structure out of the two to have two separate lengths defined:</p>
 <pre><code class="language-cpp">typedef struct _FILE_FULL_EA_INFORMATION {
   ULONG  NextEntryOffset;
@@ -314,17 +314,17 @@
 } FILE_FULL_EA_INFORMATION, *PFILE_FULL_EA_INFORMATION;
 </code></pre>
 <p>Now that we have the associated structure for the vulnerable code in <code>NtfsQueryEaUserEaList</code>, we will now go to <em>View -&gt; Open subviews -&gt; Local types</em>:</p>
-<p><img src="img/2024-03-07-10-11-54.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-11-54.png" alt="" /></p>
 <p>Once there, we will then right click within the view and select <em>Insert</em>:</p>
-<p><img src="img/2024-03-07-10-12-51.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-12-51.png" alt="" /></p>
 <p>A dialog box will then appear, within the dialog box we paste the <code>FILE_FULL_EA_INFORMATION</code> structure:</p>
-<p><img src="img/2024-03-07-10-13-26.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-13-26.png" alt="" /></p>
 <p>We then click <em>Ok</em> and head back to the variable <code>v20</code>, right-click on it, and select <em>Convert to struct</em>...*:</p>
-<p><img src="img/2024-03-07-10-14-53.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-14-53.png" alt="" /></p>
 <p>We will then go to our entry for <code>FILE_FULL_EA_INFORMATION</code>, select it, and click <em>Ok</em>:</p>
-<p><img src="img/2024-03-07-10-16-30.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-16-30.png" alt="" /></p>
 <p>At this point, we see that our data structure updated within IDA:</p>
-<p><img src="img/2024-03-07-10-17-06.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-10-17-06.png" alt="" /></p>
 <h3 id="renaming-variables-in-ida"><a class="header" href="#renaming-variables-in-ida">Renaming Variables in IDA</a></h3>
 <p>Now that we have added our custom data structure, we can proceed to rename our variables in IDA to that of the variables provided in the initial advisory:</p>
 <pre><code class="language-cpp">for ( cur_ea_list_entry = ea_list;
@@ -466,7 +466,7 @@ for ( cur_ea_list_entry = ea_list; ; cur_ea_list_entry = (unsigned int *)((char 
 }
 </code></pre>
 <p>Looking at the basic block representation, we see that the <code>for</code> loop starts here:</p>
-<p><img src="img/2024-03-07-13-12-31.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-13-12-31.png" alt="" /></p>
 <p>As we can see, each value in <code>cur_ea_list_entry</code> is checked against <code>v11</code> or in other words, the value in the register RBX is compared to the value in R12. If the value in RBX is not equal to the value in R12, the loop takes the green code path. According to the advisory, the vulnerable function path for CVE-2021-31956 occurs when this basic block fails the check and takes the red code path. So far we have covered the following loop and check from our pseudocode:</p>
 <pre><code class="language-cpp">//...
 for ( cur_ea_list_entry = ea_list; ; cur_ea_list_entry = (unsigned int *)((char *)cur_ea_list_entry + *cur_ea_list_entry) )
@@ -479,7 +479,7 @@ for ( cur_ea_list_entry = ea_list; ; cur_ea_list_entry = (unsigned int *)((char 
 }
 </code></pre>
 <p>We proceed to examine the next basic block we reach after not jumping with the JNZ instruction:</p>
-<p><img src="img/2024-03-07-13-18-44.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-13-18-44.png" alt="" /></p>
 <p>Now, according to the advisory, we want to pass this check and jump with the JNZ instruction. We can assume that the <code>NtfsLocateEaByName</code> probably checks if an Extended Attribute is present, and if so return 0 and jump. We now have covered the next <code>if</code> condition and we reexamine our position within the pseudocode:</p>
 <pre><code class="language-cpp">//...
 for ( cur_ea_list_entry = ea_list; ; cur_ea_list_entry = (unsigned int *)((char *)cur_ea_list_entry + *cur_ea_list_entry) )
@@ -498,21 +498,21 @@ for ( cur_ea_list_entry = ea_list; ; cur_ea_list_entry = (unsigned int *)((char 
 }
 </code></pre>
 <p>We've now reached the vulnerable code inside of <code>NtfsQueryEaUserEaList</code>:</p>
-<p><img src="img/2024-03-07-13-51-00.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-13-51-00.png" alt="" /></p>
 <p>Looking at the diagram above, we can see two specific things:</p>
 <ol>
 <li>According to the x64 fastcall calling convention, RDX is the second input parameter for a function call. In our case, we know that RDX is user-controlled as per the advisory from Kaspersky.Therefore, we move onto the second observation.</li>
 <li>If our controlled value is less than <em>or equal to</em> the output buffer length minus the padding, we pass the <code>if</code> condition.</li>
 </ol>
 <p>Now since we control half of the vulnerable <code>if</code> comparison, we should look further into what the other half entails. We continue to follow the basic block code path until we reach the code that sets the size of the <code>padding</code>:</p>
-<p><img src="img/2024-03-07-14-04-00.png" alt="" /></p>
+<p><img src="cve/img/2024-03-07-14-04-00.png" alt="" /></p>
 <p>Here, based again off of the information provided in the <a href="https://securelist.com/puzzlemaker-chrome-zero-day-exploit-chain/102771/">advisory</a>, we see that the padding is calculated in such a way to store the next extended attribute with a 32-bit alignment.</p>
 <p>This is where the vulnerability occurs. If an attacker is able to create a perfectly aligned output buffer, we would pass the check where the <code>ea_block_size</code> variable is less than <em>or equal to</em> the output buffer's length minus a padding of 0.</p>
 <h1 id="exploiting-cve-2021-31956"><a class="header" href="#exploiting-cve-2021-31956">Exploiting CVE-2021-31956</a></h1>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>Now that we have an understanding of the vulnerability. We can now proceed to examine both the exploit used and the context in which it was originally discovered.</p>
 <h2 id="returning-to-the-advisory"><a class="header" href="#returning-to-the-advisory">Returning to the Advisory</a></h2>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>Before striking out on our own, let's go ahead and review the information already provided by Kaspersky in their advisory for CVE-2021-31956.</p>
 <h3 id="exploit-chain"><a class="header" href="#exploit-chain">Exploit Chain</a></h3>
 <p>In Kaspersky's initial triage of the discovery, CVE-2021-31956 was part
@@ -536,11 +536,11 @@ context to that of <code>SYSTEM</code>.</p>
 <p>As noted by Kaspersky, traditionally, an attacker would steal the <code>SYSTEM</code> token to escalate privileges. However, by overwriting the <code>PreviousMode</code> field with <code>0x0</code>, it is possible to then execute various routines from user-made in kernel-mode. This means that with the <code>PreviousMode</code> field set to <code>0x0</code>, parameters are trusted and thus are not checked by the kernel.</p>
 <p>Now that we have a basic grasp of the context of what CVE-2021-31956 does and how it was discovered, let's now explore the proof-of-concept used to exploit this vulnerability.</p>
 <h2 id="exploitation-overview"><a class="header" href="#exploitation-overview">Exploitation Overview</a></h2>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>In order to arbitrarily read and write to anywhere in memory, we will need to first groom the heap until our NTFS buffer is next to a <code>_WNF_STATE_DATA</code> chunk. Then, we will need to overflow the <code>AllocatedSize</code> and <code>DataSize</code> fields within the <code>_WNF_STATE_DATA</code> chunk. The <code>AllocatedSize</code> and <code>DataSize</code> fields now provide us with the ability to read and write within the pool after this chunk. Specifically, <code>AllocatedSize</code> determines the number of bytes that can be written whereas <code>DataSize</code> determines the number of bytes that can be read. Using this read and write ability, we will then locate a <code>_WNF_NAME_INSTANCE</code> chunk and read it's <code>StateName</code> to . In addition, we will use our write to overwrite the <code>StateData</code> parameter in the <code>_WNF_NAME_INSTANCE</code> chunk to point anywhere in memory, so long as the location in memory has a <code>_WNF_STATE_DATA</code> structure.</p>
-<p><img src="img/Overview.png" alt="" /></p>
+<p><img src="cve/img/Overview.png" alt="" /></p>
 <h2 id="examining-y3as-proof-of-concept"><a class="header" href="#examining-y3as-proof-of-concept">Examining Y3A's Proof-of-Concept</a></h2>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <p>In this section we will be looking at the approach <a href="https://y3a.github.io/">Y3A</a> took to exploit CVE-2021-31956. Our goal is to break down every section and understand exactly why the exploit works and the concepts behind each technique used.</p>
 <h3 id="include-directives"><a class="header" href="#include-directives">Include Directives</a></h3>
 <p>Now that we understand the context in which the vulnerability was originally used, let's explore the proof-of-concept <a href="https://github.com/Y3A">Y3A</a> of Star Labs created to exploit CVE-2021-31956.</p>
@@ -700,7 +700,7 @@ ULONG   read;
 <p>In conclusion, our analysis shows that the purpose of this function is call <code>NtReadVirtualMemory</code> and return the contents <code>buf</code> from the address <code>addr</code>.</p>
 <h3 id="the-fix_runrefs-function"><a class="header" href="#the-fix_runrefs-function">The fix_runrefs Function</a></h3>
 <p>Reviewing the <a href="https://y3a.github.io/2022/09/03/cve-2021-31956/">blog post by Y3A</a>, we see that the <code>fix_runrefs</code> function is used to clean up the heap after exploiting CVE-2021-31956.</p>
-<p>Reviewing the exploitation process covered in <a href="CVE-2021-31956.html#exploitation-overview">Exploitation Overview</a>, We notice that in order to overwrite the target <code>StateData</code> pointer, the preceding members in the <code>_WNF_NAME_INSTANCE</code> data structure may also be overwritten. Reviewing the <code>_WNF_NAME_INSTANCE</code> data structure from the <a href="https://www.vergiliusproject.com/kernels/x64/Windows%2011/21H2%20(RTM)/_WNF_NAME_INSTANCE">Vergilius Project</a>, we see the following:</p>
+<p>Reviewing the exploitation process covered in <a href="cve/CVE-2021-31956.html#exploitation-overview">Exploitation Overview</a>, We notice that in order to overwrite the target <code>StateData</code> pointer, the preceding members in the <code>_WNF_NAME_INSTANCE</code> data structure may also be overwritten. Reviewing the <code>_WNF_NAME_INSTANCE</code> data structure from the <a href="https://www.vergiliusproject.com/kernels/x64/Windows%2011/21H2%20(RTM)/_WNF_NAME_INSTANCE">Vergilius Project</a>, we see the following:</p>
 <pre><code class="language-cpp">//0xa8 bytes (sizeof)
 struct _WNF_NAME_INSTANCE
 {
@@ -951,7 +951,7 @@ out:
 </code></pre>
 <p>We notice that if the <code>_NtUpdateWnfStateData</code> returns <code>STATUS_SUCCESS</code>, <code>write_pool</code> simply returns the <code>status</code> value <code>STATUS_SUCCESS</code> and outputs a <code>puts</code> message to the screen. However, if <code>status</code> is not equal to <code>STATUS_SUCCESS</code>, <code>write_pool</code> outputs a <code>log_warn</code> message and returns the <code>status</code> value.</p>
 <h4 id="sandbox-constraints"><a class="header" href="#sandbox-constraints">Sandbox Constraints</a></h4>
-<p>One thing to keep in mind is that the <code>_NtUpdateWnfStateData</code> function is unavailable when operating in Low Integrity. We will discuss how to bypass this constraint in <a href="CVE-2021-31956.html#escaping-the-sandbox-with-y3as-proof-of-concept">Escaping the Sandbox with Y3A's Proof-of-Concept</a>.</p>
+<p>One thing to keep in mind is that the <code>_NtUpdateWnfStateData</code> function is unavailable when operating in Low Integrity. We will discuss how to bypass this constraint in <a href="cve/CVE-2021-31956.html#escaping-the-sandbox-with-y3as-proof-of-concept">Escaping the Sandbox with Y3A's Proof-of-Concept</a>.</p>
 <h3 id="the-read_pool-function"><a class="header" href="#the-read_pool-function">The read_pool Function</a></h3>
 <p>Next, in order to read from the pool, we will examine how to use <code>NtQueryWnfStateData</code> to achieve this. According to <a href="https://pwnedcoffee.com/blog/wnf-chronicles-i-introduction/">Nacho Gomez</a>, we can define the purpose of <code>NtQueryWnfStateData</code> as follows:</p>
 <blockquote>
@@ -1006,7 +1006,7 @@ if (!NT_SUCCESS(status)) {
     return status;
 </code></pre>
 <h4 id="sandbox-constraints-1"><a class="header" href="#sandbox-constraints-1">Sandbox Constraints</a></h4>
-<p>One thing to keep in mind is that the <code>GetProcAddress</code> function is unavailable when operating in Low Integrity. We will discuss how to bypass this constraint in <a href="CVE-2021-31956.html#escaping-the-sandbox-with-y3as-proof-of-concept">Escaping the Sandbox with Y3A's Proof-of-Concept</a>.</p>
+<p>One thing to keep in mind is that the <code>GetProcAddress</code> function is unavailable when operating in Low Integrity. We will discuss how to bypass this constraint in <a href="cve/CVE-2021-31956.html#escaping-the-sandbox-with-y3as-proof-of-concept">Escaping the Sandbox with Y3A's Proof-of-Concept</a>.</p>
 <h3 id="the-find_chunk-function"><a class="header" href="#the-find_chunk-function">The find_chunk Function</a></h3>
 <p>Before delving into the <code>find_chunk</code> function, let's first take a look at its implementation within the <code>main</code> function:</p>
 <pre><code class="language-cpp">if (!NT_SUCCESS(resolve_symbols()))
@@ -1158,8 +1158,8 @@ out:
 <p>The pointer <code>idx</code> is set to the corrupted <code>WNF_STATE_DATA</code> index and the <code>status</code> is returned to the callee.</p>
 <h3 id="the-overflow_chunk-function"><a class="header" href="#the-overflow_chunk-function">The overflow_chunk Function</a></h3>
 <p>Before discussing the specifics of the <code>overflow_chunk</code> function, let's first review how exactly the vulnerability can be reached from user-mode. According to the previously-covered advisory, this can be achieved through a <code>ntoskrnl.exe</code> <em>system call</em> (syscall). Therefore, we want to find any syscalls related to extended attributes (<code>Ea</code>). After looking through the <a href="https://hfiref0x.github.io/NT10_syscalls.html">Windows x64 syscall table</a> provided by <a href="https://hfiref0x.github.io/">hfiref0x</a>, we find the following two entries:</p>
-<p><img src="img/2024-03-06-22-51-09.png" alt="" /></p>
-<p><img src="img/2024-03-06-22-51-29.png" alt="" /></p>
+<p><img src="cve/img/2024-03-06-22-51-09.png" alt="" /></p>
+<p><img src="cve/img/2024-03-06-22-51-29.png" alt="" /></p>
 <p>Because the advisory mentioned the vulnerable function is called <code>NtfsQueryEaUserEaList</code>, we can make an educated guess and assume that the <code>NtQueryEaFile</code> syscall will eventually reach <code>NtfsQueryEaUserEaList</code>. The same logic is applied to the <code>NtSetEaFile</code> syscall.</p>
 <p>Thus, we will see the <code>overflow_chunk</code> using the <code>NtSetEaFile</code> syscall to create the conditions needed so that the syscall <code>NtQueryEaFile</code> can trigger the vulnerability. Now that we know the syscalls needed to invoke the vulnerability, let's examine it's usage within the <code>overflow_chunk</code> function starting with the function definition:</p>
 <pre><code class="language-cpp">NTSTATUS overflow_chunk(_In_ USHORT overflow_chunk_sz, _In_ char *overflow_data, _In_ USHORT overflow_data_sz)
@@ -1486,7 +1486,7 @@ out:
 <p>Once the loop completes or is terminated, the <code>status</code> is then returned to the callee.</p>
 <p>PLACEHOLDER</p>
 <h1 id="references"><a class="header" href="#references">References</a></h1>
-<p><a href="CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
+<p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <ul>
 <li><a href="https://www.rapid7.com/blog/post/2019/06/12/heap-overflow-exploitation-on-windows-10-explained/">Rapid7's Blog</a></li>
 <li><a href="https://web.archive.org/web/20191229080007/https://gracefulbits.com/2018/08/13/find-which-process-is-using-the-microphone-from-a-kernel-mode-driver/">Alex Ionescu's Blog</a></li>
@@ -1497,7 +1497,7 @@ out:
 <li><a href="https://github.com/Y3A/CVE-2021-31956">Y3A's Proof-of-Concept</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
-<p><a href="../index.html">Return to Home</a></p>
+<p><a href="ttp/../index.html">Return to Home</a></p>
 <p>This section will discuss various tips and tricks I have found useful while working with WinDbg</p>
 <h1 id="revelant-blogs"><a class="header" href="#revelant-blogs">Revelant Blog(s)</a></h1>
 <ul>
@@ -1546,7 +1546,7 @@ out:
 <div style="break-before: page; page-break-before: always;"></div><hr />
 <h2 id="layout-default"><a class="header" href="#layout-default">layout: default</a></h2>
 <h1 id="resources-for-windows-security-research"><a class="header" href="#resources-for-windows-security-research">Resources for Windows Security Research</a></h1>
-<p><a href="./index.html">Return to Home</a></p>
+<p><a href="resources/./index.html">Return to Home</a></p>
 <p>Here is a list of curated resources that cover various aspects of Windows security research:</p>
 <h2 id="recommended-blogs"><a class="header" href="#recommended-blogs">Recommended Blogs</a></h2>
 <ul>
