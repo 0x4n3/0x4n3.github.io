@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="CVE-2021-31956.html"><strong aria-hidden="true">1.</strong> CVE-2021-31956</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="CVE-2021-31956.html"><strong aria-hidden="true">1.</strong> CVE-2021-31956</a></li><li class="chapter-item expanded affix "><li class="part-title">Resources</li><li class="chapter-item expanded "><a href="Windows.html"><strong aria-hidden="true">2.</strong> Microsoft Windows</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,9 +174,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <hr />
-<h2 id="layout-default"><a class="header" href="#layout-default">layout: default</a></h2>
-<h1 id="a-comprehensive-analysis-of-cve-2021-31956"><a class="header" href="#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></h1>
+                        <h1 id="a-comprehensive-analysis-of-cve-2021-31956"><a class="header" href="#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></h1>
 <p><a href="../index.html">Return to Home</a></p>
 <h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
 <ul>
@@ -1490,6 +1488,273 @@ out:
 <li><a href="https://decoded.avast.io/janvojtesek/exploit-kits-vs-google-chrome/">Jan Vojtesek's Blog</a></li>
 <li><a href="https://y3a.github.io/2022/09/03/cve-2021-31956/">Y3A's Blog</a></li>
 <li><a href="https://github.com/Y3A/CVE-2021-31956">Y3A's Proof-of-Concept</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="layout-default"><a class="header" href="#layout-default">layout: default</a></h2>
+<h1 id="resources-for-windows-security-research"><a class="header" href="#resources-for-windows-security-research">Resources for Windows Security Research</a></h1>
+<p><a href="./index.html">Return to Home</a></p>
+<p>Here is a list of curated resources that cover various aspects of Windows security research:</p>
+<h2 id="recommended-blogs"><a class="header" href="#recommended-blogs">Recommended Blogs</a></h2>
+<ul>
+<li><a href="https://decoded.avast.io/janvojtesek/">Jan Vojtěšek's Blog</a></li>
+<li><a href="https://www.matteomalvica.com/blog/">Matteo Malvica's Blog</a></li>
+<li><a href="https://tandasat.github.io/blog/">Satoshi Tanda's Blog</a></li>
+<li><a href="https://y3a.github.io/">Le Qi Chen's Blog</a></li>
+<li><a href="https://malwaretech.com/">Marcus Hutchins' Blog</a></li>
+<li><a href="https://lock.cmpxchg8b.com/">Tavis Ormandy's Blog</a></li>
+<li><a href="https://reverencecyber.com/blog/">Robel Campbell's Blog</a></li>
+<li><a href="https://connormcgarr.github.io/">Connor McGarr's Blog</a></li>
+<li><a href="https://spaceraccoon.dev/">Eugene Lim's Blog</a></li>
+<li><a href="https://www.richardosgood.com/">Richard Osgood's Blog</a></li>
+<li><a href="https://medium.com/@yardenshafir2">Yarden Shafir's Blog</a></li>
+<li><a href="https://ihack4falafel.github.io/">Hashim Jawad's Blog</a></li>
+<li><a href="https://alexplaskett.github.io/">Alex Plaskett's Blog</a></li>
+<li><a href="https://h0mbre.github.io">h0mbre's Blog</a></li>
+<li><a href="https://whereisk0shl.top/">k0shl's Blog</a></li>
+<li><a href="https://zer0-day.pw/">DHN's Blog</a></li>
+<li><a href="https://googleprojectzero.blogspot.com/">Project Zero's Blog</a></li>
+</ul>
+<h2 id="recommended-repositories"><a class="header" href="#recommended-repositories">Recommended Repositories</a></h2>
+<ul>
+<li><a href="https://github.com/MortenSchenk">Morten Schenk's GitHub</a></li>
+<li><a href="https://github.com/taviso">Tavis Ormandy's GitHub</a></li>
+</ul>
+<h2 id="technical-deep-dives"><a class="header" href="#technical-deep-dives">Technical Deep-Dives</a></h2>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel® 64 and IA-32 Architectures Software Developer Manuals</a> by Intel</li>
+</ul>
+<h3 id="windows-mitigation-bypasses-and-analysis"><a class="header" href="#windows-mitigation-bypasses-and-analysis">Windows Mitigation Bypasses and Analysis</a></h3>
+<h4 id="general"><a class="header" href="#general">General</a></h4>
+<ul>
+<li><a href="https://reverencecyber.com/cve-2023-36802-mssksrv-sys-local-privilege-escalation-poc/">CVE-2023-36802 MSSKSRV.sys Local Privilege Escalation</a> by Robel Campbell</li>
+<li><a href="https://www.offsec.com/offsec/irqls-close-encounters/">IRQLs Close Encounters of the Rootkit Kind</a> by OffSec</li>
+<li><a href="https://googleprojectzero.blogspot.com/2021/01/windows-exploitation-tricks-trapping.html">Windows Exploitation Tricks: Trapping Virtual Memory Access</a> by James Forshaw</li>
+<li><a href="https://googleprojectzero.blogspot.com/2018/04/windows-exploitation-tricks-exploiting.html">Windows Exploitation Tricks: Exploiting Arbitrary File Writes for Local Elevation of Privilege</a> by James Forshaw</li>
+<li><a href="https://symeonp.github.io/2020/12/08/phonebook-uaf-analysis.html">Discovery and analysis of a Windows PhoneBook Use-After-Free vulnerability (CVE-2020-1530)</a> by Symeon</li>
+<li><a href="https://symeonp.github.io/">itsec stuff about fuzzing, vuln hunting and (hopefully) exploitation!</a> by Symeon</li>
+<li><a href="https://fuzzysecurity.com/tutorials/expDev/23.html">Part 19: Kernel Exploitation -&gt; Logic bugs in Razer rzpnk.sys</a> by Fuzzy Security</li>
+<li><a href="https://recon.cx/2013/slides/Recon2013-Alex%20Ionescu-I%20got%2099%20problems%20but%20a%20kernel%20pointer%20ain%27t%20one.pdf">I Got 99 Problem But a Kernel Pointer Ain't One</a> by Alex Ionescu</li>
+<li><a href="https://www.tiraniddo.dev/2019/08/windows-code-injection-bypassing-cig.html?m=1">Windows Code Injection: Bypassing CIG Through KnownDlls</a> by Tyranid's Lair</li>
+</ul>
+<h4 id="intel-cet"><a class="header" href="#intel-cet">Intel CET</a></h4>
+<ul>
+<li><a href="https://www.offsec.com/offsec/bypassing-intel-cet-with-counterfeit-objects/">Bypassing Intel CET with Counterfeit Objects</a> by Matteo Malvica</li>
+<li><a href="https://www.offsec.com/offsec/intel-cet-in-action/">Intel CET in Action</a> by OffSec</li>
+</ul>
+<h4 id="windows-defender-exploit-guard-previously-emet"><a class="header" href="#windows-defender-exploit-guard-previously-emet">Windows Defender Exploit Guard (Previously EMET)</a></h4>
+<ul>
+<li><a href="https://www.offsec.com/offsec/extended-flow-guard/">eXtended Flow Guard Under The Microscope</a> by OffSec</li>
+<li><a href="https://www.offsec.com/vulndev/disarming-emet-v5-0/">Disarming EMET v5.0</a> by Matteo Memelli</li>
+<li><a href="https://www.offsec.com/vulndev/disarming-enhanced-mitigation-experience-toolkit-emet/">Disarming Enhanced Mitigation Experience Toolkit (EMET)</a> by Matteo Memelli</li>
+<li><a href="https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-on-windows-10-part-ii">Bypassing Control Flow Guard in Windows 10 - Part II</a> by Morten Schenk</li>
+</ul>
+<h3 id="just-in-time-compilation"><a class="header" href="#just-in-time-compilation">Just-in-Time Compilation</a></h3>
+<blockquote>
+<p>Note: Some of these blog posts are iOS-related, but since JIT is used in Windows applications, I have included them here.</p>
+</blockquote>
+<ul>
+<li><a href="https://connormcgarr.github.io/type-confusion-part-1/">Exploit Development: Browser Exploitation on Windows - CVE-2019-0567, A Microsoft Edge Type Confusion Vulnerability (Part 1)</a> by Connor McGarr</li>
+<li><a href="https://connormcgarr.github.io/type-confusion-part-2/">Exploit Development: Browser Exploitation on Windows - CVE-2019-0567, A Microsoft Edge Type Confusion Vulnerability (Part 2)</a> by Connor McGarr</li>
+<li><a href="https://connormcgarr.github.io/type-confusion-part-3/">Exploit Development: Browser Exploitation on Windows - CVE-2019-0567, A Microsoft Edge Type Confusion Vulnerability (Part 3)</a> by Connor McGarr</li>
+<li><a href="https://www.zerodayinitiative.com/blog/2017/7/18/understanding-risk-in-the-unintended-giant-javascript">Understanding the Risk in the Unintended Giant: JavaScript</a> by Simon Zuckerbraun</li>
+<li><a href="https://www.zerodayinitiative.com/blog/2017/10/5/check-it-out-enforcement-of-bounds-checks-in-native-jit-code">Check It Out: Enforcement of Bounds Checks in Native JIT Code</a> by Simon Zuckerbraun</li>
+<li><a href="https://www.zerodayinitiative.com/blog/2018/8/22/floating-poison-math-in-chakra">Floating-Poison Math in Chakra</a> by Simon Zuckerbraun</li>
+<li><a href="https://googleprojectzero.blogspot.com/2018/05/bypassing-mitigations-by-attacking-jit.html">Bypassing Mitigations by Attacking JIT Server in Microsoft Edge</a> by Ivan Fratric</li>
+<li><a href="https://googleprojectzero.blogspot.com/2020/09/jitsploitation-one.html">JITSploitation I: A JIT Bug</a> by Samuel Groß</li>
+<li><a href="https://googleprojectzero.blogspot.com/2020/09/jitsploitation-two.html">JITSploitation II: Getting Read/Write</a> by Samuel Groß</li>
+<li><a href="https://googleprojectzero.blogspot.com/2020/09/jitsploitation-three.html">JITSploitation III: Subverting Control Flow</a> by Samuel Groß</li>
+</ul>
+<h3 id="hyper-v"><a class="header" href="#hyper-v">Hyper-V</a></h3>
+<ul>
+<li><a href="https://googleprojectzero.blogspot.com/2021/04/who-contains-containers.html">Who Contains the Containers?</a> by James Forshaw</li>
+<li><a href="https://i.blackhat.com/us-18/Wed-August-8/us-18-Joly-Bialek-A-Dive-in-to-Hyper-V-Architecture-and-Vulnerabilities.pdf">A Dive in to Hyper-V Architecture &amp; Vulnerabilities</a> by Nicolas Joly and Joe Bialek</li>
+<li><a href="https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research/">First Steps in Hyper-V Research</a> by Microsoft</li>
+<li><a href="https://msrc.microsoft.com/blog/2019/01/fuzzing-para-virtualized-devices-in-hyper-v/">Fuzzing para-virtualized devices in Hyper-V</a> by Microsoft</li>
+</ul>
+<h3 id="windbg"><a class="header" href="#windbg">WinDbg</a></h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/debugger-commands">WinDbg Commands</a></li>
+<li><a href="https://codemachine.com/articles/windbg_quickstart.html">WinDBG quick start tutorial</a> by CodeMachine</li>
+<li><a href="https://0x4n3.github.io/windows/WinDbg">My WinDbg Blog</a></li>
+</ul>
+<h3 id="fuzzing"><a class="header" href="#fuzzing">Fuzzing</a></h3>
+<ul>
+<li><a href="https://gamozolabs.github.io/">Gamozo Labs' Blog</a></li>
+<li><a href="https://github.com/googleprojectzero/winafl">Google Project Zero's WinAFL</a></li>
+<li><a href="https://github.com/SB-GC-Labs/hAFL1">SafeBreach &amp; Guardicore Labs' hAFL1</a></li>
+</ul>
+<h3 id="presentations-and-walkthroughs"><a class="header" href="#presentations-and-walkthroughs">Presentations and Walkthroughs</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=VgWoPa8Whmc">The Info Leak Era on Software Exploitation</a> by Fermin J. Serna</li>
+<li><a href="https://www.youtube.com/watch?v=gCu2GQd0GSE">Windows 10 Mitigation Improvements</a> by David Weston and Matt Miller</li>
+<li><a href="https://www.youtube.com/watch?v=hetZx78SQ_A">Windows 10 Segment Heap Internals</a> by Mark Vincent Yason</li>
+<li><a href="https://www.youtube.com/watch?v=Gu_5kkErQ6Y">Taking Windows 10 Kernel Exploitation to the next level</a> by Morten Schenk</li>
+<li><a href="https://www.youtube.com/watch?v=MOab2Icpecc">PowerShell as an attack platform</a> by Morten Schenk</li>
+<li><a href="https://www.youtube.com/watch?v=FxZoAupttMI">Data-Only Pwning Microsoft Windows Kernel</a> by Nikita Tarakanov</li>
+<li><a href="https://www.youtube.com/watch?v=0lURSnDOPfQ">Advanced Heap Manipulation in Windows 8</a> by Zhenhua Liu</li>
+<li><a href="https://www.youtube.com/watch?v=2chDv_wTymc">Demystifying Windows Kernel Exploitation by Abusing GDI Objects</a> by Saif El Sherei</li>
+<li><a href="https://www.youtube.com/watch?v=2yuza8PRGVQ">Exploiting Hardcore Pool Corruptions in MS Windows Kernel</a> by Nikita Tarakanov</li>
+<li><a href="https://www.youtube.com/watch?v=f8hTwFpRphU">Windows kernel exploitation techniques</a> by Adrien Garin</li>
+<li><a href="https://www.youtube.com/watch?v=hUCmV7uT29I">Practical Windows Kernel Exploitation</a> by Spencer McIntyre</li>
+<li><a href="https://www.youtube.com/watch?v=0tFmqSbWSZE">Over The Edge: Pwning The Windows Kernel</a> by Rancho Han</li>
+<li><a href="https://www.youtube.com/watch?v=BCavCemZPoI">Theres a party at ring0</a> by Tavis Ormandy and Julien Tinnes</li>
+<li><a href="https://www.youtube.com/watch?v=Qj_YCpoct3k">Extreme Privilege Escalation On Windows 8 UEFI Systems</a> by Corey Kallenberg, Xeno Kovah, John Butterworth, and Sam Cornwell</li>
+<li><a href="https://www.youtube.com/watch?v=nRVbYt9LKXk">Windows privilege escalation using 3rd party services</a> by Kacper Szurek</li>
+<li><a href="https://www.youtube.com/watch?v=PC_iMqiuIRQ">Practical Windows Privilege Escalation</a> by Andrew Smith</li>
+<li><a href="https://www.youtube.com/watch?v=aRZ5Wi-NWXs">Windows Kernel Vulnerability Research and Exploitation</a> by Gilad Bakas</li>
+<li><a href="https://www.youtube.com/watch?v=pJZjWXxUEl4">Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 1</a> by OJ Reeves</li>
+<li><a href="https://www.youtube.com/watch?v=UGWqq5kTiso">Hackingz Ze Komputerz - Exploiting CAPCOM.SYS Part 2</a> by OJ Reeves</li>
+<li><a href="https://www.youtube.com/watch?v=pqU9jsCmlYA">ROP mitigations and Control Flow Guard - the end of code reuse attacks?</a> by Matthias Ganz</li>
+<li><a href="https://www.youtube.com/watch?v=mpXQvto4Vy4">Building Windows Kernel Fuzzer</a> by Jaanus Kääp</li>
+</ul>
+<h2 id="books"><a class="header" href="#books">Books</a></h2>
+<ul>
+<li><a href="https://www.amazon.com/Windows-Kernel-Programming-Pavel-Yosifovich/dp/1977593372">Windows Kernel Programming</a> by Pavel Yosifovich</li>
+<li><a href="https://www.microsoftpressstore.com/store/windows-internals-part-1-system-architecture-processes-9780735684188">Windows Internals, Part 1: System architecture, processes, threads, memory management, and more, 7th Edition</a> by Pavel Yosifovich, Mark E. Russinovich, Alex Ionescu, David A. Solomon</li>
+<li><a href="https://www.microsoftpressstore.com/store/windows-internals-part-2-9780135462409">Windows Internals, Part 2, 7th Edition</a> by Andrea Allievi, Mark E. Russinovich, Alex Ionescu, David A. Solomon</li>
+<li><a href="https://www.amazon.com/What-Makes-Page-Windows-Virtual/dp/1479114294">What Makes it Page? The Windows 7 (x64) Virtual Memory Manager</a> by Enrico Martignetti</li>
+</ul>
+<h2 id="courses"><a class="header" href="#courses">Courses</a></h2>
+<ul>
+<li><a href="https://www.offsec.com/documentation/EXP301-syllabus.pdf">EXP-301</a> by OffSec</li>
+<li><a href="https://www.offensive-security.com/awe/EXP401_syllabus.pdf">EXP-401</a> by OffSec</li>
+<li><a href="https://codemachine.com/trainings/winint.html">Windows Internal Architecture</a> by CodeMachine</li>
+<li><a href="https://codemachine.com/trainings/winmal.html">Windows Malware Techniques</a> by CodeMachine</li>
+<li><a href="https://codemachine.com/trainings/kerint.html">Windows Kernel Internals</a> by CodeMachine</li>
+<li><a href="https://codemachine.com/trainings/kerrkt.html">Windows Kernel Rootkits</a> by CodeMachine</li>
+<li><a href="https://www.sans.org/cyber-security-courses/advanced-exploit-development-penetration-testers/">SEC760: Advanced Exploit Development for Penetration Testers</a> by SANS</li>
+<li><a href="https://www.corelan-training.com/index.php/training/advanced/">Corelan Advanced - Heap Exploitation</a> by Corelan</li>
+<li><a href="https://www.corelan-training.com/index.php/training/bootcamp/">Corelan Bootcamp - Stack Exploitation</a> by Corelan</li>
+</ul>
+<h2 id="advisories"><a class="header" href="#advisories">Advisories</a></h2>
+<p>The best way to get better at vulnerability research is to practice. As a result, I have compiled a list of some advisories Google's Project Zero has produced that may help in facilitating what real bugs look like in Windows.</p>
+<h3 id="afd"><a class="header" href="#afd">AFD</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1127">Windows Kernel pool-based out-of-bound reads due to bugs in the implementation of bind() in afd.sys and tcpip.sys</a></li>
+</ul>
+<h3 id="avalon"><a class="header" href="#avalon">Avalon</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=277">Microsoft Windows Presentation Foundation memory disclosure via uninitialized transient array</a></li>
+</ul>
+<h3 id="defender"><a class="header" href="#defender">Defender</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1418">Windows Defender: Controlled Folder Bypass through UNC Path</a></li>
+</ul>
+<h3 id="directwrite"><a class="header" href="#directwrite">DirectWrite</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1829">Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to out-of-bounds cubeStackDepth</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1830">Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative cubeStackDepth</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1831">Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to negative nAxes</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1832">Microsoft DirectWrite / AFDKO stack-based buffer overflow in do_set_weight_vector_cube for large nAxes</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1833">Microsoft DirectWrite / AFDKO use of uninitialized memory while freeing resources in var_loadavar</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1834">Microsoft DirectWrite / AFDKO interpreter stack underflow in OpenType font handling due to missing CHKUFLOW</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1835">Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling due to incorrect handling of blendArray</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1836">Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readEncoding</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1837">Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readFDSelect</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1838">Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readCharset</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1839">Microsoft DirectWrite / AFDKO heap-based buffer overflow due to integer overflow in readTTCDirectory</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1840">Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to unbounded iFD</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1841">Microsoft DirectWrite / AFDKO heap-based buffer overflow in OpenType font handling in readStrings</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1842">Microsoft DirectWrite / AFDKO stack corruption in OpenType font handling while processing CFF blend DICT operator</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1843">Microsoft DirectWrite / AFDKO out-of-bounds read in OpenType font handling due to undefined FontName index</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1844">Microsoft DirectWrite / AFDKO multiple bugs in OpenType font handling related to the "post" table</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1845">Microsoft DirectWrite / AFDKO NULL pointer dereferences in OpenType font handling while accessing empty dynarrays</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1846">Microsoft DirectWrite / AFDKO heap-based out-of-bounds read/write in OpenType font handling due to empty ROS strings</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1847">Microsoft DirectWrite / AFDKO insufficient integer overflow check in dnaGrow</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1848">Microsoft DirectWrite / AFDKO read of uninitialized BuildCharArray memory in OpenType font handling</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1875">Microsoft DirectWrite invalid read in SplicePixel while processing OTF fonts</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1878">Microsoft DirectWrite out-of-bounds read in sfac_GetSbitBitmap while processing TTF fonts</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2123">Microsoft DirectWrite heap-based buffer overflow in fsg_ExecuteGlyph while processing variable TTF fonts</a></li>
+</ul>
+<h3 id="dotnet"><a class="header" href="#dotnet">DotNet</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1081">Windows: ManagementObject Arbitrary .NET Serialization RCE</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=481">.NET Partial-Trust bypass via browser command-line injection in System.Windows.Forms.Help</a></li>
+</ul>
+<h3 id="microsoft-edge"><a class="header" href="#microsoft-edge">Microsoft Edge</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1011">Microsoft Edge and IE: Type confusion in HandleColumnBreakOnColumnSpanningElement</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1254">Microsoft Edge: Type confusion in CssParser::RecordProperty</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1255">Microsoft Edge: textarea.defaultValue memory disclosure</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1264">Microsoft Edge: Out-of-bounds read in CInputDateTimeScrollerElement::_SelectValueInternal</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1299">Microsoft Edge: ACG bypass using DuplicateHandle</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1339">Microsoft Edge: Memory corruption with Object.setPrototypeOf</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1435">Microsoft Edge: ACG bypass using UnmapViewOfFile</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1552">Microsoft Edge: ACG bypass with OpenProcess()</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1582">Microsoft Edge: Chakra: Bugs in InitializeNumberFormat and InitializeDateTimeFormat</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=878">Windows: Edge/IE Isolated Private Namespace Insecure Boundary Descriptor EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=879">Windows: Edge/IE Isolated Private Namespace Insecure DACL EoP</a></li>
+</ul>
+<h3 id="fontsub"><a class="header" href="#fontsub">Fontsub</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1862">Microsoft Font Subsetting DLL returning a dangling pointer via MergeFontPackage</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1863">Microsoft Font Subsetting DLL heap-based out-of-bounds read in MergeFonts</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1864">Microsoft Font Subsetting DLL heap-based out-of-bounds read in GetGlyphIdx</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1865">Microsoft Font Subsetting DLL double free in MergeFormat12Cmap / MakeFormat12MergedGlyphList</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1866">Microsoft Font Subsetting DLL heap corruption in ComputeFormat4CmapData</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1867">Microsoft Font Subsetting DLL heap corruption in FixSbitSubTables</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1868">Microsoft Font Subsetting DLL heap corruption in ReadTableIntoStructure</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1869">Microsoft Font Subsetting DLL heap corruption in ReadAllocFormat12CharGlyphMapList</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1870">Microsoft Font Subsetting DLL heap-based out-of-bounds read in WriteTableFromStructure</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1871">Microsoft Font Subsetting DLL heap corruption in MakeFormat12MergedGlyphList</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1872">Microsoft Font Subsetting DLL heap-based out-of-bounds read in FixSbitSubTableFormat1</a></li>
+</ul>
+<h3 id="gdi32dll"><a class="header" href="#gdi32dll">GDI32.dll</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=722">Windows gdi32.dll multiple issues in the EMF CREATECOLORSPACEW record handling</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=729">Windows gdi32.dll multiple issues in the EMF COMMENT_MULTIFORMATS record handling</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=731">Windows gdi32.dll heap-based buffer overflow in ExtEscape() triggerable via EMR_EXTESCAPE EMF record</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=757">Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in multiple DIB-related EMF record handlers</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=992">Windows gdi32.dll heap-based out-of-bounds reads / memory disclosure in EMR_SETDIBITSTODEVICE and possibly other records</a></li>
+</ul>
+<h3 id="gdi"><a class="header" href="#gdi">GDI+</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=824">Microsoft GDI+ out-of-bounds write due to invalid pointer arithmetic in DecodeCompressedRLEBitmap</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=825">Microsoft GDI+ rendering of uninitialized heap bytes as pixels when handling malformed RLE-compressed bitmaps</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=826">Microsoft GDI+ out-of-bounds reads due to invalid pointer arithmetic in ValidateBitmapInfo</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=828">Microsoft GDI+ heap-based buffer overflow in the handling of EMR_EXTTEXTOUTA and EMR_POLYTEXTOUTA records</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=829">Microsoft GDI+ out-of-bounds reads in DIB palette handling in ValidateBitmapInfo</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1042">Microsoft GDI+ out-of-bounds read in gdiplus!GetRECTSForPlayback</a></li>
+</ul>
+<h3 id="hyper-v-1"><a class="header" href="#hyper-v-1">Hyper-V</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=688">Hyper-V vmswitch.sys VmsMpCommonPvtHandleMulticastOids Guest to Host Kernel-Pool Overflow</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1599">Windows: Double Dereference in NtEnumerateKey Elevation of Privilege</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2120">Windows: Server Silo Registry Key Symbolic Link EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2127">Windows Containers: ContainerUser has Elevated Privileges</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2128">Windows Containers: AppSilo Object Manager Root Directory EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2129">Windows Containers: Host Registry Virtual Registry Provider Bypass EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2149">Windows: Container Manager Service CmsRpcSrv_CreateContainer EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2150">Windows: Container Manager Service CmsRpcSrv_MapVirtualDiskToContainer EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2151">Windows: Container Manager Service Arbitrary Object Directory Creation EoP</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2153">Windows: Container Manager Service CmsRpcSrv_MapNamedPipeToContainer EoP</a></li>
+</ul>
+<h3 id="icm32dll"><a class="header" href="#icm32dll">ICM32.dll</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1052">Microsoft Color Management Module (icm32.dll) out-of-bounds read in icm32!Fill_ushort_ELUTs_from_lut16Tag</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1054">Microsoft Color Management Module (icm32.dll) out-of-bounds read in icm32!LHCalc3toX_Di16_Do16_Lut8_G32</a></li>
+</ul>
+<h3 id="windows-kernel"><a class="header" href="#windows-kernel">Windows Kernel</a></h3>
+<ul>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=169">Windows Kernel ATMFD.DLL DoS via unlimited CharString program execution</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=174">Windows Kernel ATMFD.DLL out-of-bounds reads from the input CharString stream</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=175">Windows Kernel ATMFD.DLL off-by-x oob reads/writes relative to the operand stack</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=176">Windows Kernel ATMFD.DLL kernel pool memory disclosure via uninitialized transient array</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=177">Windows Kernel ATMFD.DLL read/write-what-where in LOAD and STORE operators</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=178">Windows Kernel ATMFD.DLL pool-based buffer overflow in Counter Control Hints</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=179">Windows Kernel ATMFD.DLL pool-based buffer underflow due to integer overflow in STOREWV</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=180">Windows Kernel ATMFD.DLL unlimited out-of-bounds stack manipulation via BLEND operator</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=368">Windows Kernel win32k.sys TTF font processing: pool-based buffer overflow in the IUP[] program instruction</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=369">Windows Kernel ATMFD.DLL OTF font processing: pool-based buffer overflow with malformed GPOS table</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=370">Windows Kernel win32k.sys TTF font processing: pool-based buffer overflow in win32k!scl_ApplyTranslation</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=382">Windows Kernel ATMFD.DLL out-of-bounds reads from the input CharString stream</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=383">Windows Kernel ATMFD.DLL invalid memory access due to malformed CFF table (ATMFD+0x34072 / ATMFD+0x3407b)</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=384">Windows Kernel ATMFD.DLL invalid memory access due to malformed CFF table (ATMFD+0x3440b / ATMFD+0x3440e)</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=385">Windows Kernel ATMFD.DLL write to uninitialized address due to malformed CFF table</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=386">Windows Kernel ATMFD.DLL out-of-bounds read due to malformed Name INDEX in the CFF table</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=392">Windows Kernel ATMFD.DLL out-of-bounds read due to malformed FDSelect offset in the CFF table</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=401">Windows Kernel win32k.sys TTF font processing: out-of-bounds pool memory access in win32k!fsc_RemoveDups</a></li>
+<li><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=402">Windows Kernel win32k.sys TTF font processing: out-of-bounds pool write in win32k!fsc_BLTHoriz</a></li>
 </ul>
 
                     </main>
