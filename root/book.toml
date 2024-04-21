@@ -1,6 +1,0 @@
-[book]
-authors = ["Primary"]
-language = "en"
-multilingual = false
-src = "src"
-title = "The !CPUID Shuffle"
