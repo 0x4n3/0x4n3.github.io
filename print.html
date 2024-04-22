@@ -179,11 +179,8 @@
 <p>Hello, World! The focus of this blog is to document my own voyage through cyberspace. Hopefully along the way I can help out another traveler.</p>
 <p>Thanks,</p>
 <p>0x4n3</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="a-comprehensive-analysis-of-cve-2021-31956"><a class="header" href="#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></h1>
-<p><a href="cve/../index.html">Return to Home</a></p>
-<h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
 <ul>
-<li><a href="cve/CVE-2021-31956.html#a-comprehensive-analysis-of-cve-2021-31956">A Comprehensive Analysis of CVE-2021-31956</a></li>
 <li><a href="cve/CVE-2021-31956.html#table-of-contents">Table of Contents</a></li>
 <li><a href="cve/CVE-2021-31956.html#introduction">Introduction</a></li>
 <li><a href="cve/CVE-2021-31956.html#reverse-engineering-cve-2021-31956">Reverse Engineering CVE-2021-31956</a>
@@ -1675,7 +1672,7 @@ sd-&gt;Dacl = (PACL)0;
 <h5 id="dacl"><a class="header" href="#dacl">Dacl</a></h5>
 <p>According to Microsoft, <code>Dacl</code> is <code>OffsetDacl</code> and is defined as:</p>
 <blockquote>
-<p>An unsigned 32-bit integer that specifies the offset to the ACL that contains ACEs that control access. Typically, the DACL contains ACEs that grant or deny access to principals or groups. This must be a valid offset if the DP flag is set; if the DP flag is not set, this field MUST be set to zero. If this field is set to zero, the Dacl field MUST not be present.</p>
+<p>An unsigned 32-bit integer that specifies the offset to the ACL that contains ACEs that control access. Typically, the DACL contains ACEs that grant or deny access to principals or groups. This must be a valid offset if the DP flag is set; if the DP flag is not set, this field MUST be set to zero. If this field is set to zero, the <code>Dacl</code> field MUST not be present.</p>
 </blockquote>
 <p>In the proof-of-concept, we cast the value of <code>Dacl</code> to the <code>PACL</code> data structure before assigning it a value of <code>0x0</code>.</p>
 <p>Now that we have reviewed the member assignments of our <code>SECURITY_DESCRIPTOR</code> instantiation, let's now examine the calls to both <code>NtCreateWnfStateName</code> and <code>NtUpdateWnfStateData</code>:</p>
@@ -1704,10 +1701,74 @@ return status;
 <p>We start with a <code>for</code> loop that steps by <code>0x1</code> until the maximum value specified by <code>count</code> is reached. In the loop, let's first examine the call to <code>NtCreateWnfStateName</code>:</p>
 <pre><code class="language-cpp">status = _NtCreateWnfStateName(&amp;(statenames[i]), WnfTemporaryStateName, WnfDataScopeMachine, FALSE, 0, 0x1000, sd);
 </code></pre>
+<p>Let's look at the function prototype for <a href="https://github.com/winsiderss/phnt/blob/master/ntexapi.h"><code>NtCreateWnfStateName</code></a>:</p>
+<pre><code class="language-cpp">NTSYSCALLAPI
+NTSTATUS
+NTAPI
+NtCreateWnfStateName(
+    _Out_ PWNF_STATE_NAME StateName,
+    _In_ WNF_STATE_NAME_LIFETIME NameLifetime,
+    _In_ WNF_DATA_SCOPE DataScope,
+    _In_ BOOLEAN PersistData,
+    _In_opt_ PCWNF_TYPE_ID TypeId,
+    _In_ ULONG MaximumStateSize,
+    _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
+    );
+</code></pre>
+<p>Let's now examine each parameter in-context of the implementation within <code>spray_heap</code>:</p>
+<ul>
+<li><code>&amp;(statenames[i]</code>: The memory address of the ith item in the <code>statenames</code> array.</li>
+<li><code>WnfTemporaryStateName</code>: Examining the <a href="https://chromium.googlesource.com/external/github.com/DynamoRIO/drmemory/+/refs/heads/master/wininc/ntexapi.h">function prototype</a> for <code>WNF_STATE_NAME_LIFETIME</code>, we see 4 predefined constants:</li>
+</ul>
+<pre><code class="language-cpp">typedef enum _WNF_STATE_NAME_LIFETIME {
+    WnfWellKnownStateName,
+    WnfPermanentStateName,
+    WnfPersistentStateName,
+    WnfTemporaryStateName
+} WNF_STATE_NAME_LIFETIME;
+</code></pre>
+<p>Based on the variable name, we can assume that this constant is needed within this particular context for <code>NtCreateWnfStateName</code>. As the Windows Notification Facility (WNF) can be a complete deep-dive on its own, we will not go into too much depth exploring why <code>WnfTemporaryStateName</code> is used versus other constants and also why a constant is needed in the first place. However, if you are interested in exploring the topic further, <a href="https://blog.quarkslab.com/playing-with-the-windows-notification-facility-wnf.html">Alex Ionescu</a> has a great blogpost that provides an excellent analysis of the Windows Notification Facility.</p>
+<ul>
+<li><code>WnfDataScopeMachine</code>: As with <code>WnfTemporaryStateName</code>, we see that this value as well is a predefined constant:</li>
+</ul>
+<pre><code class="language-cpp">typedef enum _WNF_DATA_SCOPE
+{
+  WnfDataScopeSystem = 0x0,
+  WnfDataScopeSession = 0x1,
+  WnfDataScopeUser = 0x2,
+  WnfDataScopeProcess = 0x3,
+  WnfDataScopeMachine = 0x4,
+} WNF_DATA_SCOPE;
+</code></pre>
+<ul>
+<li><code>FALSE</code>: We can assume this value indicates something to do with not persisting data, but exploring the exact reasoning behind this argument is out-of-scope for this paper.</li>
+<li><code>0</code>: See see the optional <code>TypeId</code> set.</li>
+<li><code>0x1000</code>: Indicates the maximum state size.</li>
+<li><code>sd</code>: Finally, our previously modified Security Descriptor is then included into the <code>NtCreateWnfStateName</code> function call.</li>
+</ul>
+<p>Even though we weren't able to define the exact purpose of every single argument for <code>NtCreateWnfStateName</code>, it serves as an important reminder that reverse engineering native Windows vulnerabilities and binaries is a monumental task. Therefore, it is always important to keep sight on the end goal without getting too caught up in the weeds.</p>
+<p>Moving onto the next function call, <code>NtUpdateWnfStateData</code>, we start by taking a look at it's implementation within <code>spray_heap</code>:</p>
 <pre><code class="language-cpp">status = _NtUpdateWnfStateData(&amp;(statenames[i]), buf, buf_sz, 0, 0, 0, 0); // spray 0xc0 sized kernel chunks
 </code></pre>
+<p>With this in-mind, let's look at the function prototype for <a href="https://github.com/winsiderss/phnt/blob/master/ntexapi.h"><code>NtUpdateWnfStateData</code></a>:</p>
+<pre><code class="language-cpp">NTSYSCALLAPI
+NTSTATUS
+NTAPI
+NtUpdateWnfStateData(
+    _In_ PCWNF_STATE_NAME StateName,
+    _In_reads_bytes_opt_(Length) const VOID *Buffer,
+    _In_opt_ ULONG Length,
+    _In_opt_ PCWNF_TYPE_ID TypeId,
+    _In_opt_ const VOID *ExplicitScope,
+    _In_ WNF_CHANGE_STAMP MatchingChangeStamp,
+    _In_ LOGICAL CheckStamp
+    );
+</code></pre>
+<p>PLACEHOLDER</p>
+<p>Finally, after the two function calls complete, <code>sd</code> is freed and the function returns with the <code>NT_STATUS</code>.</p>
 <h4 id="sandbox-constraints-2"><a class="header" href="#sandbox-constraints-2">Sandbox Constraints</a></h4>
 <p>One thing to keep in mind is that both the <code>NtCreateWnfStateName</code> and <code>NtUpdateWnfStateName</code> functions are unavailable when operating in Low Integrity.</p>
+<p>PLACEHOLDER</p>
 <h1 id="references"><a class="header" href="#references">References</a></h1>
 <p><a href="cve/CVE-2021-31956.html#table-of-contents">Return to Top</a></p>
 <ul>
@@ -1795,6 +1856,11 @@ return status;
 <ul>
 <li><a href="https://github.com/MortenSchenk">Morten Schenk's GitHub</a></li>
 <li><a href="https://github.com/taviso">Tavis Ormandy's GitHub</a></li>
+</ul>
+<h2 id="windows-notification-facility"><a class="header" href="#windows-notification-facility">Windows Notification Facility</a></h2>
+<ul>
+<li><a href="https://github.com/ionescu007/wnfun/tree/master">Gabriella Viala and Alex Ionescu's Repo</a></li>
+<li><a href="https://pwnedcoffee.com/blog/wnf-chronicles-i-introduction/">WNF Chronicles by PWNed Coffee</a></li>
 </ul>
 <h2 id="technical-deep-dives"><a class="header" href="#technical-deep-dives">Technical Deep-Dives</a></h2>
 <ul>
