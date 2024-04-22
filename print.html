@@ -1796,6 +1796,22 @@ PSYSTEM_HANDLE_INFORMATION handle_info = NULL;
 UINT64                     handle_info_sz = 0x10000;
 HANDLE                     current_proc = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, GetCurrentProcessId());
 </code></pre>
+<p>Let's now review each variable's purpose and implementation:</p>
+<ul>
+<li><code>status</code>: Interestingly enough, unlike the previous functions we covered, <code>get_eproc</code> has a default <code>status</code> value of <code>STATUS_UNSUCCESSFUL</code>. This makes sense logically as the function needs to obtain the <code>_EPROCESS</code> value and if it does not have it, the function has failed.</li>
+<li><code>handle_info</code>: A pointer to the below <code>_SYSTEM_HANDLE_INFORMATION</code> structure initially set to null.</li>
+</ul>
+<pre><code class="language-cpp">typedef struct _SYSTEM_HANDLE_INFORMATION
+{
+    DWORD           NumberOfHandles;
+    SYSTEM_HANDLE   Handles[1];
+} SYSTEM_HANDLE_INFORMATION, *PSYSTEM_HANDLE_INFORMATION;
+</code></pre>
+<ul>
+<li><code>handle_info_sz</code>: The size of allocated memory to be used for the <code>handle_info</code> pointer. In our case it is set to <code>0x10000</code>.</li>
+<li><code>current_proc</code>: If successful, the call to the function <code>OpenProcess</code> will return a handle to the current process object. This will eventually be used</li>
+</ul>
+<p>Next, let's look into the memory allocation prepping our <code>handle_info</code> pointer for the <code>NtQuerySystemInformation</code> function call:</p>
 <pre><code class="language-cpp">printf("[+] Finding _EPROCESS address of current process: %ld\n", GetCurrentProcessId());
 
 handle_info = (PSYSTEM_HANDLE_INFORMATION)zalloc(handle_info_sz);
@@ -1804,8 +1820,10 @@ if (!handle_info) {
     status = STATUS_NO_MEMORY;
     goto out;
 }
-
-while ((status = _NtQuerySystemInformation(
+</code></pre>
+<p>After initializing the <code>handle_info</code> pointer to <code>NULL</code>, we now allocate the <code>PSYSTEM_HANDLE_INFORMATION</code> structure with a memory region of size <code>handle_info_sz</code>. If the allocation fails, the function terminates early and returns the <code>NT_STATUS</code> value <code>STATUS_NO_MEMORY</code>.</p>
+<p>With our memory allocation of <code>handle_info</code> complete, we will now enter a while loop that only breaks when the <code>NT_STATUS</code> return value of <code>NtQuerySystemInformation</code> is not equal to <code>STATUS_INFO_LENGTH_MISMATCH</code>. We will discuss in-detail later why the loop checks the <code>NT_STATUS</code> value against the constant <code>STATUS_INFO_LENGTH_MISMATCH</code>. But for now, let's look at the loop in its entirety:</p>
+<pre><code class="language-cpp">while ((status = _NtQuerySystemInformation(
     SystemHandleInformation,
     handle_info,
     handle_info_sz,
@@ -1823,8 +1841,25 @@ if (!NT_SUCCESS(status)) {
     log_warn("get_eproc::NtQuerySystemInformation()1");
     goto out;
 }
-
-printf("[+] Fetched %ld handles\n", handle_info-&gt;NumberOfHandles);
+</code></pre>
+<p>During the loop, if the return value <code>status</code> of <code>NtQuerySystemInformation</code> is equal to <code>STATUS_INFO_LENGTH_MISMATCH</code>, the loop assigns the <code>handle_info</code> a new memory allocation with <code>realloc</code> where the size, <code>handle_info_sz</code> is multiplied by two each iteration. If the memory reallocation fails, the <code>status</code> is assigned the value <code>STATUS_NO_MEMORY</code> and the function terminates early. After the loop completes without any reallocation errors, the <code>status</code> value is checked against <code>NT_STATUS</code> and if it fails, the function again terminates early.</p>
+<p>Before moving to discuss the reasoning behind the <code>STATUS_INFO_LENGTH_MISMATCH</code> loop, let's break down <code>NtQuerySystemInformation</code> and first look at its function prototype:</p>
+<pre><code class="language-cpp">__kernel_entry NTSTATUS NtQuerySystemInformation(
+  [in]            SYSTEM_INFORMATION_CLASS SystemInformationClass,
+  [in, out]       PVOID                    SystemInformation,
+  [in]            ULONG                    SystemInformationLength,
+  [out, optional] PULONG                   ReturnLength
+);
+</code></pre>
+<p>Let's now break down each parameter and how it's used within the context of our call with <code>NtQuerySystemInformation</code>:</p>
+<ul>
+<li><code>SystemHandleInformation</code>: PLACEHOLDER</li>
+<li><code>handle_info</code>: PLACEHOLDER</li>
+<li><code>handle_info_sz</code>: PLACEHOLDER</li>
+<li><code>NULL</code>: PLACEHOLDER</li>
+</ul>
+<p>Let's now discuss why the <code>STATUS_INFO_LENGTH_MISMATCH</code> value is checked against the <code>NtQuerySystemInformation</code> call in a loop. According to this answer on <a href="https://stackoverflow.com/questions/46108382/ntquerysysteminformation-returns-24-error-bad-length">Stack Overflow</a>,</p>
+<pre><code class="language-cpp">printf("[+] Fetched %ld handles\n", handle_info-&gt;NumberOfHandles);
 
 for (int i = 0; i &lt; handle_info-&gt;NumberOfHandles; i++)
     if (handle_info-&gt;Handles[i].dwProcessId == GetCurrentProcessId() &amp;&amp; handle_info-&gt;Handles[i].wValue == current_proc) {
