@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="14798" endspan -->
+
 <h1>IUnknown_RemoveBackReferences </h1>
 <p>Given an arbitrary interface pointer to an object, this function calls the object’s
 <span class="method">RemoveBackReferences</span> method. </p>
@@ -41,16 +41,16 @@
 <p>The <span class="argument">punk</span> argument is any interface pointer for 
 the object of interest. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="1551" endspan -->
+
 <h2>Behaviour </h2>
 <p>The object is expected to implement the <span class="interface">
 <a href="../../../../shell32/interfaces/iobjectwithbackreferences.htm">IObjectWithBackReferences</a></span> 
 interface. </p>
-<!--webbot bot="Include" U-Include="_include/queryinterface.htm" TAG="BODY" startspan -->
+
 
 <p>If the <span class="argument">punk</span> argument is NULL, then there is no 
 object to query for the expected interface, and the function returns
@@ -58,7 +58,7 @@ object to query for the expected interface, and the function returns
 interface, the function returns the result from the failed <span class="method">
 QueryInterface</span>. </p>
 
-<!--webbot bot="Include" i-checksum="1326" endspan -->
+
 <p>Once the function has obtained a pointer to the expected interface for the given 
 object, it uses this interface pointer to call the <span class="method">RemoveBackReferences</span> 
 method. The function then releases the interface pointer. The result of calling 
@@ -67,21 +67,21 @@ the method becomes the result of the function. </p>
 <p>The <span class="function">IUnknown_RemoveBackReferences</span> function is exported 
 from SHLWAPI.DLL as ordinal 611 in the version 6.00 from Windows Vista, and higher.
 </p>
-<!--webbot bot="Include" U-Include="../../_include/undoc600-vista.htm" TAG="BODY" startspan -->
+
 
 <p>Though new for Windows Vista, this function is not documented by Microsoft in 
 the January 2007 edition of the Software Development Kit (SDK) for Windows Vista.
 </p>
 
-<!--webbot bot="Include" i-checksum="65227" endspan -->
+
 <div class="Footer">
   <p class="Dates">This page was created on 1st June 2009. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c09.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2009. Geoff Chappell. All rights reserved.
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="7105" endspan -->
+
 </div>
 
 </body>

@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -37,14 +37,14 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="48540" -->
-<!--webbot bot="Include" U-Include="../../../../_include/preview.htm" TAG="BODY" startspan -->
+
+
 
 <div class="Header">
   <p class="alert">CURRENT WORK ITEM - PREVIEW ONLY </p>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="8381" -->
+
 <h1>ZwSetSystemInformation </h1>
 <p>This function sets a wide range of system properties and behaviour. </p>
 <h2>Declaration </h2>
@@ -123,7 +123,7 @@ as if unhandled, which will typically be fatal to Windows. </p>
 (after the preceding defences). 
 For all others, the function fails, returning <span class="constant">STATUS_INVALID_INFO_CLASS</span>.
 </p>
-<!--webbot bot="Include" U-Include="_include/names.htm" TAG="BODY" startspan -->
+
 
 <p>Names of the information classes and of the related structures and of their members 
 are from type information in public symbol files for various high-level user-mode 
@@ -131,8 +131,8 @@ modules such as URLMON.DLL starting with Windows 8 and in statically linked libr
 from early editions of the Device Driver Kit (DDK). No symbol files for the kernel 
 or NTDLL have relevant type information in any known Windows release. </p>
 
-<!--webbot bot="Include" endspan i-checksum="12368" -->
-<!--webbot bot="Include" U-Include="_include/versions.htm" TAG="BODY" startspan -->
+
+
 
 <p>Note that the versions that are shown below for each information class are those 
 for which the function does not fail trivially as invalid. More than a few are failed 
@@ -148,7 +148,7 @@ The following shorthands are used for changes within versions: </p>
   <li>late 6.1 starts with Windows 7 SP1. </li>
 </ul>
 
-<!--webbot bot="Include" endspan i-checksum="11110" -->
+
 <table>
   <tr>
     <th>Numeric Value </th>
@@ -670,19 +670,19 @@ a handle to an event object and have the <span class="constant">EVENT_MODIFY_ACC
 permission. If the function cannot reference the event object for modification, 
 it fails. </p>
 <h3>SystemSessionCreate (0x2F) </h3>
-<!--webbot bot="Include" U-Include="_include/not_implemented.htm" TAG="BODY" startspan -->
+
 
 <p>This information class is only trivially valid. The function returns
 <span class="constant">STATUS_NOT_IMPLEMENTED</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="35747" -->
+
 <h3>SystemSessionDetach (0x30) </h3>
-<!--webbot bot="Include" U-Include="_include/not_implemented.htm" TAG="BODY" startspan -->
+
 
 <p>This information class is only trivially valid. The function returns
 <span class="constant">STATUS_NOT_IMPLEMENTED</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="35747" -->
+
 <h3>SystemVeriferInformation (0x33) </h3>
 <p>If executing for a user-mode request, the caller must have
 <span class="constant">SeDebugPrivilege</span>. Without it, the function fails, 
@@ -723,19 +723,19 @@ and become the <span class="member">ComPlusPackage</span> in the
 <span class="struct"><a href="../../../inc/api/ntexapi_x/kuser_shared_data/index.htm">KUSER_SHARED_DATA</a></span>.
 </p>
 <h3>SystemHotpatchInformation (0x45) </h3>
-<!--webbot bot="Include" U-Include="_include/not_supported.htm" TAG="BODY" startspan -->
+
 
 <p>This information class is only trivially valid. The function returns
 <span class="constant">STATUS_NOT_SUPPORTED</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="40394" -->
+
 <h3>SystemWatchdogTimerHandler (0x47) </h3>
-<!--webbot bot="Include" U-Include="_include/not_supported.htm" TAG="BODY" startspan -->
+
 
 <p>This information class is only trivially valid. The function returns
 <span class="constant">STATUS_NOT_SUPPORTED</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="40394" -->
+
 <h3>SystemWatchdogTimerInformation (0x48) </h3>
 <p>This information class is for kernel-mode use only. If executing for a user-mode 
 request, the function fails, returning <span class="constant">STATUS_INVALID_PARAMETER</span>.
@@ -756,12 +756,12 @@ such that its routines can be diverted by anyone who knows the
 <span class="struct"><a href="../../../inc/ntos/hal/hal_private_dispatch.htm">HAL_PRIVATE_DISPATCH</a></span> 
 type. </p>
 <h3>SystemWow64SharedInformationObsolete (0x4A) </h3>
-<!--webbot bot="Include" U-Include="_include/not_implemented.htm" TAG="BODY" startspan -->
+
 
 <p>This information class is only trivially valid. The function returns
 <span class="constant">STATUS_NOT_IMPLEMENTED</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="35747" -->
+
 <h3>SystemRegisterFirmwareTableInformationHandler (0x4B) </h3>
 <p>This information class, which would register a callback routine to execute, is 
 for kernel-mode use only. If executing for a user-mode request, the function fails, 
@@ -1067,12 +1067,12 @@ the maximum that the platform supports, i.e., 1 or 20 for 32-bit and 64-bit Wind
   <p class="Dates">This page was created on 9th July 2016 but was not published 
   until 24th <a href="../../../../../../../new/16/10.htm">October 2016</a> and was 
   last modified on 27th October 2019. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c1619.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2016-2019. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="5029" -->
+
 </div>
 
 </body>

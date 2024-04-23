@@ -15,7 +15,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -33,14 +33,14 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="58008" endspan -->
-<!--webbot bot="Include" U-Include="../../../../../_include/preview.htm" startspan -->
+
+
 
 <div class="Header">
   <p class="alert">CURRENT WORK ITEM - PREVIEW ONLY </p>
 </div>
 
-<!--webbot bot="Include" i-checksum="8381" endspan -->
+
 <h1>GetBackgroundImage </h1>
 <p>This method of the <span class="interface"><a href="index.htm">IListView</a></span> 
 interface queries a List-View control for information about its background image 
@@ -53,19 +53,19 @@ or watermark. </p>
 structure that specifies what information is desired and receives whatever 
 information is produced. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The method returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="37727" endspan -->
-<!--webbot bot="Include" U-Include="_include/e_fail.htm" TAG="BODY" startspan -->
+
+
 
 <p>Except where noted to the contrary, the error code is
 <span class="constant">E_FAIL</span>. </p>
 
-<!--webbot bot="Include" i-checksum="3188" endspan -->
+
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="_include/createdestroy.htm" TAG="BODY" startspan -->
+
 
 <p>The method fails, returning <span class="constant">E_UNEXPECTED</span>, if 
 the List-View control has not yet received its <span class="message">WM_CREATE</span> 
@@ -73,11 +73,11 @@ message or has already received a <span class="message">WM_DESTROY</span>
 message.
 </p>
 
-<!--webbot bot="Include" i-checksum="20458" endspan -->
+
 <p>The method also fails if given NULL for the <span class="argument">plvbki</span> 
 argument. Otherwise, <span class="argument">plvbki</span> is taken as addressing 
 an <span class="struct">LVBKIMAGEW</span> structure. </p>
-<!--webbot bot="Include" U-Include="_include/bkiorwm.htm" TAG="BODY" startspan -->
+
 
 <p>A List-View control can have simultaneously both a background image and a 
 watermark. Though only one or the other is displayed at any one time (the 
@@ -87,7 +87,7 @@ the
 <span class="constant">LVBKIF_TYPE_WATERMARK</span> bit in the
 <span class="member">ulFlags</span> member on input. </p>
 
-<!--webbot bot="Include" i-checksum="25224" endspan -->
+
 <h3>Watermark </h3>
 <p>If <span class="constant">LVBKIF_TYPE_WATERMARK</span> bit is set on input, 
 the method is a request for the watermark only. The method always succeeds in 
@@ -151,12 +151,12 @@ message. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 29th April 2008 and was last 
   modified on 3rd June 2008. </p>
-  <!--webbot bot="Include" U-Include="../../../../../_include/c08.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2008. Geoff Chappell. All rights reserved.
 <a href="../../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="56773" endspan -->
+
 </div>
 
 </body>

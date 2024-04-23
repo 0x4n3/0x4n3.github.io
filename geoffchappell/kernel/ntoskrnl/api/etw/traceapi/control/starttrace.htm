@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,14 +31,14 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="42787" -->
-<!--webbot bot="Include" U-Include="../../../../../_include/placeholder.htm" TAG="BODY" startspan -->
+
+
 
 <div class="Header">
   <p class="alert">PLACEHOLDER FOR WORK THAT MAY NEVER BE DONE - PREVIEW ONLY </p>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="62046" -->
+
 <h1>EtwStartLoggerCode </h1>
 <p>When given <span class="constant">EtwStartLoggerCode</span> (1) as its
 <span class="argument">FunctionCode</span> argument, the <span class="function">
@@ -68,7 +68,7 @@ for so long, it is not the concern of this note. </p>
 <p>Kernel-mode software also does not call <span class="function">NtTraceControl</span> 
 to start a tracing session. </p>
 <h2>Input Validation </h2>
-<!--webbot bot="Include" U-Include="_include/validateusermodeloggerinfo.htm" TAG="BODY" startspan -->
+
 
 <p>A <span class="struct"><a href="../wmi_logger_information/index.htm">WMI_LOGGER_INFORMATION</a></span> 
 structure is expected to begin the input and is produced as the function’s successful 
@@ -78,9 +78,9 @@ buffer’s address, the function returns <span class="constant">STATUS_INVALID_B
 If a kernel-mode request provides no input, the returned error code is
 <span class="constant">STATUS_INVALID_PARAMETER</span>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="44770" -->
+
 <h3>Input Buffer </h3>
-<!--webbot bot="Include" U-Include="_include/validateloggerinfo.htm" TAG="BODY" startspan -->
+
 
 <p>The expected structure begins with a <span class="struct">WNODE_HEADER</span>. 
 Within this, the <span class="member">BufferSize</span> tells how many bytes of 
@@ -95,7 +95,7 @@ If <span class="member">BufferSize</span> in the header is too large for the inp
 buffer, the function returns <span class="constant">STATUS_INVALID_BUFFER_SIZE</span>.
 </p>
 
-<!--webbot bot="Include" endspan i-checksum="7708" -->
+
 <h3>Log File Mode </h3>
 <p>The key to intepreting the many properties that can be specified in the
 <span class="struct">WMI_LOGGER_INFORMATION</span> is the set of bit flags that 
@@ -111,12 +111,12 @@ the other is set or clear. </p>
   published on 31st <a href="../../../../../../../../new/18/12.htm">December 2018</a>. 
   It was last modified on 28th <a href="../../../../../../../../new/20/05.htm">May 
   2020</a>. </p>
-  <!--webbot bot="Include" U-Include="../../../../../_include/c1820.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2018-2020. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="14474" -->
+
 </div>
 
 </body>

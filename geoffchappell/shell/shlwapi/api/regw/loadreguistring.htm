@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="55064" endspan -->
+
 <h1>SHLoadRegUIString </h1>
 <p>This function loads the string resource that is indicated indirectly by a given 
 registry value. </p>
@@ -42,11 +42,11 @@ SHLoadRegUIString (
     LPCTSTR pszValue, 
     LPTSTR pszOutBuf, 
     UINT cchOutBuf);</pre>
-<!--webbot bot="Include" U-Include="../_include/aw.htm" TAG="BODY" startspan -->
+
 
 <p>The function exists in ANSI and Unicode forms. </p>
 
-<!--webbot bot="Include" i-checksum="40026" endspan -->
+
 <h3>Parameters </h3>
 <p>The <span class="argument">hKey</span> argument provides a handle to an open 
 key. </p>
@@ -57,11 +57,11 @@ to query the key’s default value. </p>
 arguments describe a buffer, by address and capacity (in characters) respectively, 
 which is to receive the loaded string resource. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="1551" endspan -->
+
 <h2>Behaviour </h2>
 <p>If <span class="argument">cchOutBuf</span> is not zero, the function initialises 
 the output buffer with a null character. </p>
@@ -132,13 +132,13 @@ from Unicode around a call to the Unicode form. </p>
 <p>The <span class="function">SHLoadRegUIString</span> function is exported from 
 SHLWAPI.DLL as ordinals 438 and 439 (for ANSI and Unicode forms respectively) in 
 version 5.00 and higher. </p>
-<!--webbot bot="Include" U-Include="../_include/undoc500-2007.htm" TAG="BODY" startspan -->
+
 
 <p>Though this function dates from as long ago as 1999, it was still not documented 
 by Microsoft as late as the January 2007 edition of the Windows Vista Software Development 
 Kit (SDK). </p>
 
-<!--webbot bot="Include" i-checksum="62277" endspan -->
+
 <p>Although this function remains undocumented, the notion of indirection for registry 
 strings is taken into Windows itself for Windows Vista and Microsoft seems more 
 than merely pleased to write about it as a new feature, e.g., in
@@ -153,12 +153,12 @@ Explorer. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 11th July 2009 and was last modified 
   on 17th July 2009. </p>
-  <!--webbot bot="Include" U-Include="../../../_include/c09.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2009. Geoff Chappell. All rights reserved.
 <a href="../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="50766" endspan -->
+
 </div>
 
 </body>

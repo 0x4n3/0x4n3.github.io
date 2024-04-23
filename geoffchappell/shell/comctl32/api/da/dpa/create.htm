@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="14798" endspan -->
+
 <h1>DPA_Create </h1>
 <p>This function creates a dynamic pointer array. </p>
 <h2>Declaration </h2>
@@ -47,7 +47,7 @@ for the DPA, measured as a number of pointers. </p>
 also named <span class="struct"><a href="dpa.htm">DPA</a></span>. Memory for the 
 control structure is obtained from the process heap in the NT implementations, else 
 a private heap in the Windows implementations. </p>
-<!--webbot bot="Include" U-Include="_include/cpgrow.htm" TAG="BODY" startspan -->
+
 
 <p>Memory for the pointer array itself is not obtained by this function. Instead, 
 the memory block that contains the array grows and shrinks according to the demands 
@@ -56,7 +56,7 @@ size is set from the <span class="argument">cpGrow</span> argument. This allocat
 unit has an effective minimum of eight: the function chooses eight as the allocation 
 unit if given any lesser value. </p>
 
-<!--webbot bot="Include" i-checksum="20375" endspan -->
+
 <p>This function is implemented in terms of <span class="function">
 <a href="createex.htm">DPA_CreateEx</a></span> (with NULL for the additional
 <span class="argument">hHeap</span> argument) in version 4.71 and higher. </p>
@@ -66,24 +66,24 @@ as ordinal 328 in version 3.50 and higher. The implementation for version 6.10
 and higher is built into a statically linked library and thence is also exported 
 from the Internet Explorer module IERTUTIL.DLL as ordinal 74 in version 7.0 and 
 higher. </p>
-<!--webbot bot="Include" U-Include="../../_include/settlement.htm" TAG="BODY" startspan -->
+
 
 <p>This function was documented among the
 <a target="_top" href="http://msdn.microsoft.com/library/ms807073.aspx">
 Settlement Program Interfaces</a> in December 2002, but with Windows 2000 cited 
 as the minimum operating system, despite many years of earlier availability. </p>
 
-<!--webbot bot="Include" i-checksum="21400" endspan -->
+
 <div class="Footer">
   <p class="Dates">This page was created on 9th April 2005 (from material first 
   published in 1997) and was last modified 
   on 15th March 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c9710.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 1997-2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="5797" endspan -->
+
 </div>
 
 </body>

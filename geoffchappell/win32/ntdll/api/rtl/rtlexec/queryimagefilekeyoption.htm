@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
+
 <h1>LdrQueryImageFileKeyOption </h1>
 <p>The <span class="function">LdrQueryImageFileKeyOption</span> function queries 
 a value from among the Image File Execution Options 
@@ -48,7 +48,7 @@ LdrQueryImageFileKeyOption (
 <h3>Parameters </h3>
 <p>The <span class="argument">hKey</span> argument is a handle to a registry key 
 that contains Image File Execution Options. </p>
-<!--webbot bot="Include" U-Include="../../ldrinit/_include/ifeoargs.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">lpszOption</span> argument names the one option whose 
 value is sought. </p>
@@ -66,15 +66,15 @@ function might have put into the buffer (had the buffer been large enough). This
 argument can be <span class="constant">NULL</span> if the caller does not want to 
 know how much data is produced or is available. </p>
 
-<!--webbot bot="Include" endspan i-checksum="29951" -->
+
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../../_include/ntstatus.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns <span class="constant">STATUS_SUCCESS</span> if successful, 
 else a negative error code. </p>
 
-<!--webbot bot="Include" endspan i-checksum="8" -->
-<!--webbot bot="Include" U-Include="../../ldrinit/_include/80000005.htm" TAG="BODY" startspan -->
+
+
 
 <p>Of particular importance is <span class="constant">STATUS_BUFFER_OVERFLOW</span>, 
 which is the function’s indication that the buffer, if any, is too small for the 
@@ -82,7 +82,7 @@ whole value and that a size that would have sufficed has been set into the varia
 if any, that was specified through the <span class="argument">lpcbData</span> argument.
 </p>
 
-<!--webbot bot="Include" endspan i-checksum="30326" -->
+
 <h2>Availability </h2>
 <p>The <span class="function">LdrQueryImageFileKeyOption</span> function is exported 
 by name from NTDLL.DLL in version 5.2 starting from Windows Server 2003 SP1, and 
@@ -287,12 +287,12 @@ even when the returned error code is not <span class="constant">STATUS_BUFFER_OV
   <p class="Dates">This page was created on 3rd
   <a href="../../../../../../../new/19/03.htm">March 2019</a> and was last modified 
   on 26th May 2019. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c19.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2019. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="6722" -->
+
 </div>
 
 </body>

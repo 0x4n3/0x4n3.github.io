@@ -19,7 +19,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="43332" -->
+
 <div class="Main">
   <h1>MSHTML Methods: execCommandShowHelp </h1>
   <h2>Scripting Syntax </h2>
@@ -64,7 +64,7 @@
   specifically to call the <span class="method">Exec</span> method but with execution 
   options constrained to <span class="constant">OLECMDEXECOPT_SHOWHELP</span>.
   </p>
-  <!--webbot bot="Include" U-Include="_include/commands.htm" TAG="BODY" startspan -->
+  
 
 <p>The case-insensitive command name given as <span class="argument">sCommand</span> 
 translates to a numeric command ID in the MSHTML command group represented 
@@ -75,20 +75,20 @@ the
 scripting.
 </p>
 
-<!--webbot bot="Include" endspan i-checksum="9044" -->
+
   <p>The <span class="method">queryCommandEnabled</span> method fails if the given 
   command name is not supported for scripting. For supported commands, the method 
   becomes a call to <span class="method">Exec</span> with no input or output and 
   with <span class="constant">OLECMDEXECOPT_SHOWHELP</span> as the execution options. 
   The success or failure of calling <span class="method">Exec</span> becomes success 
   or failure of the <span class="method">execCommandShowHelp</span> method. </p>
-  <!--webbot bot="Include" U-Include="_include/exec.htm" TAG="BODY" startspan -->
+  
 
 <p>What happens in the call to <span class="method">Exec</span> varies with the 
 command and is anyway left for the different topic of MSHTML’s
 <span class="interface">IOleCommandTarget</span> functionality. </p>
 
-<!--webbot bot="Include" endspan i-checksum="18362" -->
+
   <p>That said, the <span class="object">document</span> implementation is known 
   to fail all requests with <span class="constant">OLECMDEXECOPT_SHOWHELP</span> 
   as the execution option, such that the <span class="method">execCommandShowHelp</span> 
@@ -96,12 +96,12 @@ command and is anyway left for the different topic of MSHTML’s
   execCommandShowHelp</span> from the <span class="citation">HTML and DHTML Reference</span>.
   </p>
   <div class="Demonstration">
-    <!--webbot bot="Include" U-Include="../../../_include/showdemo.htm" TAG="BODY" startspan -->
+    
 
 <p class="NoScript alert">There is a demonstration here. To see it, please enable 
 scripting and then refresh this page.</p>
 
-<!--webbot bot="Include" endspan i-checksum="36776" -->
+
     <pre id="Test_document_execCommandShowHelp" class="Script">function Test_document_execCommandShowHelp ()
 {
     var cmd = prompt ("Enter the name of an MSHTML command to execute for help:", "");
@@ -114,12 +114,12 @@ scripting and then refresh this page.</p>
   <div class="Footer">
     <p class="Dates">This page was created on 10th February 2008 and was last modified 
     on 11th December 2011. </p>
-    <!--webbot bot="Include" U-Include="../../../_include/c0811.htm" TAG="BODY" startspan -->
+    
 
 <p class="Copyright">Copyright © 2008-2011. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="55279" -->
+
   </div>
 </div>
 

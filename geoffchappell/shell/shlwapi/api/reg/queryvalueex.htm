@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="55064" endspan -->
+
 <h1>SHQueryValueEx </h1>
 <p>This function queries a value in an open registry key. </p>
 <h2>Declaration </h2>
@@ -43,37 +43,37 @@ SHQueryValueEx (
     LPDWORD pdwType,
     LPVOID pvData,
     LPDWORD pcbData);</pre>
-<!--webbot bot="Include" U-Include="../_include/aw.htm" TAG="BODY" startspan -->
+
 
 <p>The function exists in ANSI and Unicode forms. </p>
 
-<!--webbot bot="Include" i-checksum="40026" endspan -->
+
 <h3>Parameters </h3>
 <p>The <span class="argument">hKey</span> argument provides a handle to an open 
 key. </p>
-<!--webbot bot="Include" U-Include="_include/value.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">pszValue</span> argument provides the address of a 
 null-terminated string that names the value to query within the key, or is NULL 
 to query the key’s default value. </p>
 
-<!--webbot bot="Include" i-checksum="64447" endspan -->
-<!--webbot bot="Include" U-Include="_include/type.htm" TAG="BODY" startspan -->
+
+
 
 <p>The <span class="argument">pdwType</span> argument provides the address of a 
 variable that is to receive the data type, e.g., <span class="constant">REG_SZ</span> 
 or <span class="constant">REG_DWORD</span>. This argument can be NULL to mean that 
 the data type is not wanted. </p>
 
-<!--webbot bot="Include" i-checksum="7590" endspan -->
-<!--webbot bot="Include" U-Include="_include/data.htm" TAG="BODY" startspan -->
+
+
 
 <p>The <span class="argument">pvData</span> argument provides the address of a buffer 
 that is to receive the data. This argument can be NULL to mean that there is no 
 buffer and that the data is not wanted. </p>
 
-<!--webbot bot="Include" i-checksum="63841" endspan -->
-<!--webbot bot="Include" U-Include="_include/cb.htm" TAG="BODY" startspan -->
+
+
 
 <p>The <span class="argument">pcbData</span> argument provides the address of a 
 variable that plays different roles on input and output. On input, the variable 
@@ -83,14 +83,14 @@ output, the variable receives the size of the data, in bytes. This argument can
 be NULL to mean that the size of the buffer is zero (if a buffer is even given) 
 and that the size of the data is not wanted. </p>
 
-<!--webbot bot="Include" i-checksum="51819" endspan -->
+
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/ec.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="1551" endspan -->
-<!--webbot bot="Include" U-Include="_include/error_more_data.htm" TAG="BODY" startspan -->
+
+
 
 <p>Of particular interest are the cases in which the value is accessible but has 
 more data than can fit in the given buffer, including because there is no buffer:
@@ -108,7 +108,7 @@ more data than can fit in the given buffer, including because there is no buffer
   <span class="argument">pcbData</span> receives the size of the data. </li>
 </ul>
 
-<!--webbot bot="Include" i-checksum="52352" endspan -->
+
 <h2>Behaviour </h2>
 <p>Although this function and the standard API function <span class="function">RegQueryValueEx</span> 
 have exactly the same prototype, the two do not behave identically. A call to the 
@@ -418,12 +418,12 @@ which arguably supersedes <span class="function">SHQueryValueEx</span>. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 21st September 2004 and was last modified 
   on 27th December 2009. </p>
-  <!--webbot bot="Include" U-Include="../../../_include/c0409.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2004-2009. Geoff Chappell. All rights reserved.
 <a href="../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="3935" endspan --></div>
+
 
 </body>
 

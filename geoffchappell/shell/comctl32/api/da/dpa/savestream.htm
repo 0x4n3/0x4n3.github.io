@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="14798" endspan -->
+
 <h1>DPA_SaveStream </h1>
 <p>This function saves items from a DPA to a stream. </p>
 <h2>Declaration </h2>
@@ -41,7 +41,7 @@ DPA_SaveStream (
     PFNDPASTREAM pfn,
     IStream *pstm,
     PVOID pvInstData);</pre>
-<!--webbot bot="Include" u-include="_include/scb.htm" tag="BODY" startspan -->
+
 
 <p>The callback function has the prototype: </p>
 <pre class="source">typedef HRESULT (*PFNDPASTREAM) (
@@ -49,8 +49,8 @@ DPA_SaveStream (
     IStream *pstm,
     PVOID pvInstData);</pre>
 
-<!--webbot bot="Include" i-checksum="33265" endspan -->
-<!--webbot bot="Include" U-Include="_include/sinfo.htm" TAG="BODY" startspan -->
+
+
 
 <p>The information structure for the callback function has the form: </p>
 <pre class="source">typedef struct _DPASTREAMINFO {
@@ -58,7 +58,7 @@ DPA_SaveStream (
     PVOID pvItem;
 } DPASTREAMINFO; </pre>
 
-<!--webbot bot="Include" i-checksum="49578" endspan -->
+
 <h3>Parameters </h3>
 <p>The <span class="argument">pdpa</span> argument provides a handle to the DPA.
 </p>
@@ -141,14 +141,14 @@ as ordinal 10 in version 4.71 and higher. The implementation for version 6.10
 and higher is built into a statically linked library and thence is also exported 
 from the Internet Explorer module IERTUTIL.DLL as ordinal 88 in version 7.0 and 
 higher. </p>
-<!--webbot bot="Include" U-Include="../../_include/undoc471.htm" TAG="BODY" startspan -->
+
 
 <p>Though this function dates from as long ago as 1997, it was still not 
 documented by Microsoft in the MSDN Library at least as late as the CD edition 
 dated January 2004. </p>
 
-<!--webbot bot="Include" i-checksum="43173" endspan -->
-<!--webbot bot="Include" U-Include="../../_include/doc05.htm" TAG="BODY" startspan -->
+
+
 
 <p>Microsoft documented this function for the MSDN on-line in April 2005, apparently 
 after a contributor to a
@@ -158,7 +158,7 @@ Massy’s claim that Internet Explorer uses no Windows API functions that were n
 by then documented by Microsoft. This article now follows Microsoft’s nomenclature as 
 much as possible. </p>
 
-<!--webbot bot="Include" i-checksum="60158" endspan -->
+
 <p>Microsoft’s name for the <span class="struct">DPASTREAMINFO</span> structure 
 has long been knowable even without formal documentation from Microsoft. The
 <span class="function">DPA_SaveStream</span> function is called from BROWSEUI.DLL, 
@@ -177,12 +177,12 @@ of this pair of DPA functions. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 9th April 2005 and was last modified 
   on 15th March 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c0510.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2005-2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="4693" endspan -->
+
 </div>
 
 </body>

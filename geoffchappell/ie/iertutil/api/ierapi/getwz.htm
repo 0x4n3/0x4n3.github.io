@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="55064" endspan -->
+
 <h1>IERegGetWz </h1>
 <p>Reads an Internet Explorer registry setting that’s defined to have
 <span class="constant">REG_SZ</span> type. </p>
@@ -43,13 +43,13 @@ IERegGetDw (
     DWORD *pcchData);
 </pre>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/setting.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">uSetting</span> argument is an index that identifies 
 the setting. For a list of supported settings, see the general notes on the
 <a href="index.htm">Internet Explorer Registry API</a>. </p>
 
-<!--webbot bot="Include" i-checksum="3285" endspan -->
+
 <p>The <span class="argument">pszData</span> argument provides the address of a 
 buffer that is to receive the setting’s <span class="constant">REG_SZ</span> data.
 </p>
@@ -58,21 +58,21 @@ variable, which gives the size of the buffer, measured in characters. On success
 this variable receives the size of the setting’s string data, again measured in 
 characters. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="1551" endspan -->
+
 <h2>Behaviour </h2>
 <p>If either <span class="argument">pszData</span> or <span class="argument">pcchData</span> 
 is NULL, the function cannot do anything useful, and fails (returning
 <span class="constant">E_FAIL</span>). </p>
-<!--webbot bot="Include" U-Include="_include/outofrange.htm" TAG="BODY" startspan -->
+
 
 <p>If the given index is unsupported, the function fails (returning 0x80040704). 
 </p>
 
-<!--webbot bot="Include" i-checksum="38562" endspan -->
+
 <p>The function looks for the indicated setting at its allowed locations in the 
 registry. It ignores values that are present but whose data does not have the type 
 that is defined for that setting. Register errors while looking for a value just 
@@ -98,12 +98,12 @@ mean the value is not present. The function succeeds if either </p>
 as ordinal 163 in version 8.0 and higher. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 7th April 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../_include/c10.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="61781" endspan -->
+
 </div>
 
 </body>

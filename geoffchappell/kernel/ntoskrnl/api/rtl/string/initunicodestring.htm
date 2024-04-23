@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
+
 <h1>RtlInitUnicodeString </h1>
 <p>The <span class="function">RtlInitUnicodeString</span> function initialises a
 <span class="struct"><a href="../../../inc/shared/ntdef/unicode_string.htm">UNICODE_STRING</a></span> structure 
@@ -42,7 +42,7 @@ RtlInitUnicodeString (
     UNICODE_STRING *DestinationString, 
     PCWSTR SourceString);</pre>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/initunicodestring_parameters.htm" TAG="BODY" startspan -->
+
 
 <p>The required <span class="argument">DestinationString</span> argument provides 
 the address of a <span class="struct">UNICODE_STRING</span> structure that the function 
@@ -52,7 +52,7 @@ of a null-terminated Unicode string that is to be represented by the structure.
 This argument can be <span class="constant">NULL</span> to initialise the struture 
 as representing no string. </p>
 
-<!--webbot bot="Include" endspan i-checksum="19344" -->
+
 <h2>Availability </h2>
 <p>The <span class="function">RtlInitUnicodeString</span> function is exported by 
 name from the kernel and from NTDLL in all known versions, i.e., 3.10 and higher.
@@ -74,7 +74,7 @@ settlement concerning unfair use of internal Windows APIs by “middleware” pr
 such as Internet Explorer. (For instance, it is linked to by the WININET.DLL version 
 6.0 from Windows versions 5.1 and 5.2 and Internet Explorer version 6.0.) </p>
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="../nls/_include/unicode_string.htm" TAG="BODY" startspan -->
+
 
 <p>The intention of the <span class="struct">UNICODE_STRING</span> structure is 
 to keep together both the address and size of a Unicode string, presumably to save 
@@ -87,7 +87,7 @@ If this array is null-terminated, which it explicitly need not be, then
 <span class="member">MaximumLength</span> member is the size in bytes of the memory 
 from <span class="member">Buffer</span> onwards. </p>
 
-<!--webbot bot="Include" endspan i-checksum="43448" -->
+
 <p>The <span class="function">RtlInitUnicodeString</span> function initialises a
 <span class="struct">UNICODE_STRING</span> so that it describes a buffer that contains 
 exactly the given null-terminated Unicode string. Microsoft’s names
@@ -223,12 +223,12 @@ string. Kernel-mode programmers still care about such efficiencies! </p>
   <p class="Dates">This page was created on 16th
   <a href="../../../../../../../new/19/03.htm">March 2019</a> and was last modified 
   on 1st June 2020. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c1920.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2019-2020. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="5277" -->
+
 </div>
 
 </body>

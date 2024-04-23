@@ -17,7 +17,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -35,14 +35,14 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="58008" endspan -->
-<!--webbot bot="Include" U-Include="../../../../../_include/preview.htm" startspan -->
+
+
 
 <div class="Header">
   <p class="alert">CURRENT WORK ITEM - PREVIEW ONLY </p>
 </div>
 
-<!--webbot bot="Include" i-checksum="8381" endspan -->
+
 <h1>SetBackgroundImage </h1>
 <p>This method of the <span class="interface"><a href="index.htm">IListView</a></span> 
 interface sets the background image or watermark of a List-View control. </p>
@@ -53,19 +53,19 @@ interface sets the background image or watermark of a List-View control. </p>
 <span class="struct"><a href="../../structures/lvbkimage.htm">LVBKIMAGEW</a></span> 
 structure that describes the desired background. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The method returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="37727" endspan -->
-<!--webbot bot="Include" U-Include="_include/e_fail.htm" TAG="BODY" startspan -->
+
+
 
 <p>Except where noted to the contrary, the error code is
 <span class="constant">E_FAIL</span>. </p>
 
-<!--webbot bot="Include" i-checksum="3188" endspan -->
+
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="_include/createdestroy.htm" TAG="BODY" startspan -->
+
 
 <p>The method fails, returning <span class="constant">E_UNEXPECTED</span>, if 
 the List-View control has not yet received its <span class="message">WM_CREATE</span> 
@@ -73,7 +73,7 @@ message or has already received a <span class="message">WM_DESTROY</span>
 message.
 </p>
 
-<!--webbot bot="Include" i-checksum="20458" endspan -->
+
 <p>The method also fails if the address given in <span class="argument">lParam</span> 
 is NULL. Otherwise, <span class="argument">lParam</span> is taken as addressing 
 an <span class="struct">LVBKIMAGEW</span> structure. These notes mostly take the 
@@ -85,7 +85,7 @@ noted in detail below, the method actually does have a few cases of failure that
 may cause it to clear one bit in the structure—and perhaps this actually is by 
 design not inattention.
 </p>
-<!--webbot bot="Include" U-Include="_include/bkiorwm.htm" TAG="BODY" startspan -->
+
 
 <p>A List-View control can have simultaneously both a background image and a 
 watermark. Though only one or the other is displayed at any one time (the 
@@ -95,7 +95,7 @@ the
 <span class="constant">LVBKIF_TYPE_WATERMARK</span> bit in the
 <span class="member">ulFlags</span> member on input. </p>
 
-<!--webbot bot="Include" i-checksum="25224" endspan -->
+
 <h3>Watermark </h3>
 <p>If <span class="constant">LVBKIF_TYPE_WATERMARK</span> is set, the method 
 sets or clears a watermark. The only other valid bit in <span class="member">
@@ -316,12 +316,12 @@ Explorer 4.0 is needed for MSHTML. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 29th April 2008 and was last 
   modified on 3rd June 2008. </p>
-  <!--webbot bot="Include" U-Include="../../../../../_include/c08.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2008. Geoff Chappell. All rights reserved.
 <a href="../../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="56773" endspan -->
+
 </div>
 
 </body>

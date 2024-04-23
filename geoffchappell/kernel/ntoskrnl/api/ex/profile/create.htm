@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
+
 <h1>NtCreateProfile </h1>
 <p>This function creates an object for profiling a process’s execution within a 
 specified range of addresses. </p>
@@ -59,7 +59,7 @@ NtCreateProfile (
     ULONG BufferSize);</pre>
 <p>in versions 3.10 and 3.50. </p>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/create_common.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">ProfileHandle</span> argument is the address of a 
 variable that is to receive a handle to the created <a href="eprofile.htm">profile 
@@ -88,19 +88,19 @@ while profiling is started but not stopped. </p>
 <p>The <span class="argument">ProfileSource</span> argument limits the profiling 
 to the specified source. </p>
 
-<!--webbot bot="Include" endspan i-checksum="10106" -->
+
 <p>The <span class="argument">Affinity</span> argument limits the profiling to the 
 specified processors in the current processor group. Modern versions require that 
 the specified processors all be active, except that if this argument is -1 it stands 
 for all the active processors in the current processor group, whichever they happen 
 to be. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../../_include/ntstatus.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns <span class="constant">STATUS_SUCCESS</span> if successful, 
 else a negative error code. </p>
 
-<!--webbot bot="Include" endspan i-checksum="8" -->
+
 <h2>Availability </h2>
 <p>The <span class="function">NtCreateProfile</span> function and its alias
 <span class="function">ZwCreateProfile</span> are exported by name from NTDLL in 
@@ -190,12 +190,12 @@ four. The early versions, however, do not check. A smaller
   <p class="Dates">This page was created on 23rd
   <a href="../../../../../../../new/16/12.htm">December 2016</a> and was last modified 
   on 13th June 2018. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c1618.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2016-2018. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="5013" -->
+
 </div>
 
 </body>

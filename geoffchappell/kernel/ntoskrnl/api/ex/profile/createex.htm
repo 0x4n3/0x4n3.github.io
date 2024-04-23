@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
+
 <h1>ZwCreateProfileEx </h1>
 <p>This function creates an object for profiling a process’s execution within a 
 specified range of addresses. </p>
@@ -49,7 +49,7 @@ NtCreateProfileEx (
     USHORT GroupCount, 
     GROUP_AFFINITY *AffinityArray);</pre>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/create_common.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">ProfileHandle</span> argument is the address of a 
 variable that is to receive a handle to the created <a href="eprofile.htm">profile 
@@ -78,19 +78,19 @@ while profiling is started but not stopped. </p>
 <p>The <span class="argument">ProfileSource</span> argument limits the profiling 
 to the specified source. </p>
 
-<!--webbot bot="Include" endspan i-checksum="10106" -->
+
 <p>The <span class="argument">GroupCount</span> is the number of elements in the 
 array whose start address is given by <span class="argument">AffinityArray</span>. 
 Together they limit the profiling to the specified processors, which must be active. 
 The <span class="argument">GroupCount</span> can be 0 to stand for all active processors. 
 In this case, the <span class="argument">AffinityArray</span> is ignored. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../../_include/ntstatus.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns <span class="constant">STATUS_SUCCESS</span> if successful, 
 else a negative error code. </p>
 
-<!--webbot bot="Include" endspan i-checksum="8" -->
+
 <h2>Availability </h2>
 <p>The <span class="function">NtCreateProfileEx</span> function and its alias
 <span class="function">ZwCreateProfileEx</span> are exported by name from NTDLL 
@@ -106,7 +106,7 @@ of Windows 10. </p>
 NtCreateProfileEx</span>, documented or not, is known in any higher-level user-mode 
 module that is distributed as standard with Windows. </p>
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="../../_include/win10.htm" TAG="BODY" startspan -->
+
 
 <p>The following implementation notes come mainly from inspection of the kernel 
 from the original release of Windows 10. They may some day get revised to account 
@@ -116,7 +116,7 @@ unable to resist a quick trip down memory lane. I have no programme of revisitin
 this analysis for later releases. Updates mean just that I happen to have noticed 
 something and to have found time to add it. </p>
 
-<!--webbot bot="Include" endspan i-checksum="60685" -->
+
 <h3>Parameter Validation </h3>
 <p>The function has no purpose except to create a profile object that can be made 
 to store execution counts in the given buffer. If <span class="argument">BufferSize</span> 
@@ -254,12 +254,12 @@ this article’s preparation but again in June 2018. </p>
   <p class="Dates">This page was created on 23rd
   <a href="../../../../../../../new/16/12.htm">December 2016</a> and was last modified 
   on 6th October 2018. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c1618.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2016-2018. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="5013" -->
+
 </div>
 
 </body>

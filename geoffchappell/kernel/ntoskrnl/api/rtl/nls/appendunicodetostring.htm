@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
+
 <h1>RtlAppendUnicodeToString </h1>
 <p>The <span class="function">RtlAppendUnicodeToString</span> function modifes a
 <span class="struct"><a href="../../../inc/shared/ntdef/unicode_string.htm">UNICODE_STRING</a></span> structure 
@@ -53,12 +53,12 @@ a null-terminated Unicode string to append to whatever characters are already de
 by <span class="argument">Destination</span>. This argument can be
 <span class="constant">NULL</span> to append nothing. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../../_include/ntstatus.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns <span class="constant">STATUS_SUCCESS</span> if successful, 
 else a negative error code. </p>
 
-<!--webbot bot="Include" endspan i-checksum="8" -->
+
 <h2>Availability </h2>
 <p>The <span class="function">RtlAppendUnicodeToString</span> function is exported 
 by name from the kernel and NTDLL is all known versions, i.e., 3.10 and higher.
@@ -71,7 +71,7 @@ kernel-mode function as an export from the kernel, it is mostly applicable to th
 user-mode implementation too, both being plausibly compiled from the same source 
 file. </p>
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="_include/unicode_string.htm" TAG="BODY" startspan -->
+
 
 <p>The intention of the <span class="struct">UNICODE_STRING</span> structure is 
 to keep together both the address and size of a Unicode string, presumably to save 
@@ -84,7 +84,7 @@ If this array is null-terminated, which it explicitly need not be, then
 <span class="member">MaximumLength</span> member is the size in bytes of the memory 
 from <span class="member">Buffer</span> onwards. </p>
 
-<!--webbot bot="Include" endspan i-checksum="43448" -->
+
 <p>The <span class="function">RtlAppendUnicodeToString</span> function appends the 
 string from <span class="argument">Source</span> to whatever string is already described 
 by <span class="argument">Destination</span>. The null terminator is appended too, 
@@ -137,12 +137,12 @@ buffer must be resident.” </p>
 <div class="Footer">
   <p class="Dates">This page was created on 2nd
   <a href="../../../../../../../new/20/06.htm">June 2020</a>. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c20.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2020. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="5634" -->
+
 </div>
 
 </body>

@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="55064" endspan -->
+
 <h1>IERegDeleteValue </h1>
 <p>Deletes an Internet Explorer registry setting. </p>
 <h2>Declaration </h2>
@@ -41,32 +41,32 @@ IERegDeleteValue (
     BOOL bFromHKLM);
 </pre>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/setting.htm" TAG="BODY" startspan -->
+
 
 <p>The <span class="argument">uSetting</span> argument is an index that identifies 
 the setting. For a list of supported settings, see the general notes on the
 <a href="index.htm">Internet Explorer Registry API</a>. </p>
 
-<!--webbot bot="Include" i-checksum="3285" endspan -->
+
 <p>The <span class="argument">bFromHKLM</span> argument is non-zero to delete the 
 setting from the <span class="regkey">HKEY_LOCAL_MACHINE\Software</span> branch, 
 else from <span class="regkey">HKEY_CURRENT_USER\Software</span>. </p>
 <h3>Return Value </h3>
-<!--webbot bot="Include" U-Include="../_include/hresult.htm" TAG="BODY" startspan -->
+
 
 <p>The function returns zero for success, else an error code. </p>
 
-<!--webbot bot="Include" i-checksum="1551" endspan -->
+
 <h2>Behaviour </h2>
 <p>The function tries to open all four possible branches for Internet Explorer registry 
 settings, if this has not yet been done. Failure to open a branch just means that 
 this function and others cannot operate later in that branch. </p>
-<!--webbot bot="Include" U-Include="_include/outofrange.htm" TAG="BODY" startspan -->
+
 
 <p>If the given index is unsupported, the function fails (returning 0x80040704). 
 </p>
 
-<!--webbot bot="Include" i-checksum="38562" endspan -->
+
 <p>The function also fails (returning 0x80040700) if the selected setting is not 
 supported in the indicated branch or if IERTUTIL does not have this branch open.
 </p>
@@ -79,12 +79,12 @@ code is necessarily 0x80040703. </p>
 IERTUTIL as ordinal 168 in version 8.0 and higher. </p>
 <div class="Footer">
   <p class="Dates">This page was created on 7th April 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../_include/c10.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="61781" endspan -->
+
 </div>
 
 </body>

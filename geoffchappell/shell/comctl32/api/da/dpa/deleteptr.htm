@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="14798" endspan -->
+
 <h1>DPA_DeletePtr </h1>
 <p>This function deletes an item from a DPA. </p>
 <h2>Declaration </h2>
@@ -48,12 +48,12 @@ the item. </p>
 <p>If successful, the function returns a pointer to the item, including to return 
 NULL for an empty item. The function returns NULL for failure. </p>
 <h2>Behaviour </h2>
-<!--webbot bot="Include" U-Include="_include/index.htm" TAG="BODY" startspan -->
+
 
 <p>The function fails if the DPA handle is NULL, or if the index is negative or 
 is not not less than the current number of pointers in the array. </p>
 
-<!--webbot bot="Include" i-checksum="51442" endspan -->
+
 <p>Otherwise, the function deletes from the DPA whatever pointer is described by 
 the given index. If this was not the last pointer in the array, then each pointer 
 further into the array is moved one position towards the start of the array. If 
@@ -62,7 +62,7 @@ the current capacity, the function reduces the capacity by one allocation unit a
 gives back the last allocation unit from the memory used for the pointer array.
 </p>
 <h3>Variations </h3>
-<!--webbot bot="Include" U-Include="_include/null40.htm" TAG="BODY" startspan -->
+
 
 <p>Defence against a NULL <span class="argument">pdpa</span> argument begins in 
 a build of version 4.0. Specifically, there is no defence in the version 4.0 from 
@@ -71,31 +71,31 @@ Explorer 3.00 for Windows NT. (I have no copy of an Internet Explorer 3.00 for W
 95. See the list of <a href="../../../history/index.htm">COMCTL32 versions</a> 
 found for this survey.) </p>
 
-<!--webbot bot="Include" i-checksum="61182" endspan -->
+
 <h2>Availability </h2>
 <p>The <span class="function">DPA_DeletePtr</span> function is exported from COMCTL32.DLL 
 as ordinal 336 in version 3.50 and higher. The implementation for version 6.10 
 and higher is built into a statically linked library and thence is also exported 
 from the Internet Explorer module IERTUTIL.DLL as ordinal 76 in version 7.0 and 
 higher. </p>
-<!--webbot bot="Include" U-Include="../../_include/settlement.htm" TAG="BODY" startspan -->
+
 
 <p>This function was documented among the
 <a target="_top" href="http://msdn.microsoft.com/library/ms807073.aspx">
 Settlement Program Interfaces</a> in December 2002, but with Windows 2000 cited 
 as the minimum operating system, despite many years of earlier availability. </p>
 
-<!--webbot bot="Include" i-checksum="21400" endspan -->
+
 <div class="Footer">
   <p class="Dates">This page was created on 9th April 2005 (from material first 
   published in 1997) and was last modified 
   on 15th June 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c9710.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 1997-2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="5797" endspan -->
+
 </div>
 
 </body>

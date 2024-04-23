@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<!--webbot bot="Include" i-checksum="32624" endspan -->
+
 <h1>API-MS-Win-Core-RtlSupport-L1-1-0 </h1>
 <p>All functions in the API-MS-Win-Core-RtlSupport-L1-1-0 set are exports from both 
 KERNEL32 and NTDLL, mostly from x64 builds only: </p>
@@ -52,26 +52,26 @@ KERNEL32 and NTDLL, mostly from x64 builds only: </p>
   <li><span class="function">RtlUnwindEx</span> (x64 only) </li>
   <li><span class="function">RtlVirtualUnwind</span> (x64 only) </li>
 </ul>
-<!--webbot bot="Include" U-Include="../../../../../_include/stubs_k32_except.htm" TAG="BODY" startspan -->
+
 
 <p>For most of these functions, the implementations in KERNEL32 version 6.1 and 
 higher are just stubs which transfer the handling to wherever the schema redirects 
 the API Set. The exceptions are: </p>
 
-<!--webbot bot="Include" i-checksum="62144" endspan -->
+
 <ul>
   <li> <span class="function">RtlCopyMemory</span> and 
   <span class="function">RtlFillMemory</span>, which are implemented completely 
   in KERNEL32. </li>
 </ul>
-<!--webbot bot="Include" U-Include="../../../../../_include/impl_nt.htm" TAG="BODY" startspan -->
+
 
 <p>Non-trivial implementations of all functions in this API Set are exported from 
 NTDLL version 6.1 and higher. </p>
 
-<!--webbot bot="Include" i-checksum="22174" endspan -->
+
 <h2>Schema Redirection </h2>
-<!--webbot bot="Include" U-Include="../../../../../_include/61/redir_k32_to_nt.htm" TAG="BODY" startspan -->
+
 
 <p>The Windows 7 schema redirects this API Set to NTDLL. Thus: </p>
 <ul>
@@ -83,16 +83,16 @@ NTDLL version 6.1 and higher. </p>
   import from underlying implementations in NTDLL. </li>
 </ul>
 
-<!--webbot bot="Include" i-checksum="58656" endspan -->
+
 <div class="Footer">
   <p class="Dates">This page was created on 15th June 2010 and was last modified 
   on 22nd June 2010. </p>
-  <!--webbot bot="Include" U-Include="../../../../../../_include/c10.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2010. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" i-checksum="5555" endspan -->
+
 </div>
 </body>
 

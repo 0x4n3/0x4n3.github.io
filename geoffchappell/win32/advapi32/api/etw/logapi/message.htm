@@ -13,7 +13,7 @@
 
 <body>
 
-<!--webbot bot="Include" U-Include="../../../../_include/noscript.htm" TAG="BODY" startspan -->
+
 
 <div class="NoScript" id="Banner">
   <div id="Links">
@@ -31,14 +31,14 @@
   </div>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="29544" -->
-<!--webbot bot="Include" U-Include="../../../../_include/draft.htm" TAG="BODY" startspan -->
+
+
 
 <div class="Header">
   <p class="alert">DRAFT: Take more than your usual care. </p>
 </div>
 
-<!--webbot bot="Include" endspan i-checksum="34080" -->
+
 <h1>TraceMessage </h1>
 <p>This function writes a message event to an event tracing session from user mode.
 </p>
@@ -51,13 +51,13 @@ TraceMessage (
     USHORT MessageNumber, 
     ...);</pre>
 <h3>Parameters </h3>
-<!--webbot bot="Include" U-Include="_include/sessionhandle.htm" TAG="BODY" startspan -->
+
 
 <p>The required <span class="argument">SessionHandle</span> selects the event tracing 
 session, also called a logger, to which the event is to be written. </p>
 
-<!--webbot bot="Include" endspan i-checksum="47660" -->
-<!--webbot bot="Include" U-Include="_include/messageflags.htm" TAG="BODY" startspan -->
+
+
 
 <p>The <span class="argument">MessageFlags</span> argument directs the logger to 
 add items to the event in addition to the message arguments. The following bits 
@@ -107,7 +107,7 @@ of the event. The plain intention is that events that have the same
 from <span class="argument">MessageGuid</span>, are recurrences of the one event 
 and have the same interpretation of message arguments. </p>
 
-<!--webbot bot="Include" endspan i-checksum="10406" -->
+
 <p>The remaining arguments, if any, present the message arguments. Successive pairs 
 of function arguments each provide respectively the address and size of one message 
 argument. This sequence ends with a function argument that would represent a
@@ -138,7 +138,7 @@ header, a <span class="struct">
 in contrast to the <span class="struct">
 <a href="../../../../../km/ntoskrnl/api/etw/tracelog/event_trace_header.htm">EVENT_TRACE_HEADER</a></span>.
 </p>
-<!--webbot bot="Include" U-Include="_include/wpp.htm" TAG="BODY" startspan -->
+
 
 <p>This new functionality looks to have been devised as special support for Windows 
 Pre-Processor (WPP) Tracing. This is diagnostic magic that turns drivers, services, 
@@ -153,7 +153,7 @@ of the message arguments for each combination of <span class="argument">MessageG
 and <span class="argument">MessageNumber</span> is done by an event consumer that 
 has the PDB file. </p>
 
-<!--webbot bot="Include" endspan i-checksum="37400" -->
+
 <h2>Documentation Status </h2>
 <p>The <span class="function">TraceMessage</span> function is documented. </p>
 <h2>Behaviour </h2>
@@ -169,12 +169,12 @@ argument. </p>
   <p class="Dates">This page was created on 12th
   <a href="../../../../../../../new/18/12.htm">December 2018</a> and was last modified 
   on 31st December 2018. </p>
-  <!--webbot bot="Include" U-Include="../../../../_include/c18.htm" TAG="BODY" startspan -->
+  
 
 <p class="Copyright">Copyright © 2018. Geoff Chappell. All rights reserved. 
 <a href="../../../../../../../about/terms.htm">Conditions apply</a>. </p>
 
-<!--webbot bot="Include" endspan i-checksum="6594" -->
+
 </div>
 
 </body>
